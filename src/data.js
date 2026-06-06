@@ -1,5 +1,8 @@
 import { sport } from './sportData';
 import { film } from './filmData';
+import { investering } from './investeringData';
+import { politik } from './politikData';
+import { lvid } from './lvidData';
 
 export const categories = {
   musik: { name: 'Musik', color: '#a78bfa' },
@@ -18,11 +21,11 @@ export const categories = {
 export const subcatMap = {
   musik: ['Artister', 'Album', 'Genrer'],
   film: ['Handlingar', 'Citat', 'Karaktärer', 'Skådespelare'],
-  sport: ['Basket', 'Golf'],
-  lvid: ['Koncept', 'Strategi'],
-  investering: ['Begrepp', 'Strategier', 'Bolag'],
+  sport: ['Basket', 'Golf', 'Positioner', 'Stjärnspelare (färskvara)', 'Allsvenskan', 'Premier League', 'La Liga', 'Serie A', 'Bundesliga', 'Ligue 1', 'Hammarby (trupp)'],
+  lvid: ['Termer'],
+  investering: ['Grundläggande', 'Värdering', 'Lönsamhet', 'Risk', 'Teknisk', 'Case'],
   studier: ['Tekniker', 'Anteckningar'],
-  politik: ['Ideologier', 'System', 'Personer'],
+  politik: ['Huvudstäder', 'Valutor', 'Språk', 'Statsskick', 'Sevärdheter', 'Ledare (färskvara)'],
   kemi: ['Grundämnen', 'Formler', 'Reaktioner'],
   biologi: ['Cellbiologi', 'Genetik', 'Ekologi'],
   vokabular: ['Engelska', 'Franska', 'Spanska'],
@@ -31,6 +34,10 @@ export const subcatMap = {
 
 export const initialData = {
   sport,
+  film,
+  investering,
+  politik,
+  lvid,
   kemi: {
     'Grundämnen': [
       { title: 'H', definition: 'Väte – atomnummer 1, lättaste elementet', difficulty: 'lätt' },
