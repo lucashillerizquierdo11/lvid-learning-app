@@ -4,8 +4,10 @@ import { initialData, categories, subcatMap } from './data';
 import { loadState, saveState, mergeCustomCards } from './store';
 import {
   Rating, State, makeScheduler, newCard, gradeCard,
-  previewIntervals, serializeCard, deserializeCard, formatInterval,
+  previewIntervals, serializeCard, deserializeCard, formatInterval, isDue,
 } from './fsrs';
+
+const NEW_CARDS_PER_SESSION = 20;
 
 function shuffle(arr) {
   const a = [...arr];
@@ -14,6 +16,26 @@ function shuffle(arr) {
     [a[i], a[j]] = [a[j], a[i]];
   }
   return a;
+}
+
+// Round-robins items across their groups so the same topic never repeats
+// back-to-back - this is what makes review order interleaved (ABCABC)
+// instead of blocked (AAABBB), the ordering the report's Layer 3 calls for.
+function interleave(items, keyFn) {
+  const groups = new Map();
+  for (const item of items) {
+    const k = keyFn(item);
+    if (!groups.has(k)) groups.set(k, []);
+    groups.get(k).push(item);
+  }
+  const buckets = [...groups.values()].map(shuffle);
+  const result = [];
+  while (buckets.some(b => b.length)) {
+    for (const b of buckets) {
+      if (b.length) result.push(b.shift());
+    }
+  }
+  return result;
 }
 
 // ---- Bildhämtning från Wikipedia (gratis, ingen nyckel) ----
@@ -65,6 +87,7 @@ export default function App() {
 
   const modes = [
     { id: 'flashcard', name: 'Flashcard' },
+    { id: 'review', name: 'Repetition' },
     { id: 'multiple', name: 'Flerval' },
     { id: 'fillin', name: 'Fylla i' },
     { id: 'matching', name: 'Matcha' },
@@ -80,10 +103,51 @@ export default function App() {
 
   const card = cards[idx];
 
+  // Cross-topic due queue powering "Repetition" - this is the interleaved
+  // spaced-review engine; "Flashcard" stays a per-subcategory block/focus mode.
+  const [reviewQueue, setReviewQueue] = useState([]);
+  const [reviewIdx, setReviewIdx] = useState(0);
+
+  const dueCount = useMemo(() => {
+    const now = new Date();
+    let n = 0;
+    for (const c of Object.keys(data)) {
+      for (const s of Object.keys(data[c] || {})) {
+        for (const cd of data[c][s]) {
+          const stored = cardStates[`${c}:${s}:${cd.title}`];
+          if (stored && isDue(deserializeCard(stored), now)) n++;
+        }
+      }
+    }
+    return n;
+  }, [data, cardStates]);
+
+  function buildReviewQueue() {
+    const now = new Date();
+    const due = [];
+    const fresh = [];
+    for (const c of Object.keys(data)) {
+      for (const s of Object.keys(data[c] || {})) {
+        for (const cd of data[c][s]) {
+          const key = `${c}:${s}:${cd.title}`;
+          const stored = cardStates[key];
+          if (stored) {
+            if (isDue(deserializeCard(stored), now)) due.push({ cat: c, sub: s, card: cd, key });
+          } else {
+            fresh.push({ cat: c, sub: s, card: cd, key });
+          }
+        }
+      }
+    }
+    const newBatch = shuffle(fresh).slice(0, NEW_CARDS_PER_SESSION);
+    setReviewQueue(interleave([...shuffle(due), ...newBatch], item => item.cat));
+    setReviewIdx(0);
+  }
+
   function reset() { setIdx(0); setFlipped(false); setPicked(null); setTyped(''); setRevealed(false); setMatchSel(null); setMatched([]); }
   function selectCat(c) { setCat(c); setSub((subcatMap[c] || [])[0]); reset(); }
   function selectSub(s) { setSub(s); reset(); }
-  function selectMode(m) { setMode(m); reset(); }
+  function selectMode(m) { setMode(m); reset(); if (m === 'review') buildReviewQueue(); }
   function next() { setFlipped(false); setPicked(null); setTyped(''); setRevealed(false); setIdx(i => Math.min(i + 1, cards.length - 1)); }
   function prev() { setFlipped(false); setPicked(null); setTyped(''); setRevealed(false); setIdx(i => Math.max(i - 1, 0)); }
 
@@ -103,6 +167,24 @@ export default function App() {
     const { card: nextCard } = gradeCard(scheduler, cardState, rating, new Date());
     setCardStates(cs => ({ ...cs, [cardKey]: serializeCard(nextCard) }));
     if (idx < cards.length - 1) next();
+  }
+
+  const reviewItem = mode === 'review' ? reviewQueue[reviewIdx] : null;
+  const reviewCardState = useMemo(() => {
+    if (!reviewItem) return null;
+    const stored = cardStates[reviewItem.key];
+    return stored ? deserializeCard(stored) : newCard();
+  }, [reviewItem, cardStates]);
+  const reviewPreview = useMemo(() => {
+    if (!reviewCardState) return null;
+    return previewIntervals(scheduler, reviewCardState, new Date());
+  }, [reviewCardState, scheduler]);
+
+  function rateReview(rating) {
+    const { card: nextCard } = gradeCard(scheduler, reviewCardState, rating, new Date());
+    setCardStates(cs => ({ ...cs, [reviewItem.key]: serializeCard(nextCard) }));
+    setFlipped(false);
+    setReviewIdx(i => i + 1);
   }
 
   // riktning: vad visas och vad är svaret
@@ -203,7 +285,9 @@ export default function App() {
           </div>
           <div className="modes">
             {modes.map(m => (
-              <button key={m.id} onClick={() => selectMode(m.id)} className={`mode-btn ${mode === m.id ? 'active' : ''}`}>{m.name}</button>
+              <button key={m.id} onClick={() => selectMode(m.id)} className={`mode-btn ${mode === m.id ? 'active' : ''}`}>
+                {m.name}{m.id === 'review' && dueCount > 0 ? ` (${dueCount})` : ''}
+              </button>
             ))}
           </div>
         </header>
@@ -226,7 +310,7 @@ export default function App() {
           </div>
 
           <div className="center">
-            {!card && mode !== 'matching' && <p className="empty">Inga kort här ännu.</p>}
+            {!card && mode !== 'matching' && mode !== 'review' && <p className="empty">Inga kort här ännu.</p>}
 
             {mode === 'flashcard' && card && (
               <>
@@ -254,6 +338,41 @@ export default function App() {
                   </div>
                 )}
               </>
+            )}
+
+            {mode === 'review' && reviewItem && (
+              <>
+                <div className="spaced-info">
+                  <span className="dot" style={{ background: categories[reviewItem.cat]?.color }}></span>
+                  {' '}{categories[reviewItem.cat]?.name} · {reviewItem.sub} &nbsp;·&nbsp; Kort {reviewIdx + 1} / {reviewQueue.length}
+                </div>
+                <div className={`card ${flipped ? 'flip' : ''}`} onClick={() => setFlipped(f => !f)}>
+                  <div className="card-in">
+                    <div className="face front">
+                      {visual && <CardImage query={reviewItem.card.title} />}
+                      <span className="lbl">{dir === 'term' ? 'Begrepp' : 'Definition'}</span>
+                      {dir === 'term' ? <h2>{reviewItem.card.title}</h2> : <p>{reviewItem.card.definition}</p>}
+                      <span className="hint">Klicka för att vända</span>
+                    </div>
+                    <div className="face back">
+                      <span className="lbl">{dir === 'term' ? 'Definition' : 'Begrepp'}</span>
+                      {dir === 'term' ? <p>{reviewItem.card.definition}</p> : <h2>{reviewItem.card.title}</h2>}
+                    </div>
+                  </div>
+                </div>
+                {flipped && reviewPreview && (
+                  <div className="fb">
+                    <button className="fb-btn forgot" onClick={() => rateReview(Rating.Again)}>Igen<span className="iv">{formatInterval(reviewPreview[Rating.Again].card.due)}</span></button>
+                    <button className="fb-btn hard" onClick={() => rateReview(Rating.Hard)}>Svår<span className="iv">{formatInterval(reviewPreview[Rating.Hard].card.due)}</span></button>
+                    <button className="fb-btn good" onClick={() => rateReview(Rating.Good)}>Bra<span className="iv">{formatInterval(reviewPreview[Rating.Good].card.due)}</span></button>
+                    <button className="fb-btn easy" onClick={() => rateReview(Rating.Easy)}>Lätt<span className="iv">{formatInterval(reviewPreview[Rating.Easy].card.due)}</span></button>
+                  </div>
+                )}
+              </>
+            )}
+
+            {mode === 'review' && !reviewItem && (
+              <p className="empty">{reviewQueue.length === 0 ? 'Inga kort att repetera just nu. Bra jobbat! 🎉' : 'Klart för denna sessionen! 🎉'}</p>
             )}
 
             {mode === 'multiple' && card && (
