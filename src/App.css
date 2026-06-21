@@ -102,6 +102,23 @@ input, textarea, select { -webkit-appearance: none; appearance: none; }
 .result { font-size: 15px; padding: 12px; border-radius: 8px; width: 100%; text-align: center; }
 .result.ok { background: #14271f; color: var(--green); }
 .result.no { background: #2a1818; color: var(--red); }
+.result.pending { background: var(--bg2); color: var(--muted); }
+
+/* Judgment-of-learning prediction */
+.jol { display: flex; flex-direction: column; align-items: center; gap: 8px; width: 100%; max-width: 520px; }
+.jol-label { font-size: 12px; color: var(--muted); }
+.jol-btns { display: flex; gap: 8px; width: 100%; }
+.jol-btn { flex: 1; padding: 10px 6px; border-radius: 7px; border: 1px solid var(--border); background: var(--bg2); color: var(--text); cursor: pointer; font-size: 13px; font-weight: 600; transition: .15s; }
+.jol-btn:hover { background: var(--bg3); }
+.jol-btn.low { color: var(--red); border-color: #5a2a2a; }
+.jol-btn.mid { color: var(--amber); border-color: #5a4a1f; }
+.jol-btn.high { color: var(--green); border-color: #1f5a45; }
+
+/* Weak areas */
+.weak-areas { display: flex; flex-direction: column; gap: 6px; }
+.weak-btn { display: flex; align-items: center; gap: 8px; padding: 8px 10px; border: 1px solid var(--border); background: var(--bg); color: var(--text); border-radius: 7px; cursor: pointer; font-size: 12px; text-align: left; transition: .15s; }
+.weak-btn:hover { background: var(--bg3); }
+.weak-btn .iv { margin-left: auto; color: var(--muted); font-size: 11px; }
 
 /* Matching */
 .match { display: flex; gap: 16px; width: 100%; max-width: 640px; position: relative; }
@@ -225,6 +242,10 @@ input, textarea, select { -webkit-appearance: none; appearance: none; }
   .fb { gap: 6px; }
   .fb-btn { padding: 8px 4px; font-size: 11px; min-height: 44px; }
   .fb-btn .iv { font-size: 10px; }
+
+  /* JOL prediction */
+  .jol-btn { padding: 8px 4px; font-size: 12px; min-height: 44px; }
+  .weak-btn { min-height: 44px; }
   
   /* Quiz/matching */
   .opts { gap: 6px; }

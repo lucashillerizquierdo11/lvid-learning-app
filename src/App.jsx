@@ -5,7 +5,7 @@ import { loadState, saveState, mergeCustomCards } from './store';
 import { matchTier } from './textMatch';
 import {
   Rating, State, makeScheduler, newCard, gradeCard,
-  previewIntervals, serializeCard, deserializeCard, formatInterval, isDue,
+  previewIntervals, serializeCard, deserializeCard, formatInterval, isDue, retrievability,
 } from './fsrs';
 
 const NEW_CARDS_PER_SESSION = 20;
@@ -75,9 +75,14 @@ export default function App() {
   const [score, setScore] = useState(saved?.score || { correct: 0, total: 0 });
   const [retention, setRetention] = useState(saved?.settings?.retention ?? 0.9);
   const scheduler = useMemo(() => makeScheduler(retention), [retention]);
+  const [delayedFeedback, setDelayedFeedback] = useState(saved?.settings?.delayedFeedback ?? false);
+  const [predicted, setPredicted] = useState(null);
+  const [jolLog, setJolLog] = useState(saved?.jolLog || []);
   const [picked, setPicked] = useState(null);
+  const [pickRevealed, setPickRevealed] = useState(false);
   const [typed, setTyped] = useState('');
   const [revealed, setRevealed] = useState(false);
+  const [resultShown, setResultShown] = useState(false);
   const [matchSel, setMatchSel] = useState(null);
   const [matched, setMatched] = useState([]);
   const [visual, setVisual] = useState(true);      // visa bilder
@@ -145,12 +150,75 @@ export default function App() {
     setReviewIdx(0);
   }
 
-  function reset() { setIdx(0); setFlipped(false); setPicked(null); setTyped(''); setRevealed(false); setMatchSel(null); setMatched([]); }
+  function reset() {
+    setIdx(0); setFlipped(false); setPredicted(null); setPicked(null); setPickRevealed(false);
+    setTyped(''); setRevealed(false); setResultShown(false); setMatchSel(null); setMatched([]);
+  }
   function selectCat(c) { setCat(c); setSub((subcatMap[c] || [])[0]); reset(); }
   function selectSub(s) { setSub(s); reset(); }
   function selectMode(m) { setMode(m); reset(); if (m === 'review') buildReviewQueue(); }
-  function next() { setFlipped(false); setPicked(null); setTyped(''); setRevealed(false); setIdx(i => Math.min(i + 1, cards.length - 1)); }
-  function prev() { setFlipped(false); setPicked(null); setTyped(''); setRevealed(false); setIdx(i => Math.max(i - 1, 0)); }
+  function next() {
+    setFlipped(false); setPredicted(null); setPicked(null); setPickRevealed(false);
+    setTyped(''); setRevealed(false); setResultShown(false); setIdx(i => Math.min(i + 1, cards.length - 1));
+  }
+  function prev() {
+    setFlipped(false); setPredicted(null); setPicked(null); setPickRevealed(false);
+    setTyped(''); setRevealed(false); setResultShown(false); setIdx(i => Math.max(i - 1, 0));
+  }
+
+  // Judgment-of-learning: ask the learner to predict confidence before
+  // seeing the answer, then log predicted-vs-actual for calibration feedback.
+  function predictAndFlip(level) { setPredicted(level); setFlipped(true); }
+  function logJol(rating) {
+    if (!predicted) return;
+    setJolLog(log => [...log.slice(-199), { level: predicted, correct: rating !== Rating.Again }]);
+  }
+  const calibration = useMemo(() => {
+    const buckets = { low: { c: 0, t: 0 }, mid: { c: 0, t: 0 }, high: { c: 0, t: 0 } };
+    for (const e of jolLog) { buckets[e.level].t++; if (e.correct) buckets[e.level].c++; }
+    return buckets;
+  }, [jolLog]);
+
+  // Per-category average retrievability, surfaced so learners can jump
+  // straight to their weakest topics instead of only following due-dates.
+  const weakAreas = useMemo(() => {
+    const now = new Date();
+    const byCategory = {};
+    for (const c of Object.keys(data)) {
+      let sum = 0, n = 0;
+      for (const s of Object.keys(data[c] || {})) {
+        for (const cd of data[c][s]) {
+          const stored = cardStates[`${c}:${s}:${cd.title}`];
+          if (stored) {
+            const cs = deserializeCard(stored);
+            if (cs.reps > 0) { sum += retrievability(scheduler, cs, now); n++; }
+          }
+        }
+      }
+      if (n >= 3) byCategory[c] = sum / n;
+    }
+    return Object.entries(byCategory).sort((a, b) => a[1] - b[1]).slice(0, 3);
+  }, [data, cardStates, scheduler]);
+
+  function buildWeakQueue(catKey) {
+    const now = new Date();
+    const items = [];
+    for (const s of Object.keys(data[catKey] || {})) {
+      for (const cd of data[catKey][s]) {
+        const key = `${catKey}:${s}:${cd.title}`;
+        const stored = cardStates[key];
+        if (stored) {
+          const cs = deserializeCard(stored);
+          if (cs.reps > 0) items.push({ cat: catKey, sub: s, card: cd, key, r: retrievability(scheduler, cs, now) });
+        }
+      }
+    }
+    items.sort((a, b) => a.r - b.r);
+    setReviewQueue(interleave(items.slice(0, NEW_CARDS_PER_SESSION), item => item.sub));
+    setReviewIdx(0);
+    setFlipped(false); setPredicted(null);
+    setMode('review');
+  }
 
   const cardKey = card ? `${cat}:${sub}:${card.title}` : null;
   const cardState = useMemo(() => {
@@ -167,7 +235,9 @@ export default function App() {
   function rate(rating) {
     const { card: nextCard } = gradeCard(scheduler, cardState, rating, new Date());
     setCardStates(cs => ({ ...cs, [cardKey]: serializeCard(nextCard) }));
+    logJol(rating);
     if (idx < cards.length - 1) next();
+    else setPredicted(null);
   }
 
   const reviewItem = mode === 'review' ? reviewQueue[reviewIdx] : null;
@@ -184,6 +254,8 @@ export default function App() {
   function rateReview(rating) {
     const { card: nextCard } = gradeCard(scheduler, reviewCardState, rating, new Date());
     setCardStates(cs => ({ ...cs, [reviewItem.key]: serializeCard(nextCard) }));
+    logJol(rating);
+    setPredicted(null);
     setFlipped(false);
     setReviewIdx(i => i + 1);
   }
@@ -209,6 +281,8 @@ export default function App() {
     if (picked !== null) return;
     setPicked(opt);
     setScore(s => ({ correct: s.correct + (opt === answerValue ? 1 : 0), total: s.total + 1 }));
+    if (delayedFeedback) setTimeout(() => setPickRevealed(true), 1200);
+    else setPickRevealed(true);
   }
 
   // fylla i
@@ -220,6 +294,8 @@ export default function App() {
     if (revealed) return;
     setRevealed(true);
     setScore(s => ({ correct: s.correct + (fillTier !== 'wrong' ? 1 : 0), total: s.total + 1 }));
+    if (delayedFeedback) setTimeout(() => setResultShown(true), 1200);
+    else setResultShown(true);
   }
 
   // matcha
@@ -244,8 +320,8 @@ export default function App() {
   }
 
   useEffect(() => {
-    saveState({ customCards, cardStates, score, settings: { retention } });
-  }, [customCards, cardStates, score, retention]);
+    saveState({ customCards, cardStates, score, jolLog, settings: { retention, delayedFeedback } });
+  }, [customCards, cardStates, score, jolLog, retention, delayedFeedback]);
 
   const learned = allCards.filter(c => cardStates[`${cat}:${sub}:${c.title}`]?.state === State.Review).length;
   const accuracy = score.total ? Math.round((score.correct / score.total) * 100) : null;
@@ -283,6 +359,10 @@ export default function App() {
                 <input type="range" min="0.7" max="0.97" step="0.01" value={retention}
                   onChange={e => setRetention(parseFloat(e.target.value))} />
               </label>
+              <button className={`toggle ${delayedFeedback ? 'on' : ''}`} onClick={() => setDelayedFeedback(v => !v)}
+                title="Fördröj rättning en kort stund - tvingar dig att hålla kvar svaret i minnet">
+                ⏱️ Fördröjd rättning {delayedFeedback ? 'på' : 'av'}
+              </button>
             </div>
           </div>
           <div className="modes">
@@ -309,6 +389,17 @@ export default function App() {
               <div className="stat-row"><span>Träffsäkerhet</span><b>{accuracy === null ? '–' : accuracy + '%'}</b></div>
               <div className="bar"><div className="fill" style={{ width: `${allCards.length ? (learned / allCards.length) * 100 : 0}%` }}></div></div>
             </div>
+            {weakAreas.length > 0 && (
+              <div className="stat-box weak-areas">
+                <h4>Svaga områden</h4>
+                {weakAreas.map(([c, r]) => (
+                  <button key={c} className="weak-btn" onClick={() => buildWeakQueue(c)}>
+                    <span className="dot" style={{ background: categories[c]?.color }}></span>
+                    {categories[c]?.name}<span className="iv">{Math.round(r * 100)}%</span>
+                  </button>
+                ))}
+              </div>
+            )}
           </div>
 
           <div className="center">
@@ -331,6 +422,16 @@ export default function App() {
                   </div>
                 </div>
                 <Nav idx={idx} len={cards.length} prev={prev} next={next} />
+                {!flipped && (
+                  <div className="jol">
+                    <span className="jol-label">Hur säker är du på svaret?</span>
+                    <div className="jol-btns">
+                      <button className="jol-btn low" onClick={() => predictAndFlip('low')}>Osäker</button>
+                      <button className="jol-btn mid" onClick={() => predictAndFlip('mid')}>Lagom</button>
+                      <button className="jol-btn high" onClick={() => predictAndFlip('high')}>Säker</button>
+                    </div>
+                  </div>
+                )}
                 {flipped && preview && (
                   <div className="fb">
                     <button className="fb-btn forgot" onClick={() => rate(Rating.Again)}>Igen<span className="iv">{formatInterval(preview[Rating.Again].card.due)}</span></button>
@@ -362,6 +463,16 @@ export default function App() {
                     </div>
                   </div>
                 </div>
+                {!flipped && (
+                  <div className="jol">
+                    <span className="jol-label">Hur säker är du på svaret?</span>
+                    <div className="jol-btns">
+                      <button className="jol-btn low" onClick={() => predictAndFlip('low')}>Osäker</button>
+                      <button className="jol-btn mid" onClick={() => predictAndFlip('mid')}>Lagom</button>
+                      <button className="jol-btn high" onClick={() => predictAndFlip('high')}>Säker</button>
+                    </div>
+                  </div>
+                )}
                 {flipped && reviewPreview && (
                   <div className="fb">
                     <button className="fb-btn forgot" onClick={() => rateReview(Rating.Again)}>Igen<span className="iv">{formatInterval(reviewPreview[Rating.Again].card.due)}</span></button>
@@ -384,8 +495,8 @@ export default function App() {
                 {dir === 'term' ? <h2 className="q">{card.title}</h2> : <p className="def-prompt">{card.definition}</p>}
                 <div className="opts">
                   {options.map((o, i) => {
-                    const isCorrect = picked !== null && o === answerValue;
-                    const isWrong = picked === o && o !== answerValue;
+                    const isCorrect = pickRevealed && o === answerValue;
+                    const isWrong = pickRevealed && picked === o && o !== answerValue;
                     return (
                       <button key={i} onClick={() => pick(o)} className={`opt ${isCorrect ? 'correct' : ''} ${isWrong ? 'wrong' : ''}`}>{o}</button>
                     );
@@ -404,6 +515,8 @@ export default function App() {
                   onChange={e => setTyped(e.target.value)} onKeyDown={e => e.key === 'Enter' && checkTyped()} />
                 {!revealed
                   ? <button className="check" onClick={checkTyped}>Kontrollera</button>
+                  : !resultShown
+                  ? <div className="result pending">Kollar svaret…</div>
                   : <div className={`result ${fillTier !== 'wrong' ? 'ok' : 'no'}`}>
                       {fillTier === 'exact' ? 'Rätt! ' : fillTier === 'close' ? 'Nästan rätt! ' : 'Rätt svar: '}<b>{fillAnswer}</b>
                     </div>}
@@ -448,6 +561,12 @@ export default function App() {
               <h4>Session</h4>
               <div className="stat-row"><span>Rätt</span><b>{score.correct}</b></div>
               <div className="stat-row"><span>Totalt</span><b>{score.total}</b></div>
+            </div>
+            <div className="stat-box" title="Hur väl din förutsagda säkerhet matchar faktiskt minne - hjälper dig märka när du överskattar">
+              <h4>Kalibrering</h4>
+              <div className="stat-row"><span>Osäker</span><b>{calibration.low.t ? Math.round(calibration.low.c / calibration.low.t * 100) + '%' : '–'}</b></div>
+              <div className="stat-row"><span>Lagom</span><b>{calibration.mid.t ? Math.round(calibration.mid.c / calibration.mid.t * 100) + '%' : '–'}</b></div>
+              <div className="stat-row"><span>Säker</span><b>{calibration.high.t ? Math.round(calibration.high.c / calibration.high.t * 100) + '%' : '–'}</b></div>
             </div>
           </div>
         </div>
