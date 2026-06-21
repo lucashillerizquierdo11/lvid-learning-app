@@ -1,6 +1,7 @@
 import React, { useState, useMemo, useEffect } from 'react';
 import './App.css';
 import { initialData, categories, subcatMap } from './data';
+import { loadState, saveState, mergeCustomCards } from './store';
 
 function shuffle(arr) {
   const a = [...arr];
@@ -34,15 +35,17 @@ function CardImage({ query }) {
 }
 
 export default function App() {
-  const [data, setData] = useState(initialData);
+  const saved = useMemo(() => loadState(), []);
+  const [customCards, setCustomCards] = useState(saved?.customCards || {});
+  const data = useMemo(() => mergeCustomCards(initialData, customCards), [customCards]);
   const [cat, setCat] = useState('film');
   const [sub, setSub] = useState('Handlingar');
   const [mode, setMode] = useState('flashcard');
   const [idx, setIdx] = useState(0);
   const [flipped, setFlipped] = useState(false);
   const [search, setSearch] = useState('');
-  const [progress, setProgress] = useState({});
-  const [score, setScore] = useState({ correct: 0, total: 0 });
+  const [progress, setProgress] = useState(saved?.progress || {});
+  const [score, setScore] = useState(saved?.score || { correct: 0, total: 0 });
   const [picked, setPicked] = useState(null);
   const [typed, setTyped] = useState('');
   const [revealed, setRevealed] = useState(false);
@@ -130,14 +133,18 @@ export default function App() {
 
   function addCard() {
     if (!nt.trim() || !nd.trim()) return;
-    setData(d => {
-      const copy = { ...d };
+    setCustomCards(cc => {
+      const copy = { ...cc };
       copy[cat] = { ...(copy[cat] || {}) };
       copy[cat][sub] = [...(copy[cat][sub] || []), { title: nt, definition: nd, difficulty: ndiff }];
       return copy;
     });
     setNt(''); setNd(''); setNdiff('medel');
   }
+
+  useEffect(() => {
+    saveState({ customCards, progress, score });
+  }, [customCards, progress, score]);
 
   const learned = allCards.filter(c => progress[`${cat}:${sub}:${c.title}`]?.status === 'lärt').length;
   const accuracy = score.total ? Math.round((score.correct / score.total) * 100) : null;
