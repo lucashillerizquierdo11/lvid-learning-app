@@ -2,6 +2,10 @@ import React, { useState, useMemo, useEffect } from 'react';
 import './App.css';
 import { initialData, categories, subcatMap } from './data';
 import { loadState, saveState, mergeCustomCards } from './store';
+import {
+  Rating, State, makeScheduler, newCard, gradeCard,
+  previewIntervals, serializeCard, deserializeCard, formatInterval,
+} from './fsrs';
 
 function shuffle(arr) {
   const a = [...arr];
@@ -44,8 +48,10 @@ export default function App() {
   const [idx, setIdx] = useState(0);
   const [flipped, setFlipped] = useState(false);
   const [search, setSearch] = useState('');
-  const [progress, setProgress] = useState(saved?.progress || {});
+  const [cardStates, setCardStates] = useState(saved?.cardStates || {});
   const [score, setScore] = useState(saved?.score || { correct: 0, total: 0 });
+  const [retention, setRetention] = useState(saved?.settings?.retention ?? 0.9);
+  const scheduler = useMemo(() => makeScheduler(retention), [retention]);
   const [picked, setPicked] = useState(null);
   const [typed, setTyped] = useState('');
   const [revealed, setRevealed] = useState(false);
@@ -62,7 +68,6 @@ export default function App() {
     { id: 'multiple', name: 'Flerval' },
     { id: 'fillin', name: 'Fylla i' },
     { id: 'matching', name: 'Matcha' },
-    { id: 'spaced', name: 'Spaced Rep' },
   ];
 
   const subs = subcatMap[cat] || [];
@@ -82,9 +87,21 @@ export default function App() {
   function next() { setFlipped(false); setPicked(null); setTyped(''); setRevealed(false); setIdx(i => Math.min(i + 1, cards.length - 1)); }
   function prev() { setFlipped(false); setPicked(null); setTyped(''); setRevealed(false); setIdx(i => Math.max(i - 1, 0)); }
 
-  function mark(status) {
-    const key = `${cat}:${sub}:${card.title}`;
-    setProgress(p => ({ ...p, [key]: { status, seen: (p[key]?.seen || 0) + 1 } }));
+  const cardKey = card ? `${cat}:${sub}:${card.title}` : null;
+  const cardState = useMemo(() => {
+    if (!cardKey) return null;
+    const stored = cardStates[cardKey];
+    return stored ? deserializeCard(stored) : newCard();
+  }, [cardKey, cardStates]);
+
+  const preview = useMemo(() => {
+    if (!cardState) return null;
+    return previewIntervals(scheduler, cardState, new Date());
+  }, [cardState, scheduler]);
+
+  function rate(rating) {
+    const { card: nextCard } = gradeCard(scheduler, cardState, rating, new Date());
+    setCardStates(cs => ({ ...cs, [cardKey]: serializeCard(nextCard) }));
     if (idx < cards.length - 1) next();
   }
 
@@ -143,10 +160,10 @@ export default function App() {
   }
 
   useEffect(() => {
-    saveState({ customCards, progress, score });
-  }, [customCards, progress, score]);
+    saveState({ customCards, cardStates, score, settings: { retention } });
+  }, [customCards, cardStates, score, retention]);
 
-  const learned = allCards.filter(c => progress[`${cat}:${sub}:${c.title}`]?.status === 'lärt').length;
+  const learned = allCards.filter(c => cardStates[`${cat}:${sub}:${c.title}`]?.state === State.Review).length;
   const accuracy = score.total ? Math.round((score.correct / score.total) * 100) : null;
 
   return (
@@ -177,6 +194,11 @@ export default function App() {
               <button className="toggle dir" onClick={() => { setDir(d => d === 'term' ? 'def' : 'term'); reset(); }} title="Byt riktning">
                 {dir === 'term' ? 'Begrepp → Definition' : 'Definition → Begrepp'}
               </button>
+              <label className="retention" title="Hur hög minnessäkerhet schemaläggningen siktar på">
+                Mål: {Math.round(retention * 100)}%
+                <input type="range" min="0.7" max="0.97" step="0.01" value={retention}
+                  onChange={e => setRetention(parseFloat(e.target.value))} />
+              </label>
             </div>
           </div>
           <div className="modes">
@@ -206,9 +228,8 @@ export default function App() {
           <div className="center">
             {!card && mode !== 'matching' && <p className="empty">Inga kort här ännu.</p>}
 
-            {(mode === 'flashcard' || mode === 'spaced') && card && (
+            {mode === 'flashcard' && card && (
               <>
-                {mode === 'spaced' && <div className="spaced-info">Spaced repetition prioriterar kort du markerat som svåra. Markera ärligt!</div>}
                 <div className={`card ${flipped ? 'flip' : ''}`} onClick={() => setFlipped(f => !f)}>
                   <div className="card-in">
                     <div className="face front">
@@ -224,11 +245,14 @@ export default function App() {
                   </div>
                 </div>
                 <Nav idx={idx} len={cards.length} prev={prev} next={next} />
-                <div className="fb">
-                  <button className="fb-btn forgot" onClick={() => mark('glömt')}>{mode === 'spaced' ? 'Igen (1 min)' : 'Glömt'}</button>
-                  <button className="fb-btn soon" onClick={() => mark('snart')}>{mode === 'spaced' ? 'Svår (10 min)' : 'Snart'}</button>
-                  <button className="fb-btn learned" onClick={() => mark('lärt')}>{mode === 'spaced' ? 'Lätt (4 dagar)' : 'Lärt'}</button>
-                </div>
+                {flipped && preview && (
+                  <div className="fb">
+                    <button className="fb-btn forgot" onClick={() => rate(Rating.Again)}>Igen<span className="iv">{formatInterval(preview[Rating.Again].card.due)}</span></button>
+                    <button className="fb-btn hard" onClick={() => rate(Rating.Hard)}>Svår<span className="iv">{formatInterval(preview[Rating.Hard].card.due)}</span></button>
+                    <button className="fb-btn good" onClick={() => rate(Rating.Good)}>Bra<span className="iv">{formatInterval(preview[Rating.Good].card.due)}</span></button>
+                    <button className="fb-btn easy" onClick={() => rate(Rating.Easy)}>Lätt<span className="iv">{formatInterval(preview[Rating.Easy].card.due)}</span></button>
+                  </div>
+                )}
               </>
             )}
 
