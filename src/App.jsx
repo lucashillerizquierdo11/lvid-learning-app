@@ -2,6 +2,7 @@ import React, { useState, useMemo, useEffect } from 'react';
 import './App.css';
 import { initialData, categories, subcatMap } from './data';
 import { loadState, saveState, mergeCustomCards } from './store';
+import { matchTier } from './textMatch';
 import {
   Rating, State, makeScheduler, newCard, gradeCard,
   previewIntervals, serializeCard, deserializeCard, formatInterval, isDue,
@@ -213,11 +214,12 @@ export default function App() {
   // fylla i
   const fillPrompt = dir === 'term' ? card?.definition : card?.title;
   const fillAnswer = dir === 'term' ? card?.title : card?.definition;
+  const fillTier = useMemo(() => matchTier(typed, fillAnswer || ''), [typed, fillAnswer]);
+
   function checkTyped() {
     if (revealed) return;
     setRevealed(true);
-    const ok = typed.trim().toLowerCase() === (fillAnswer || '').trim().toLowerCase();
-    setScore(s => ({ correct: s.correct + (ok ? 1 : 0), total: s.total + 1 }));
+    setScore(s => ({ correct: s.correct + (fillTier !== 'wrong' ? 1 : 0), total: s.total + 1 }));
   }
 
   // matcha
@@ -402,8 +404,8 @@ export default function App() {
                   onChange={e => setTyped(e.target.value)} onKeyDown={e => e.key === 'Enter' && checkTyped()} />
                 {!revealed
                   ? <button className="check" onClick={checkTyped}>Kontrollera</button>
-                  : <div className={`result ${typed.trim().toLowerCase() === (fillAnswer || '').toLowerCase() ? 'ok' : 'no'}`}>
-                      {typed.trim().toLowerCase() === (fillAnswer || '').toLowerCase() ? 'Rätt! ' : 'Rätt svar: '}<b>{fillAnswer}</b>
+                  : <div className={`result ${fillTier !== 'wrong' ? 'ok' : 'no'}`}>
+                      {fillTier === 'exact' ? 'Rätt! ' : fillTier === 'close' ? 'Nästan rätt! ' : 'Rätt svar: '}<b>{fillAnswer}</b>
                     </div>}
                 <Nav idx={idx} len={cards.length} prev={prev} next={next} />
               </div>
