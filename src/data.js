@@ -3,6 +3,7 @@ import { film } from './filmData';
 import { investering } from './investeringData';
 import { politik } from './politikData';
 import { lvid } from './lvidData';
+import { svenskaInformell, svenskaFormell } from './vokabularSvenskaData';
 
 export const categories = {
   musik: { name: 'Musik', color: '#a78bfa' },
@@ -44,7 +45,7 @@ export const subcatMap = {
   politik: ['Huvudstäder', 'Valutor', 'Språk', 'Statsskick', 'Sevärdheter', 'Ledare (färskvara)'],
   kemi: ['Grundämnen', 'Formler', 'Reaktioner'],
   biologi: ['Cellbiologi', 'Genetik', 'Ekologi'],
-  vokabular: ['Engelska', 'Franska', 'Spanska'],
+  vokabular: ['Engelska', 'Franska', 'Spanska', 'Svenska informell', 'Svenska formell'],
   historia: ['Antiken', 'Medeltiden', 'Modern'],
 };
 
@@ -54,6 +55,10 @@ export const initialData = {
   investering,
   politik,
   lvid,
+  vokabular: {
+    'Svenska informell': svenskaInformell,
+    'Svenska formell': svenskaFormell,
+  },
   kemi: {
     'Grundämnen': [
       { title: 'H', definition: 'Väte – atomnummer 1, lättaste elementet', difficulty: 'lätt' },
