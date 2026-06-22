@@ -66,6 +66,13 @@ input, textarea, select { -webkit-appearance: none; appearance: none; }
 .face h2 { font-size: 30px; font-weight: 600; }
 .face p { font-size: 16px; color: var(--text); line-height: 1.6; }
 .hint { position: absolute; bottom: 16px; font-size: 11px; color: var(--muted); }
+.mnemonic, .example { font-size: 13px; color: var(--muted); margin-top: 10px; line-height: 1.5; }
+
+/* Elaboration / self-explanation prompt */
+.elab { width: 100%; max-width: 520px; display: flex; flex-direction: column; gap: 6px; }
+.elab-label { font-size: 12px; color: var(--muted); }
+.elab-input { width: 100%; padding: 10px 12px; border: 1px solid var(--border); background: var(--bg2); color: var(--text); border-radius: 8px; font-size: 13px; font-family: inherit; outline: none; resize: vertical; }
+.elab-input:focus { border-color: var(--accent); }
 
 /* Nav */
 .nav { display: flex; gap: 12px; align-items: center; width: 100%; max-width: 520px; }

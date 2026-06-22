@@ -90,6 +90,9 @@ export default function App() {
   const [nt, setNt] = useState('');
   const [nd, setNd] = useState('');
   const [ndiff, setNdiff] = useState('medel');
+  const [nm, setNm] = useState('');
+  const [nex, setNex] = useState('');
+  const [elabNotes, setElabNotes] = useState(saved?.elabNotes || {});
 
   const modes = [
     { id: 'flashcard', name: 'Flashcard' },
@@ -310,18 +313,21 @@ export default function App() {
 
   function addCard() {
     if (!nt.trim() || !nd.trim()) return;
+    const newCardData = { title: nt, definition: nd, difficulty: ndiff };
+    if (nm.trim()) newCardData.mnemonic = nm.trim();
+    if (nex.trim()) newCardData.example = nex.trim();
     setCustomCards(cc => {
       const copy = { ...cc };
       copy[cat] = { ...(copy[cat] || {}) };
-      copy[cat][sub] = [...(copy[cat][sub] || []), { title: nt, definition: nd, difficulty: ndiff }];
+      copy[cat][sub] = [...(copy[cat][sub] || []), newCardData];
       return copy;
     });
-    setNt(''); setNd(''); setNdiff('medel');
+    setNt(''); setNd(''); setNdiff('medel'); setNm(''); setNex('');
   }
 
   useEffect(() => {
-    saveState({ customCards, cardStates, score, jolLog, settings: { retention, delayedFeedback } });
-  }, [customCards, cardStates, score, jolLog, retention, delayedFeedback]);
+    saveState({ customCards, cardStates, score, jolLog, elabNotes, settings: { retention, delayedFeedback } });
+  }, [customCards, cardStates, score, jolLog, elabNotes, retention, delayedFeedback]);
 
   const learned = allCards.filter(c => cardStates[`${cat}:${sub}:${c.title}`]?.state === State.Review).length;
   const accuracy = score.total ? Math.round((score.correct / score.total) * 100) : null;
@@ -418,6 +424,8 @@ export default function App() {
                     <div className="face back">
                       <span className="lbl">{backLabel}</span>
                       {dir === 'term' ? <p>{backText}</p> : <h2>{backText}</h2>}
+                      {card.mnemonic && <p className="mnemonic">💡 {card.mnemonic}</p>}
+                      {card.example && <p className="example">📌 {card.example}</p>}
                     </div>
                   </div>
                 </div>
@@ -430,6 +438,14 @@ export default function App() {
                       <button className="jol-btn mid" onClick={() => predictAndFlip('mid')}>Lagom</button>
                       <button className="jol-btn high" onClick={() => predictAndFlip('high')}>Säker</button>
                     </div>
+                  </div>
+                )}
+                {flipped && (
+                  <div className="elab">
+                    <label className="elab-label">Varför/hur hänger detta ihop? (frivilligt)</label>
+                    <textarea className="elab-input" rows="2" value={elabNotes[cardKey] || ''}
+                      onChange={e => setElabNotes(n => ({ ...n, [cardKey]: e.target.value }))}
+                      placeholder="Förklara med egna ord..." />
                   </div>
                 )}
                 {flipped && preview && (
@@ -460,6 +476,8 @@ export default function App() {
                     <div className="face back">
                       <span className="lbl">{dir === 'term' ? 'Definition' : 'Begrepp'}</span>
                       {dir === 'term' ? <p>{reviewItem.card.definition}</p> : <h2>{reviewItem.card.title}</h2>}
+                      {reviewItem.card.mnemonic && <p className="mnemonic">💡 {reviewItem.card.mnemonic}</p>}
+                      {reviewItem.card.example && <p className="example">📌 {reviewItem.card.example}</p>}
                     </div>
                   </div>
                 </div>
@@ -471,6 +489,14 @@ export default function App() {
                       <button className="jol-btn mid" onClick={() => predictAndFlip('mid')}>Lagom</button>
                       <button className="jol-btn high" onClick={() => predictAndFlip('high')}>Säker</button>
                     </div>
+                  </div>
+                )}
+                {flipped && (
+                  <div className="elab">
+                    <label className="elab-label">Varför/hur hänger detta ihop? (frivilligt)</label>
+                    <textarea className="elab-input" rows="2" value={elabNotes[reviewItem.key] || ''}
+                      onChange={e => setElabNotes(n => ({ ...n, [reviewItem.key]: e.target.value }))}
+                      placeholder="Förklara med egna ord..." />
                   </div>
                 )}
                 {flipped && reviewPreview && (
@@ -555,6 +581,10 @@ export default function App() {
               <select value={ndiff} onChange={e => setNdiff(e.target.value)}>
                 <option value="lätt">Lätt</option><option value="medel">Medel</option><option value="svår">Svår</option>
               </select>
+              <label>Minnesregel (frivilligt)</label>
+              <input value={nm} onChange={e => setNm(e.target.value)} placeholder="t.ex. en knepig minnesknep" />
+              <label>Exempel (frivilligt)</label>
+              <textarea rows="2" value={nex} onChange={e => setNex(e.target.value)} placeholder="Ett konkret exempel..." />
               <button className="add" onClick={addCard}>+ Lägg till i {sub}</button>
             </div>
             <div className="stat-box">
