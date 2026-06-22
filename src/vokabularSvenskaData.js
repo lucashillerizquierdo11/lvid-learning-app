@@ -900,6 +900,240 @@ export const svenskaInformell = [
     "definition": "to be completely worn out",
     "difficulty": "lätt",
     "example": "Jag är helt slut efter flytten idag. (I'm completely worn out after moving today.)"
+  },
+  {
+    "title": "schyst",
+    "definition": "decent / fair",
+    "difficulty": "lätt",
+    "example": "Det var schysst av dig att hjälpa till utan att fråga. (That was decent of you to help out without being asked.)"
+  },
+  {
+    "title": "trevare",
+    "definition": "a feeler / test attempt",
+    "difficulty": "svår",
+    "example": "Han skickade en trevare om jobbet innan han sökte officiellt. (He sent a feeler about the job before officially applying.)"
+  },
+  {
+    "title": "hugga huvudet av",
+    "definition": "to bite someone's head off",
+    "difficulty": "svår",
+    "example": "Hon hög huvudet av mig för en liten miss. (She bit my head off over a tiny mistake.)"
+  },
+  {
+    "title": "byta fot",
+    "definition": "to change one's approach mid-way",
+    "difficulty": "svår",
+    "example": "Laget bytte fot helt i andra halvlek. (The team completely changed their approach in the second half.)"
+  },
+  {
+    "title": "vara hangen",
+    "definition": "to be totally smitten",
+    "difficulty": "svår",
+    "example": "Han är helt hangen efter sin nya flickvän. (He is totally smitten with his new girlfriend.)"
+  },
+  {
+    "title": "hänga läpp",
+    "definition": "to sulk / pout",
+    "difficulty": "medel",
+    "example": "Han hängde läpp hela kvällen efter förlusten. (He sulked the whole evening after the loss.)"
+  },
+  {
+    "title": "vara på spåret",
+    "definition": "to be onto something",
+    "difficulty": "medel",
+    "example": "Polisen kände att de var på spåret efter tipset. (The police felt they were onto something after the tip.)"
+  },
+  {
+    "title": "få fnatt",
+    "definition": "to freak out / go crazy",
+    "difficulty": "medel",
+    "example": "Hon fick fnatt när hon tappade bort nycklarna. (She freaked out when she lost her keys.)"
+  },
+  {
+    "title": "vara körd",
+    "definition": "to be done for / in trouble",
+    "difficulty": "lätt",
+    "example": "Vi är körda om bussen redan har gått. (We're done for if the bus has already left.)"
+  },
+  {
+    "title": "dra en vals",
+    "definition": "to spin a long-winded story",
+    "difficulty": "svår",
+    "example": "Han drog en vals om varför han var sen igen. (He spun a long-winded story about why he was late again.)"
+  },
+  {
+    "title": "käka upp sig",
+    "definition": "to scarf down food",
+    "difficulty": "medel",
+    "example": "Han käkade upp sig innan träningen. (He scarfed down some food before practice.)"
+  },
+  {
+    "title": "vara på hugget",
+    "definition": "to be eager / on the ball",
+    "difficulty": "medel",
+    "example": "Hon var verkligen på hugget under hela mötet. (She was really on the ball during the whole meeting.)"
+  },
+  {
+    "title": "sno åt sig",
+    "definition": "to snag / grab for oneself",
+    "difficulty": "medel",
+    "example": "Han snodde åt sig den sista biten pizza. (He snagged the last slice of pizza for himself.)"
+  },
+  {
+    "title": "få kalla fötter",
+    "definition": "to get cold feet",
+    "difficulty": "medel",
+    "example": "Hon fick kalla fötter precis innan bröllopet. (She got cold feet right before the wedding.)"
+  },
+  {
+    "title": "hamna i kläm",
+    "definition": "to get caught in the middle",
+    "difficulty": "svår",
+    "example": "Barnen hamnade i kläm under föräldrarnas bråk. (The children got caught in the middle of the parents' fight.)"
+  },
+  {
+    "title": "vara på alerten",
+    "definition": "to be on alert / watchful",
+    "difficulty": "medel",
+    "example": "Vakten var extra på alerten efter stölden. (The guard was extra on alert after the theft.)"
+  },
+  {
+    "title": "dra ett streck över",
+    "definition": "to draw a line under / let go of",
+    "difficulty": "medel",
+    "example": "Vi drar ett streck över det och börjar om. (We'll draw a line under it and start over.)"
+  },
+  {
+    "title": "vara skitnödig",
+    "definition": "to be in dire need (slang, mild)",
+    "difficulty": "svår",
+    "example": "Jag är skitnödig på toaletten, var snabb! (I really need the bathroom, hurry!)"
+  },
+  {
+    "title": "snurra till det",
+    "definition": "to make things confusing",
+    "difficulty": "medel",
+    "example": "Han snurrade till det med alla detaljer. (He made things confusing with all the details.)"
+  },
+  {
+    "title": "vara stenhård",
+    "definition": "to be dead set / unyielding",
+    "difficulty": "medel",
+    "example": "Chefen var stenhård om deadline. (The boss was dead set on the deadline.)"
+  },
+  {
+    "title": "käftriva",
+    "definition": "to argue loudly back and forth",
+    "difficulty": "svår",
+    "example": "Syskonen käftrev om vem som skulle diska. (The siblings bickered loudly about who should do the dishes.)"
+  },
+  {
+    "title": "få napp",
+    "definition": "to get a bite / response (figuratively)",
+    "difficulty": "medel",
+    "example": "Han fick napp på sin annons redan dagen efter. (He got a response to his ad already the next day.)"
+  },
+  {
+    "title": "vara på dekis",
+    "definition": "to be in bad shape / broke",
+    "difficulty": "svår",
+    "example": "Bilen är rätt på dekis efter alla mil. (The car is in pretty bad shape after all those miles.)"
+  },
+  {
+    "title": "snacka runt",
+    "definition": "to talk in circles",
+    "difficulty": "medel",
+    "example": "Han snackade runt utan att svara på frågan. (He talked in circles without answering the question.)"
+  },
+  {
+    "title": "hugga till",
+    "definition": "to lash out / strike suddenly",
+    "difficulty": "svår",
+    "example": "Hon högg till med ett skarpt svar. (She lashed out with a sharp reply.)"
+  },
+  {
+    "title": "vara på G igen",
+    "definition": "to be back in the game",
+    "difficulty": "medel",
+    "example": "Efter skadan är hon äntligen på G igen. (After the injury she's finally back in the game.)"
+  },
+  {
+    "title": "dra runt",
+    "definition": "to drag along / take with",
+    "difficulty": "medel",
+    "example": "Han drog runt sin lillebror på alla fester. (He dragged his little brother along to every party.)"
+  },
+  {
+    "title": "vara skraj för",
+    "definition": "to be afraid of",
+    "difficulty": "medel",
+    "example": "Hon är skraj för spindlar sedan barnsben. (She's been afraid of spiders since childhood.)"
+  },
+  {
+    "title": "käkväska",
+    "definition": "a chatterbox (mildly mocking, slang)",
+    "difficulty": "svår",
+    "example": "Han är en sådan käkväska att man inte hinner svara. (He's such a chatterbox you can't even get a word in.)"
+  },
+  {
+    "title": "vara nördig",
+    "definition": "to be nerdy",
+    "difficulty": "lätt",
+    "example": "Han är ganska nördig när det gäller dataspel. (He's pretty nerdy when it comes to video games.)"
+  },
+  {
+    "title": "vara lagom",
+    "definition": "to be just right / moderate",
+    "difficulty": "lätt",
+    "example": "Maten var lagom kryddad för min smak. (The food was just the right amount of spicy for my taste.)"
+  },
+  {
+    "title": "hugga en blund",
+    "definition": "to catch some sleep",
+    "difficulty": "svår",
+    "example": "Jag hugger en blund innan vi kör vidare. (I'll catch some sleep before we keep driving.)"
+  },
+  {
+    "title": "vara på tårna",
+    "definition": "to be on one's toes / alert",
+    "difficulty": "medel",
+    "example": "Personalen var på tårna inför inspektionen. (The staff were on their toes ahead of the inspection.)"
+  },
+  {
+    "title": "käka allt",
+    "definition": "to eat everything / clean the plate",
+    "difficulty": "lätt",
+    "example": "Han käkade allt på tallriken trots att han var mätt. (He ate everything on his plate even though he was full.)"
+  },
+  {
+    "title": "vara hutlös",
+    "definition": "to be outrageous / shameless (price etc.)",
+    "difficulty": "svår",
+    "example": "Priset på den biljetten var helt hutlöst. (The price of that ticket was completely outrageous.)"
+  },
+  {
+    "title": "snacka runt sig",
+    "definition": "to talk one's way out of something",
+    "difficulty": "svår",
+    "example": "Han snackade runt sig och slank undan straff. (He talked his way out and avoided punishment.)"
+  },
+  {
+    "title": "vara på väg ut",
+    "definition": "to be heading out the door (figuratively, leaving a job etc.)",
+    "difficulty": "medel",
+    "example": "Ryktet säger att hon är på väg ut från företaget. (Rumor has it she's on her way out of the company.)"
+  },
+  {
+    "title": "käftslunga",
+    "definition": "a sharp verbal jab (slang)",
+    "difficulty": "svår",
+    "example": "Hon gav honom en käftslunga han inte glömmer. (She gave him a sharp jab he won't forget.)"
+  },
+  {
+    "title": "vara taggig",
+    "definition": "to be prickly / irritable",
+    "difficulty": "medel",
+    "example": "Han är lite taggig innan han fått sin kaffe. (He's a bit prickly before he's had his coffee.)"
   }
 ];
 
@@ -1809,5 +2043,245 @@ export const svenskaFormell = [
     "definition": "thesis examiner",
     "difficulty": "svår",
     "example": "Opponenten ställde flera kritiska frågor under disputationen. (The examiner asked several critical questions during the defense.)"
+  },
+  {
+    "title": "avtalsvillkor",
+    "definition": "contract terms",
+    "difficulty": "medel",
+    "example": "Avtalsvillkoren förhandlades om innan undertecknandet. (The contract terms were renegotiated before signing.)"
+  },
+  {
+    "title": "hävning",
+    "definition": "termination/rescission of a contract",
+    "difficulty": "svår",
+    "example": "Leverantören hotade med hävning av avtalet. (The supplier threatened to terminate the contract.)"
+  },
+  {
+    "title": "dröjsmålsränta",
+    "definition": "late payment interest",
+    "difficulty": "svår",
+    "example": "Dröjsmålsränta tillkommer vid sen betalning. (Late payment interest applies in case of delayed payment.)"
+  },
+  {
+    "title": "preskription",
+    "definition": "statute of limitations",
+    "difficulty": "svår",
+    "example": "Fordringen hade gått i preskription efter tio år. (The claim had become statute-barred after ten years.)"
+  },
+  {
+    "title": "skälighetsbedömning",
+    "definition": "reasonableness assessment",
+    "difficulty": "svår",
+    "example": "Domstolen gjorde en skälighetsbedömning av villkoren. (The court made a reasonableness assessment of the terms.)"
+  },
+  {
+    "title": "avtalsbrott",
+    "definition": "breach of contract",
+    "difficulty": "medel",
+    "example": "Företaget stämdes för avtalsbrott efter den uteblivna leveransen. (The company was sued for breach of contract after the missed delivery.)"
+  },
+  {
+    "title": "rättssäkerhet",
+    "definition": "rule of law / legal certainty",
+    "difficulty": "svår",
+    "example": "Reformen syftade till att stärka rättssäkerheten. (The reform aimed to strengthen legal certainty.)"
+  },
+  {
+    "title": "vitesklausul",
+    "definition": "penalty clause",
+    "difficulty": "svår",
+    "example": "Avtalet innehöll en vitesklausul vid försenad leverans. (The contract included a penalty clause for delayed delivery.)"
+  },
+  {
+    "title": "näringsidkare",
+    "definition": "business operator / trader",
+    "difficulty": "svår",
+    "example": "Lagen skiljer mellan konsument och näringsidkare. (The law distinguishes between consumer and business operator.)"
+  },
+  {
+    "title": "konsumentskydd",
+    "definition": "consumer protection",
+    "difficulty": "medel",
+    "example": "Konsumentskyddet stärktes genom den nya lagstiftningen. (Consumer protection was strengthened through the new legislation.)"
+  },
+  {
+    "title": "miljöpåverkan",
+    "definition": "environmental impact",
+    "difficulty": "medel",
+    "example": "Projektet krävde en utredning av dess miljöpåverkan. (The project required an investigation into its environmental impact.)"
+  },
+  {
+    "title": "hållbarhetsredovisning",
+    "definition": "sustainability report",
+    "difficulty": "svår",
+    "example": "Bolaget publicerade sin första hållbarhetsredovisning i år. (The company published its first sustainability report this year.)"
+  },
+  {
+    "title": "utsläppsrätt",
+    "definition": "emissions allowance",
+    "difficulty": "svår",
+    "example": "Företaget köpte utsläppsrätter för att täcka sina utsläpp. (The company bought emissions allowances to cover its emissions.)"
+  },
+  {
+    "title": "cirkulär ekonomi",
+    "definition": "circular economy",
+    "difficulty": "medel",
+    "example": "Branschen rör sig sakta mot en cirkulär ekonomi. (The industry is slowly moving toward a circular economy.)"
+  },
+  {
+    "title": "biologisk mångfald",
+    "definition": "biodiversity",
+    "difficulty": "medel",
+    "example": "Skogsavverkningen hotar den biologiska mångfalden i området. (The logging threatens the biodiversity in the area.)"
+  },
+  {
+    "title": "klimatanpassning",
+    "definition": "climate adaptation",
+    "difficulty": "svår",
+    "example": "Kommunen arbetar med klimatanpassning av sina kustområden. (The municipality is working on climate adaptation of its coastal areas.)"
+  },
+  {
+    "title": "resiliens",
+    "definition": "resilience",
+    "difficulty": "svår",
+    "example": "Systemets resiliens testades under krisen. (The system's resilience was tested during the crisis.)"
+  },
+  {
+    "title": "paradigmskifte",
+    "definition": "paradigm shift",
+    "difficulty": "svår",
+    "example": "Pandemin ledde till ett paradigmskifte inom distansarbete. (The pandemic led to a paradigm shift in remote work.)"
+  },
+  {
+    "title": "institutionalisera",
+    "definition": "to institutionalize",
+    "difficulty": "svår",
+    "example": "Reformerna syftade till att institutionalisera de nya rutinerna. (The reforms aimed to institutionalize the new routines.)"
+  },
+  {
+    "title": "byråkratisera",
+    "definition": "to bureaucratize",
+    "difficulty": "svår",
+    "example": "Kritiker menade att processen hade byråkratiserats i onödan. (Critics argued the process had been unnecessarily bureaucratized.)"
+  },
+  {
+    "title": "centralisering",
+    "definition": "centralization",
+    "difficulty": "svår",
+    "example": "Centraliseringen av beslutsfattandet väckte protester. (The centralization of decision-making sparked protests.)"
+  },
+  {
+    "title": "mandatperiod",
+    "definition": "term of office",
+    "difficulty": "medel",
+    "example": "Hon valdes om för en ny mandatperiod i styrelsen. (She was re-elected for a new term on the board.)"
+  },
+  {
+    "title": "remissinstans",
+    "definition": "consultation body / referral authority",
+    "difficulty": "svår",
+    "example": "Förslaget skickades till flera remissinstanser för synpunkter. (The proposal was sent to several consultation bodies for input.)"
+  },
+  {
+    "title": "lagrum",
+    "definition": "legal provision / statutory clause",
+    "difficulty": "svår",
+    "example": "Domen hänvisade till ett specifikt lagrum. (The ruling referred to a specific legal provision.)"
+  },
+  {
+    "title": "prejudikat",
+    "definition": "legal precedent",
+    "difficulty": "svår",
+    "example": "Domen blev ett viktigt prejudikat för liknande fall. (The ruling became an important precedent for similar cases.)"
+  },
+  {
+    "title": "sakkunnig",
+    "definition": "expert witness / specialist consultant",
+    "difficulty": "medel",
+    "example": "En sakkunnig kallades in för att bedöma skadan. (An expert witness was called in to assess the damage.)"
+  },
+  {
+    "title": "vittnesmål",
+    "definition": "testimony",
+    "difficulty": "medel",
+    "example": "Vittnesmålet ändrade hela bilden av händelsen. (The testimony changed the whole picture of the event.)"
+  },
+  {
+    "title": "åtalsanmälan",
+    "definition": "criminal complaint / report for prosecution",
+    "difficulty": "svår",
+    "example": "Företaget gjorde en åtalsanmälan mot den tidigare anställde. (The company filed a criminal complaint against the former employee.)"
+  },
+  {
+    "title": "rekvisit",
+    "definition": "legal requirement / element of an offense",
+    "difficulty": "svår",
+    "example": "Alla rekvisit för brottet måste vara uppfyllda. (All the legal elements of the offense must be fulfilled.)"
+  },
+  {
+    "title": "integritet",
+    "definition": "privacy / integrity",
+    "difficulty": "medel",
+    "example": "Den nya lagen stärker individens rätt till integritet. (The new law strengthens the individual's right to privacy.)"
+  },
+  {
+    "title": "dataskydd",
+    "definition": "data protection",
+    "difficulty": "medel",
+    "example": "Företaget investerade stort i bättre dataskydd. (The company invested heavily in better data protection.)"
+  },
+  {
+    "title": "anonymisera",
+    "definition": "to anonymize",
+    "difficulty": "medel",
+    "example": "Forskarna anonymiserade alla personuppgifter i studien. (The researchers anonymized all personal data in the study.)"
+  },
+  {
+    "title": "pseudonymisera",
+    "definition": "to pseudonymize",
+    "difficulty": "svår",
+    "example": "Uppgifterna pseudonymiserades innan analysen genomfördes. (The data was pseudonymized before the analysis was carried out.)"
+  },
+  {
+    "title": "redundans",
+    "definition": "redundancy (technical/organizational)",
+    "difficulty": "svår",
+    "example": "Systemet byggdes med redundans för att undvika driftstopp. (The system was built with redundancy to avoid downtime.)"
+  },
+  {
+    "title": "latens",
+    "definition": "latency",
+    "difficulty": "svår",
+    "example": "Den nya servern minskade latensen avsevärt. (The new server significantly reduced the latency.)"
+  },
+  {
+    "title": "infrastruktur",
+    "definition": "infrastructure",
+    "difficulty": "medel",
+    "example": "Kommunen satsar stort på digital infrastruktur. (The municipality is investing heavily in digital infrastructure.)"
+  },
+  {
+    "title": "interoperabilitet",
+    "definition": "interoperability",
+    "difficulty": "svår",
+    "example": "Systemen saknade interoperabilitet med varandra. (The systems lacked interoperability with each other.)"
+  },
+  {
+    "title": "användarvänlighet",
+    "definition": "user-friendliness",
+    "difficulty": "medel",
+    "example": "Plattformens användarvänlighet förbättrades efter omdesignen. (The platform's user-friendliness improved after the redesign.)"
+  },
+  {
+    "title": "komplexitet",
+    "definition": "complexity",
+    "difficulty": "medel",
+    "example": "Projektets komplexitet underskattades från början. (The project's complexity was underestimated from the start.)"
+  },
+  {
+    "title": "robusthet",
+    "definition": "robustness",
+    "difficulty": "svår",
+    "example": "Modellens robusthet testades mot avvikande data. (The model's robustness was tested against outlier data.)"
   }
 ];
