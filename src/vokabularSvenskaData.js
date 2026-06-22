@@ -1,2287 +1,2288 @@
 // Curated vocabulary data for "Svenska informell" and "Svenska formell".
 // Card shape matches the rest of the app: { title, definition, difficulty, example }.
+// definition: exakt svensk beskrivning (ingen engelsk översättning); example: svensk exempelmening utan översättning.
 export const svenskaInformell = [
   {
     "title": "höfta",
-    "definition": "to estimate roughly / wing it",
+    "definition": "att gissa eller uppskatta något ungefärligt utan att räkna eller mäta exakt",
     "difficulty": "medel",
-    "example": "Jag kan höfta hur mycket det kommer kosta. (I can roughly estimate how much it will cost.)"
+    "example": "Jag kan höfta hur mycket det kommer kosta."
   },
   {
     "title": "göra en tabbe",
-    "definition": "to make a blunder",
+    "definition": "att göra ett dumt litet misstag av slarv eller glömska",
     "difficulty": "lätt",
-    "example": "Han gjorde en tabbe när han glömde nycklarna hemma. (He made a blunder when he forgot the keys at home.)"
+    "example": "Han gjorde en tabbe när han glömde nycklarna hemma."
   },
   {
     "title": "magiskt",
-    "definition": "amazing (casual intensifier)",
+    "definition": "starkt positivt omdöme om en upplevelse, \"fantastiskt\"; ingen koppling till magi",
     "difficulty": "lätt",
-    "example": "Festen igår var helt magisk. (The party yesterday was totally amazing.)"
+    "example": "Festen igår var helt magisk."
   },
   {
     "title": "tappa huvudet",
-    "definition": "to lose one's cool",
+    "definition": "att tillfälligt bli så stressad eller arg att man slutar tänka klart",
     "difficulty": "medel",
-    "example": "Han tappade huvudet när bussen var sen igen. (He lost his cool when the bus was late again.)"
+    "example": "Han tappade huvudet när bussen var sen igen."
   },
   {
     "title": "fjortis",
-    "definition": "teenager (mildly mocking)",
+    "definition": "skämtsamt nedsättande ord för en tonåring som beter sig omoget eller bryr sig överdrivet om trender",
     "difficulty": "lätt",
-    "example": "Han klär sig som en fjortis ibland. (He dresses like a try-hard teenager sometimes.)"
+    "example": "Han klär sig som en fjortis ibland."
   },
   {
     "title": "smuts",
-    "definition": "gossip / dirt on someone",
+    "definition": "skvaller eller komprometterande information om en person, inte bokstavlig smuts",
     "difficulty": "medel",
-    "example": "Har du någon smuts om den nya chefen? (Do you have any dirt on the new boss?)"
+    "example": "Har du någon smuts om den nya chefen?"
   },
   {
     "title": "manglad",
-    "definition": "exhausted / wrecked",
+    "definition": "helt utsliten och kraftlös efter stor ansträngning",
     "difficulty": "medel",
-    "example": "Jag är helt manglad efter passet på gymmet. (I'm totally wrecked after the gym session.)"
+    "example": "Jag är helt manglad efter passet på gymmet."
   },
   {
     "title": "pippad",
-    "definition": "crazy / out of it",
+    "definition": "virrig eller galen i huvudet, sagt skämtsamt om en handling eller idé",
     "difficulty": "medel",
-    "example": "Du är pippad om du tror att det går. (You're crazy if you think that'll work.)"
+    "example": "Du är pippad om du tror att det går."
   },
   {
     "title": "spöa",
-    "definition": "to beat (in a game)",
+    "definition": "att vinna stort och tydligt över en motståndare i en tävling eller match",
     "difficulty": "lätt",
-    "example": "Vi spöade dem rejält i fotboll igår. (We thoroughly beat them at football yesterday.)"
+    "example": "Vi spöade dem rejält i fotboll igår."
   },
   {
     "title": "mosa",
-    "definition": "to crush / beat badly",
+    "definition": "att vinna väldigt övertygande och med stor marginal, starkare än \"spöa\"",
     "difficulty": "lätt",
-    "example": "Laget mosade motståndarna med fem mål. (The team crushed the opponents by five goals.)"
+    "example": "Laget mosade motståndarna med fem mål."
   },
   {
     "title": "keff",
-    "definition": "lame / bad",
+    "definition": "av dålig kvalitet eller tråkig, ett nedvärderande omdöme om en sak eller upplevelse",
     "difficulty": "lätt",
-    "example": "Den nya filmen var rätt keff tyvärr. (Unfortunately the new movie was pretty lame.)"
+    "example": "Den nya filmen var rätt keff tyvärr."
   },
   {
     "title": "soft",
-    "definition": "cool / nice and easy-going",
+    "definition": "skön, avslappnad och lättsam, om en person, situation eller atmosfär",
     "difficulty": "lätt",
-    "example": "Det var soft av dig att skjutsa mig. (That was nice of you to give me a ride.)"
+    "example": "Det var soft av dig att skjutsa mig."
   },
   {
     "title": "vass",
-    "definition": "sharp / impressive",
+    "definition": "skicklig, snabbtänkt och träffsäker, bildligt — inte vass i bokstavlig mening",
     "difficulty": "lätt",
-    "example": "Hon är vass på matte och löser allt snabbt. (She's sharp at math and solves everything fast.)"
+    "example": "Hon är vass på matte och löser allt snabbt."
   },
   {
     "title": "lättkränkt",
-    "definition": "easily offended",
+    "definition": "tar lätt illa upp, även av småsaker som inte är menade illvilligt",
     "difficulty": "medel",
-    "example": "Han blir lättkränkt av minsta skämt. (He gets easily offended by the slightest joke.)"
+    "example": "Han blir lättkränkt av minsta skämt."
   },
   {
     "title": "lacka ur",
-    "definition": "to lose it / flip out",
+    "definition": "att plötsligt tappa fattningen av ilska eller frustration",
     "difficulty": "medel",
-    "example": "Hon lackade ur när datorn kraschade igen. (She lost it when the computer crashed again.)"
+    "example": "Hon lackade ur när datorn kraschade igen."
   },
   {
     "title": "banga",
-    "definition": "to chicken out",
+    "definition": "att i sista stund dra sig ur något av rädsla eller osäkerhet",
     "difficulty": "medel",
-    "example": "Han bangade på sista sekunden och hoppade inte. (He chickened out at the last second and didn't jump.)"
+    "example": "Han bangade på sista sekunden och hoppade inte."
   },
   {
     "title": "chilla",
-    "definition": "to relax / hang out",
+    "definition": "att koppla av utan att göra något särskilt eller ansträngande",
     "difficulty": "lätt",
-    "example": "Vi chillar hemma framför tv:n ikväll. (We're chilling at home in front of the TV tonight.)"
+    "example": "Vi chillar hemma framför tv:n ikväll."
   },
   {
     "title": "dunder",
-    "definition": "a smash hit",
+    "definition": "en mycket stor framgång, t.ex. en låt eller film som blir extremt populär",
     "difficulty": "medel",
-    "example": "Den nya låten är ett rent dunder på radion. (That new song is a real smash hit on the radio.)"
+    "example": "Den nya låten är ett rent dunder på radion."
   },
   {
     "title": "najs",
-    "definition": "nice",
+    "definition": "trevligt eller skönt, ett kort uttryck av gillande",
     "difficulty": "lätt",
-    "example": "Det var najs av dig att tänka på mig. (That was nice of you to think of me.)"
+    "example": "Det var najs av dig att tänka på mig."
   },
   {
     "title": "dryg",
-    "definition": "stuck-up / arrogant",
+    "definition": "skryter och ser ner på andra, högfärdig i sitt sätt att vara",
     "difficulty": "lätt",
-    "example": "Han blev rätt dryg efter att han vunnit tävlingen. (He got pretty arrogant after winning the competition.)"
+    "example": "Han blev rätt dryg efter att han vunnit tävlingen."
   },
   {
     "title": "flippa",
-    "definition": "to freak out",
+    "definition": "att plötsligt bli mycket upprörd, chockad eller arg",
     "difficulty": "lätt",
-    "example": "Mamma flippade när hon såg röran i köket. (Mom freaked out when she saw the mess in the kitchen.)"
+    "example": "Mamma flippade när hon såg röran i köket."
   },
   {
     "title": "dissad",
-    "definition": "disrespected",
+    "definition": "behandlad respektlöst eller förlöjligad av andra, känt sig nonchalerad",
     "difficulty": "medel",
-    "example": "Han kände sig dissad av sina egna kompisar. (He felt disrespected by his own friends.)"
+    "example": "Han kände sig dissad av sina egna kompisar."
   },
   {
     "title": "pinsam",
-    "definition": "embarrassing",
+    "definition": "skapar skam eller obehag inför andra, gör en generad",
     "difficulty": "lätt",
-    "example": "Det var riktigt pinsamt när jag snubblade på scen. (It was really embarrassing when I tripped on stage.)"
+    "example": "Det var riktigt pinsamt när jag snubblade på scen."
   },
   {
     "title": "seg",
-    "definition": "slow / sluggish",
+    "definition": "går trögt och tar onödigt lång tid, om t.ex. tid eller en process",
     "difficulty": "lätt",
-    "example": "Internet är väldigt seg på kvällarna. (The internet is really sluggish in the evenings.)"
+    "example": "Internet är väldigt seg på kvällarna."
   },
   {
     "title": "svennig",
-    "definition": "overly conventional (mildly mocking)",
+    "definition": "typiskt \"vanlig svensk\" på ett tråkigt eller oäventyrligt sätt, lätt nedlåtande",
     "difficulty": "medel",
-    "example": "Det var ganska svennigt av honom att klaga på det. (That was a pretty basic thing for him to complain about.)"
+    "example": "Det var ganska svennigt av honom att klaga på det."
   },
   {
     "title": "töntig",
-    "definition": "dorky / lame",
+    "definition": "löjlig eller pinsam på ett barnsligt, ofarligt sätt",
     "difficulty": "lätt",
-    "example": "Den tröjan är lite töntig om jag ska vara ärlig. (That shirt is a bit dorky, to be honest.)"
+    "example": "Den tröjan är lite töntig om jag ska vara ärlig."
   },
   {
     "title": "kaxig",
-    "definition": "cocky",
+    "definition": "självsäker på ett utmanande och lätt provocerande sätt",
     "difficulty": "lätt",
-    "example": "Han blev kaxig så fort han vann en omgång. (He got cocky the moment he won one round.)"
+    "example": "Han blev kaxig så fort han vann en omgång."
   },
   {
     "title": "risig",
-    "definition": "rough / in bad shape",
+    "definition": "i dåligt skick, fysiskt eller känslomässigt, t.ex. trött eller sjuklig",
     "difficulty": "lätt",
-    "example": "Jag känner mig risig efter den korta natten. (I feel rough after the short night's sleep.)"
+    "example": "Jag känner mig risig efter den korta natten."
   },
   {
     "title": "kass",
-    "definition": "lousy / crappy",
+    "definition": "av dålig kvalitet, mer nedlåtande än \"keff\"",
     "difficulty": "lätt",
-    "example": "Maten på det stället var verkligen kass. (The food at that place was really lousy.)"
+    "example": "Maten på det stället var verkligen kass."
   },
   {
     "title": "snåljåp",
-    "definition": "cheapskate",
+    "definition": "en person som ogärna spenderar pengar även när det vore rimligt",
     "difficulty": "medel",
-    "example": "Han är en sådan snåljåp att han aldrig bjuder på något. (He's such a cheapskate that he never treats anyone.)"
+    "example": "Han är en sådan snåljåp att han aldrig bjuder på något."
   },
   {
     "title": "blåst",
-    "definition": "scammed / ripped off",
+    "definition": "lurad i en affär, fick mindre värde tillbaka än man betalade för",
     "difficulty": "medel",
-    "example": "Jag blev blåst på pengarna när jag köpte biljetten. (I got scammed out of my money when I bought the ticket.)"
+    "example": "Jag blev blåst på pengarna när jag köpte biljetten."
   },
   {
     "title": "puckad",
-    "definition": "silly / a bit stupid (mild)",
+    "definition": "dum eller velig på ett ofarligt, lätt skämtsamt sätt",
     "difficulty": "medel",
-    "example": "Sluta vara puckad och lyssna på mig nu. (Stop being silly and listen to me now.)"
+    "example": "Sluta vara puckad och lyssna på mig nu."
   },
   {
     "title": "fett",
-    "definition": "awesome (intensifier)",
+    "definition": "förstärkningsord för \"väldigt\" framför ett positivt omdöme, inte bokstavligt fett",
     "difficulty": "lätt",
-    "example": "Det var fett att se er igen efter så länge. (It was awesome to see you guys again after so long.)"
+    "example": "Det var fett att se er igen efter så länge."
   },
   {
     "title": "sjukt",
-    "definition": "really / crazy (intensifier)",
+    "definition": "förstärkningsord för \"extremt\", positivt eller negativt, ingen koppling till sjukdom",
     "difficulty": "lätt",
-    "example": "Det var sjukt bra av dig att klara provet. (It was insanely good of you to pass the test.)"
+    "example": "Det var sjukt bra av dig att klara provet."
   },
   {
     "title": "galet",
-    "definition": "crazy / wild",
+    "definition": "intensivt och vilt på ett uppskattande sätt, om en upplevelse",
     "difficulty": "lätt",
-    "example": "Det var galet kul på festivalen i helgen. (It was wildly fun at the festival this weekend.)"
+    "example": "Det var galet kul på festivalen i helgen."
   },
   {
     "title": "asbra",
-    "definition": "really good",
+    "definition": "väldigt bra; \"as-\" är ett slangprefix som förstärker som \"jätte-\"",
     "difficulty": "lätt",
-    "example": "Maten på festen var asbra igår. (The food at the party yesterday was really good.)"
+    "example": "Maten på festen var asbra igår."
   },
   {
     "title": "asdryg",
-    "definition": "super arrogant",
+    "definition": "extremt högfärdig och nedlåtande mot andra",
     "difficulty": "medel",
-    "example": "Han var asdryg mot servitören utan anledning. (He was super arrogant to the waiter for no reason.)"
+    "example": "Han var asdryg mot servitören utan anledning."
   },
   {
     "title": "lirka",
-    "definition": "to coax along carefully",
+    "definition": "att försiktigt och listigt övertala eller manövrera fram ett önskat resultat",
     "difficulty": "medel",
-    "example": "Hon fick lirka med chefen för att få ledigt. (She had to carefully coax her boss to get time off.)"
+    "example": "Hon fick lirka med chefen för att få ledigt."
   },
   {
     "title": "käfta",
-    "definition": "to bicker / sass back",
+    "definition": "att svara argt och oförskämt tillbaka i ett gräl",
     "difficulty": "medel",
-    "example": "Sluta käfta emot och gör som jag säger. (Stop sassing back and do as I say.)"
+    "example": "Sluta käfta emot och gör som jag säger."
   },
   {
     "title": "mucka",
-    "definition": "to start trouble",
+    "definition": "att medvetet provocera fram bråk eller konflikt",
     "difficulty": "medel",
-    "example": "Han brukar mucka gräl när han har druckit. (He tends to start fights when he's been drinking.)"
+    "example": "Han brukar mucka gräl när han har druckit."
   },
   {
     "title": "tjura",
-    "definition": "to sulk",
+    "definition": "att vara tyst och sur som protest, ofta på ett barnsligt sätt",
     "difficulty": "lätt",
-    "example": "Hon tjurade hela kvällen efter förlusten. (She sulked all evening after the loss.)"
+    "example": "Hon tjurade hela kvällen efter förlusten."
   },
   {
     "title": "gnälla",
-    "definition": "to whine",
+    "definition": "att klaga upprepat och tjatigt över samma sak",
     "difficulty": "lätt",
-    "example": "Han gnäller alltid om vädret på vintern. (He always whines about the weather in winter.)"
+    "example": "Han gnäller alltid om vädret på vintern."
   },
   {
     "title": "snoka",
-    "definition": "to snoop",
+    "definition": "att i smyg och nyfiket leta efter information man inte ska se",
     "difficulty": "lätt",
-    "example": "Hon snokade runt i mina lådor igår. (She was snooping around in my drawers yesterday.)"
+    "example": "Hon snokade runt i mina lådor igår."
   },
   {
     "title": "lura",
-    "definition": "to trick / fool",
+    "definition": "att medvetet vilseleda någon att tro fel sak",
     "difficulty": "lätt",
-    "example": "Han lurade mig att tro att det var gratis. (He tricked me into thinking it was free.)"
+    "example": "Han lurade mig att tro att det var gratis."
   },
   {
     "title": "hänga",
-    "definition": "to hang out",
+    "definition": "att umgås avslappnat utan särskild planerad aktivitet",
     "difficulty": "lätt",
-    "example": "Vi hänger på stan efter skolan idag. (We're hanging out downtown after school today.)"
+    "example": "Vi hänger på stan efter skolan idag."
   },
   {
     "title": "käka",
-    "definition": "to eat (casual)",
+    "definition": "vardagligt ord för att äta",
     "difficulty": "lätt",
-    "example": "Vill du käka något innan vi går? (Do you want to grab a bite before we go?)"
+    "example": "Vill du käka något innan vi går?"
   },
   {
     "title": "sticka",
-    "definition": "to take off / leave",
+    "definition": "att lämna en plats, ofta snabbt eller utan att dröja",
     "difficulty": "lätt",
-    "example": "Jag måste sticka, bussen går snart. (I have to take off, the bus is leaving soon.)"
+    "example": "Jag måste sticka, bussen går snart."
   },
   {
     "title": "smita",
-    "definition": "to sneak off / dodge",
+    "definition": "att i smyg undvika eller fly från en plikt eller obekväm situation",
     "difficulty": "medel",
-    "example": "Han smet undan från läxorna igen. (He dodged his homework again.)"
+    "example": "Han smet undan från läxorna igen."
   },
   {
     "title": "ragga",
-    "definition": "to hit on someone",
+    "definition": "att aktivt försöka flörta med eller charma en person man är intresserad av",
     "difficulty": "medel",
-    "example": "Han raggade på henne hela kvällen utan framgång. (He hit on her all evening without success.)"
+    "example": "Han raggade på henne hela kvällen utan framgång."
   },
   {
     "title": "tjata",
-    "definition": "to nag",
+    "definition": "att be om samma sak om och om igen tills man får sin vilja igenom",
     "difficulty": "lätt",
-    "example": "Barnen tjatade om glass tills hon gav med sig. (The kids nagged about ice cream until she gave in.)"
+    "example": "Barnen tjatade om glass tills hon gav med sig."
   },
   {
     "title": "kolla",
-    "definition": "to check / look",
+    "definition": "vardagligt ord för att titta på eller undersöka något",
     "difficulty": "lätt",
-    "example": "Kolla om dörren är låst innan vi går. (Check if the door is locked before we leave.)"
+    "example": "Kolla om dörren är låst innan vi går."
   },
   {
     "title": "paja",
-    "definition": "to break / wreck",
+    "definition": "att av misstag förstöra eller göra sönder något",
     "difficulty": "lätt",
-    "example": "Han pajade fjärrkontrollen av misstag. (He broke the remote by accident.)"
+    "example": "Han pajade fjärrkontrollen av misstag."
   },
   {
     "title": "vimsig",
-    "definition": "absent-minded",
+    "definition": "virrig och glömsk, har svårt att hålla koll på saker och detaljer",
     "difficulty": "medel",
-    "example": "Hon är lite vimsig på morgnarna innan kaffet. (She's a bit absent-minded in the mornings before coffee.)"
+    "example": "Hon är lite vimsig på morgnarna innan kaffet."
   },
   {
     "title": "jobbig",
-    "definition": "annoying / tough to deal with",
+    "definition": "krävande eller påfrestande att hantera, om en person eller situation",
     "difficulty": "lätt",
-    "example": "Mötet blev jobbigt när alla pratade samtidigt. (The meeting got tough when everyone talked at once.)"
+    "example": "Mötet blev jobbigt när alla pratade samtidigt."
   },
   {
     "title": "skitbra",
-    "definition": "really great",
+    "definition": "mycket bra; \"skit-\" används här som ett slangförstärkande prefix",
     "difficulty": "lätt",
-    "example": "Konserten igår var skitbra. (The concert yesterday was really great.)"
+    "example": "Konserten igår var skitbra."
   },
   {
     "title": "mysigt",
-    "definition": "cozy",
+    "definition": "varmt, skönt och trivsamt, om en stämning eller plats",
     "difficulty": "lätt",
-    "example": "Det var mysigt att fika tillsammans i regnet. (It was cozy to have coffee together in the rain.)"
+    "example": "Det var mysigt att fika tillsammans i regnet."
   },
   {
     "title": "grymt",
-    "definition": "awesome",
+    "definition": "förstärkningsord för \"väldigt bra\", inget med grymhet att göra",
     "difficulty": "lätt",
-    "example": "Resan blev grymt mycket bättre än vi trott. (The trip turned out way more awesome than we expected.)"
+    "example": "Resan blev grymt mycket bättre än vi trott."
   },
   {
     "title": "knäpp",
-    "definition": "wacky / a bit crazy",
+    "definition": "lite konstig eller udda på ett oskadligt, ibland charmigt sätt",
     "difficulty": "lätt",
-    "example": "Han har alltid haft lite knäppa idéer. (He's always had some wacky ideas.)"
+    "example": "Han har alltid haft lite knäppa idéer."
   },
   {
     "title": "korkad",
-    "definition": "dumb (mild)",
+    "definition": "dum på ett milt sätt, ofta använt självironiskt om eget misstag",
     "difficulty": "lätt",
-    "example": "Det var korkat av mig att glömma paraplyet. (It was dumb of me to forget the umbrella.)"
+    "example": "Det var korkat av mig att glömma paraplyet."
   },
   {
     "title": "pank",
-    "definition": "broke (no money)",
+    "definition": "helt utan pengar för tillfället",
     "difficulty": "lätt",
-    "example": "Jag är helt pank efter resan till Spanien. (I'm totally broke after the trip to Spain.)"
+    "example": "Jag är helt pank efter resan till Spanien."
   },
   {
     "title": "skön",
-    "definition": "pleasant / chill",
+    "definition": "bekväm och behaglig känsla, avslappnande",
     "difficulty": "lätt",
-    "example": "Det var en skön känsla att vara klar med tentan. (It was a nice feeling to be done with the exam.)"
+    "example": "Det var en skön känsla att vara klar med tentan."
   },
   {
     "title": "trist",
-    "definition": "dull / boring",
+    "definition": "tråkig, saknar stimulans eller glädje",
     "difficulty": "lätt",
-    "example": "Föreläsningen blev rätt trist efter en timme. (The lecture got pretty dull after an hour.)"
+    "example": "Föreläsningen blev rätt trist efter en timme."
   },
   {
     "title": "flummig",
-    "definition": "flaky / vague-minded",
+    "definition": "vag, ostrukturerad eller svårbegriplig i tänkande eller uttryck",
     "difficulty": "medel",
-    "example": "Hans förklaring kändes lite flummig. (His explanation felt a bit flaky/vague.)"
+    "example": "Hans förklaring kändes lite flummig."
   },
   {
     "title": "stingslig",
-    "definition": "touchy / snappish",
+    "definition": "lättirriterad och känslig för minsta kritik eller kommentar",
     "difficulty": "medel",
-    "example": "Hon blir stingslig om man nämner jobbet. (She gets touchy if you mention work.)"
+    "example": "Hon blir stingslig om man nämner jobbet."
   },
   {
     "title": "burdus",
-    "definition": "blunt / brusque",
+    "definition": "säger saker rakt och utan finess, kan uppfattas som ohövligt",
     "difficulty": "svår",
-    "example": "Han sa det på ett ganska burdust sätt. (He said it in a rather brusque way.)"
+    "example": "Han sa det på ett ganska burdust sätt."
   },
   {
     "title": "petig",
-    "definition": "nitpicky",
+    "definition": "bryr sig överdrivet mycket om småsaker och detaljer",
     "difficulty": "medel",
-    "example": "Läraren var petig med kommatecknen i uppsatsen. (The teacher was nitpicky about the commas in the essay.)"
+    "example": "Läraren var petig med kommatecknen i uppsatsen."
   },
   {
     "title": "tantig",
-    "definition": "old-fashioned (mildly mocking)",
+    "definition": "omodern eller gammaldags i stil eller smak, lätt nedvärderande",
     "difficulty": "medel",
-    "example": "Mina kläder är lite tantiga enligt min syster. (My clothes are a bit old-fashioned according to my sister.)"
+    "example": "Mina kläder är lite tantiga enligt min syster."
   },
   {
     "title": "skrytig",
-    "definition": "boastful",
+    "definition": "berättar gärna och ofta om egna framgångar för att imponera på andra",
     "difficulty": "medel",
-    "example": "Han blev skrytig så fort han fick ny bil. (He got boastful the moment he got a new car.)"
+    "example": "Han blev skrytig så fort han fick ny bil."
   },
   {
     "title": "lugna ner sig",
-    "definition": "to calm down",
+    "definition": "att gå från upprört till lugnt sinnestillstånd",
     "difficulty": "lätt",
-    "example": "Han behövde lugna ner sig innan han kunde svara. (He needed to calm down before he could answer.)"
+    "example": "Han behövde lugna ner sig innan han kunde svara."
   },
   {
     "title": "hålla ut",
-    "definition": "to hold on / endure",
+    "definition": "att fortsätta orka och stå emot trots motgång, tills något tar slut",
     "difficulty": "medel",
-    "example": "Vi måste hålla ut till slutet av terminen. (We have to hold on until the end of the term.)"
+    "example": "Vi måste hålla ut till slutet av terminen."
   },
   {
     "title": "klanta sig",
-    "definition": "to mess up",
+    "definition": "att göra ett pinsamt eller dumt misstag",
     "difficulty": "medel",
-    "example": "Jag klantade mig och glömde hela presentationen. (I messed up and forgot the whole presentation.)"
+    "example": "Jag klantade mig och glömde hela presentationen."
   },
   {
     "title": "ha koll",
-    "definition": "to have a handle on things",
+    "definition": "att vara väl informerad och ha kontroll över en situation",
     "difficulty": "lätt",
-    "example": "Hon har alltid koll på vad som händer. (She always has a handle on what's going on.)"
+    "example": "Hon har alltid koll på vad som händer."
   },
   {
     "title": "gå i taket",
-    "definition": "to hit the roof (anger)",
+    "definition": "att plötsligt och kraftfullt bli väldigt arg",
     "difficulty": "medel",
-    "example": "Pappa gick i taket när han såg betyget. (Dad hit the roof when he saw the grade.)"
+    "example": "Pappa gick i taket när han såg betyget."
   },
   {
     "title": "ge järnet",
-    "definition": "to give it one's all",
+    "definition": "att anstränga sig maximalt för att klara av något",
     "difficulty": "medel",
-    "example": "Hon gav järnet under hela loppet. (She gave it her all during the whole race.)"
+    "example": "Hon gav järnet under hela loppet."
   },
   {
     "title": "hålla tummarna",
-    "definition": "to keep fingers crossed",
+    "definition": "att hoppas och önska att något ska gå bra för någon",
     "difficulty": "lätt",
-    "example": "Vi håller tummarna för att det går bra. (We're keeping our fingers crossed that it goes well.)"
+    "example": "Vi håller tummarna för att det går bra."
   },
   {
     "title": "släppa loss",
-    "definition": "to let loose",
+    "definition": "att sluta hålla tillbaka sig och bete sig fritt och okontrollerat",
     "difficulty": "medel",
-    "example": "Alla släppte loss på dansgolvet sent på kvällen. (Everyone let loose on the dance floor late in the evening.)"
+    "example": "Alla släppte loss på dansgolvet sent på kvällen."
   },
   {
     "title": "snacka skit om",
-    "definition": "to badmouth someone",
+    "definition": "att tala illa om någon bakom personens rygg",
     "difficulty": "medel",
-    "example": "Hon snackade skit om honom bakom hans rygg. (She badmouthed him behind his back.)"
+    "example": "Hon snackade skit om honom bakom hans rygg."
   },
   {
     "title": "vara nere",
-    "definition": "to be down (mood)",
+    "definition": "att må psykiskt dåligt eller känna sig nedstämd",
     "difficulty": "lätt",
-    "example": "Han har varit lite nere sedan han blev av med jobbet. (He's been a bit down since he lost his job.)"
+    "example": "Han har varit lite nere sedan han blev av med jobbet."
   },
   {
     "title": "vara taggad",
-    "definition": "to be pumped/excited",
+    "definition": "att vara entusiastisk och peppad inför något som ska hända",
     "difficulty": "lätt",
-    "example": "Vi är supertaggade inför matchen ikväll. (We're super pumped for the match tonight.)"
+    "example": "Vi är supertaggade inför matchen ikväll."
   },
   {
     "title": "vara bakis",
-    "definition": "to be hungover",
+    "definition": "att må dåligt dagen efter att ha druckit för mycket alkohol",
     "difficulty": "lätt",
-    "example": "Han var rejält bakis efter festen i lördags. (He was really hungover after the party on Saturday.)"
+    "example": "Han var rejält bakis efter festen i lördags."
   },
   {
     "title": "ha is i magen",
-    "definition": "to keep one's cool",
+    "definition": "att behålla lugnet trots en stressig eller pressad situation",
     "difficulty": "svår",
-    "example": "Hon hade is i magen trots all stress. (She kept her cool despite all the stress.)"
+    "example": "Hon hade is i magen trots all stress."
   },
   {
     "title": "vara på G",
-    "definition": "to be up for it",
+    "definition": "att vara redo och pepp att göra något direkt, utan dröjsmål",
     "difficulty": "lätt",
-    "example": "Är du på G för en runda golf imorgon? (Are you up for a round of golf tomorrow?)"
+    "example": "Är du på G för en runda golf imorgon?"
   },
   {
     "title": "käka middag",
-    "definition": "to have dinner (casual)",
+    "definition": "vardagligt uttryck för att äta kvällsmål",
     "difficulty": "lätt",
-    "example": "Vi käkar middag hos mormor på söndag. (We're having dinner at grandma's on Sunday.)"
+    "example": "Vi käkar middag hos mormor på söndag."
   },
   {
     "title": "hetsäta",
-    "definition": "to binge eat",
+    "definition": "att äta stora mängder mat snabbt, ofta drivet av starka känslor",
     "difficulty": "svår",
-    "example": "Hon hetsätte godis hela kvällen efter uppbrottet. (She binge-ate candy all evening after the breakup.)"
+    "example": "Hon hetsätte godis hela kvällen efter uppbrottet."
   },
   {
     "title": "storhandla",
-    "definition": "to do a big grocery shop",
+    "definition": "att handla mycket mat på en gång för att räcka länge",
     "difficulty": "medel",
-    "example": "Vi storhandlar en gång i veckan för hela familjen. (We do a big grocery shop once a week for the whole family.)"
+    "example": "Vi storhandlar en gång i veckan för hela familjen."
   },
   {
     "title": "missa bussen",
-    "definition": "to miss the bus",
+    "definition": "bokstavligt: komma för sent till en avgående buss; bildligt: missa ett gyllene tillfälle",
     "difficulty": "lätt",
-    "example": "Jag missade bussen och fick gå hela vägen. (I missed the bus and had to walk the whole way.)"
+    "example": "Jag missade bussen och fick gå hela vägen."
   },
   {
     "title": "ta sig samman",
-    "definition": "to pull oneself together",
+    "definition": "att mentalt samla sig för att klara av en svår uppgift eller situation",
     "difficulty": "medel",
-    "example": "Han fick ta sig samman innan intervjun. (He had to pull himself together before the interview.)"
+    "example": "Han fick ta sig samman innan intervjun."
   },
   {
     "title": "brista i skratt",
-    "definition": "to burst out laughing",
+    "definition": "att plötsligt och okontrollerat börja skratta",
     "difficulty": "medel",
-    "example": "Hela klassen brast i skratt åt skämtet. (The whole class burst out laughing at the joke.)"
+    "example": "Hela klassen brast i skratt åt skämtet."
   },
   {
     "title": "svälja stoltheten",
-    "definition": "to swallow one's pride",
+    "definition": "att acceptera något förödmjukande för sin egen skull, för att lösa en situation",
     "difficulty": "svår",
-    "example": "Han fick svälja stoltheten och be om ursäkt. (He had to swallow his pride and apologize.)"
+    "example": "Han fick svälja stoltheten och be om ursäkt."
   },
   {
     "title": "kavla upp ärmarna",
-    "definition": "to roll up one's sleeves",
+    "definition": "att förbereda sig mentalt och praktiskt för att arbeta hårt med något",
     "difficulty": "svår",
-    "example": "Vi kavlade upp ärmarna och städade hela huset. (We rolled up our sleeves and cleaned the whole house.)"
+    "example": "Vi kavlade upp ärmarna och städade hela huset."
   },
   {
     "title": "sätta ner foten",
-    "definition": "to put one's foot down",
+    "definition": "att bestämt säga ifrån och sätta tydliga gränser",
     "difficulty": "medel",
-    "example": "Mamma satte ner foten om läxorna. (Mom put her foot down about the homework.)"
+    "example": "Mamma satte ner foten om läxorna."
   },
   {
     "title": "gå rakt på sak",
-    "definition": "to get straight to the point",
+    "definition": "att säga det viktigaste direkt utan omvägar eller inledning",
     "difficulty": "medel",
-    "example": "Chefen gick rakt på sak under mötet. (The boss got straight to the point during the meeting.)"
+    "example": "Chefen gick rakt på sak under mötet."
   },
   {
     "title": "piggna till",
-    "definition": "to perk up",
+    "definition": "att gå från trött eller loj till piggare och mer alert",
     "difficulty": "medel",
-    "example": "Han pignade till så fort kaffet var klart. (He perked up as soon as the coffee was ready.)"
+    "example": "Han pignade till så fort kaffet var klart."
   },
   {
     "title": "varva ner",
-    "definition": "to wind down",
+    "definition": "att medvetet sänka tempot och koppla av efter ansträngning",
     "difficulty": "lätt",
-    "example": "Vi varvar ner med en film efter jobbet. (We wind down with a movie after work.)"
+    "example": "Vi varvar ner med en film efter jobbet."
   },
   {
     "title": "hugga i",
-    "definition": "to pitch in",
+    "definition": "att aktivt hjälpa till med ett gemensamt, fysiskt eller praktiskt arbete",
     "difficulty": "medel",
-    "example": "Alla huggade i för att få flytten klar i tid. (Everyone pitched in to get the move done in time.)"
+    "example": "Alla huggade i för att få flytten klar i tid."
   },
   {
     "title": "det är skitsamma",
-    "definition": "it doesn't matter at all (casual)",
+    "definition": "vardagligt, nonchalant uttryck för att något är helt oviktigt",
     "difficulty": "medel",
-    "example": "Det är skitsamma vilken färg vi väljer. (It really doesn't matter which color we choose.)"
+    "example": "Det är skitsamma vilken färg vi väljer."
   },
   {
     "title": "läget",
-    "definition": "how it's going (slang greeting)",
+    "definition": "vardaglig hälsningsfras som frågar hur det går för någon",
     "difficulty": "lätt",
-    "example": "Hej, läget? Allt bra med dig? (Hey, how's it going? Everything good with you?)"
+    "example": "Hej, läget? Allt bra med dig?"
   },
   {
     "title": "skärpning",
-    "definition": "shape up / get it together",
+    "definition": "kort uppmaning att ta sig samman, fokusera och prestera bättre",
     "difficulty": "medel",
-    "example": "Skärpning nu, vi har bara en timme kvar. (Get it together now, we only have an hour left.)"
+    "example": "Skärpning nu, vi har bara en timme kvar."
   },
   {
     "title": "det suger",
-    "definition": "it sucks",
+    "definition": "uttryck för att en situation eller upplevelse är tråkig eller dålig",
     "difficulty": "lätt",
-    "example": "Det suger att tåget blev inställt igen. (It sucks that the train got canceled again.)"
+    "example": "Det suger att tåget blev inställt igen."
   },
   {
     "title": "komma i fas",
-    "definition": "to get on track / in sync",
+    "definition": "att hamna i synk med ett schema eller en plan efter att ha legat efter",
     "difficulty": "svår",
-    "example": "Vi kom äntligen i fas med planeringen. (We finally got on track with the planning.)"
+    "example": "Vi kom äntligen i fas med planeringen."
   },
   {
     "title": "flyta på",
-    "definition": "to flow along smoothly",
+    "definition": "att fortlöpa smidigt utan problem eller avbrott",
     "difficulty": "medel",
-    "example": "Mötet flöt på utan några konstigheter. (The meeting flowed along smoothly without any hitches.)"
+    "example": "Mötet flöt på utan några konstigheter."
   },
   {
     "title": "dra igång",
-    "definition": "to kick off / get started",
+    "definition": "att starta något, t.ex. ett projekt eller en aktivitet",
     "difficulty": "lätt",
-    "example": "Vi drar igång projektet på måndag. (We're kicking off the project on Monday.)"
+    "example": "Vi drar igång projektet på måndag."
   },
   {
     "title": "runda av",
-    "definition": "to wrap up",
+    "definition": "att avsluta något på ett samlat och prydligt sätt",
     "difficulty": "lätt",
-    "example": "Vi rundar av dagen med en kort sammanfattning. (We wrap up the day with a short summary.)"
+    "example": "Vi rundar av dagen med en kort sammanfattning."
   },
   {
     "title": "jättebra",
-    "definition": "really good",
+    "definition": "vardagligt förstärkt uttryck för \"mycket bra\"",
     "difficulty": "lätt",
-    "example": "Föreläsningen var jättebra idag. (The lecture was really good today.)"
+    "example": "Föreläsningen var jättebra idag."
   },
   {
     "title": "urkul",
-    "definition": "super fun (slang)",
+    "definition": "extremt roligt; \"ur-\" är ett slangprefix som förstärker betydelsen",
     "difficulty": "svår",
-    "example": "Spelkvällen var urkul, vi måste göra om det. (Game night was super fun, we have to do it again.)"
+    "example": "Spelkvällen var urkul, vi måste göra om det."
   },
   {
     "title": "mysig",
-    "definition": "cozy / homey",
+    "definition": "skön, varm och trivsam känsla, om en plats, person eller stämning",
     "difficulty": "lätt",
-    "example": "Lägenheten kändes mysig trots att den var liten. (The apartment felt cozy even though it was small.)"
+    "example": "Lägenheten kändes mysig trots att den var liten."
   },
   {
     "title": "stökig",
-    "definition": "messy / chaotic",
+    "definition": "oordnat och rörigt, t.ex. om en plats eller situation",
     "difficulty": "lätt",
-    "example": "Köket blev stökigt efter middagen. (The kitchen got messy after dinner.)"
+    "example": "Köket blev stökigt efter middagen."
   },
   {
     "title": "nojig",
-    "definition": "jittery / paranoid (slang)",
+    "definition": "paranoid eller överdrivet orolig, ofta tillfälligt och utan verklig grund",
     "difficulty": "medel",
-    "example": "Han blir nojig av för mycket kaffe. (He gets jittery from too much coffee.)"
+    "example": "Han blir nojig av för mycket kaffe."
   },
   {
     "title": "avkopplande",
-    "definition": "relaxing",
+    "definition": "får en att slappna av och varva ner mentalt",
     "difficulty": "lätt",
-    "example": "Massagen var verkligen avkopplande efter en lång vecka. (The massage was really relaxing after a long week.)"
+    "example": "Massagen var verkligen avkopplande efter en lång vecka."
   },
   {
     "title": "utmattande",
-    "definition": "exhausting",
+    "definition": "tär kraftigt på krafterna och gör en väldigt trött",
     "difficulty": "medel",
-    "example": "Flytten var utmattande men vi klarade det. (The move was exhausting but we managed it.)"
+    "example": "Flytten var utmattande men vi klarade det."
   },
   {
     "title": "spännande",
-    "definition": "exciting",
+    "definition": "väcker förväntan och nyfikenhet inför vad som ska hända",
     "difficulty": "lätt",
-    "example": "Det blir spännande att se hur matchen slutar. (It'll be exciting to see how the match ends.)"
+    "example": "Det blir spännande att se hur matchen slutar."
   },
   {
     "title": "riskabel",
-    "definition": "risky",
+    "definition": "innebär en påtaglig chans att utfallet blir negativt",
     "difficulty": "medel",
-    "example": "Planen kändes lite riskabel utan en back-up. (The plan felt a bit risky without a backup.)"
+    "example": "Planen kändes lite riskabel utan en back-up."
   },
   {
     "title": "vafan",
-    "definition": "what the heck (mild exclamation)",
+    "definition": "milt svordomsuttryck för förvåning eller frustration",
     "difficulty": "medel",
-    "example": "Vafan hände med min cykel? (What the heck happened to my bike?)"
+    "example": "Vafan hände med min cykel?"
   },
   {
     "title": "jösses",
-    "definition": "goodness (mild exclamation)",
+    "definition": "milt utrop av förvåning, mer oskyldigt än ett riktigt svordomsuttryck",
     "difficulty": "medel",
-    "example": "Jösses, vad sent det blev! (Goodness, how late it got!)"
+    "example": "Jösses, vad sent det blev!"
   },
   {
     "title": "hoppsan",
-    "definition": "oopsie",
+    "definition": "lätt och oskyldigt utrop när man råkat göra en liten miss",
     "difficulty": "lätt",
-    "example": "Hoppsan, jag tappade din mugg! (Oopsie, I dropped your mug!)"
+    "example": "Hoppsan, jag tappade din mugg!"
   },
   {
     "title": "typiskt mig",
-    "definition": "typical me",
+    "definition": "självironiskt konstaterande att en olycklig sak brukar hända just en själv",
     "difficulty": "medel",
-    "example": "Typiskt mig att glömma plånboken igen. (Typical me to forget my wallet again.)"
+    "example": "Typiskt mig att glömma plånboken igen."
   },
   {
     "title": "skvaller",
-    "definition": "gossip",
+    "definition": "opålitlig eller personlig information om andra som sprids vidare mellan människor",
     "difficulty": "medel",
-    "example": "Kontoret surrar av skvaller om uppsägningarna. (The office is buzzing with gossip about the layoffs.)"
+    "example": "Kontoret surrar av skvaller om uppsägningarna."
   },
   {
     "title": "snackis",
-    "definition": "the talk of the town / hot topic",
+    "definition": "något som många pratar om just nu, t.ex. en nyhet eller skandal",
     "difficulty": "svår",
-    "example": "Skilsmässan var snackisen på hela byn. (The divorce was the talk of the whole village.)"
+    "example": "Skilsmässan var snackisen på hela byn."
   },
   {
     "title": "käpphäst",
-    "definition": "a pet topic/hobbyhorse",
+    "definition": "ett ämne en person ständigt återkommer till i samtal, ofta till andras leda",
     "difficulty": "svår",
-    "example": "Klimatfrågan är hans favoritkäpphäst i alla samtal. (Climate is his favorite hobbyhorse in every conversation.)"
+    "example": "Klimatfrågan är hans favoritkäpphäst i alla samtal."
   },
   {
     "title": "het potatis",
-    "definition": "a hot potato (issue)",
+    "definition": "en fråga som är känslig och obekväm att hantera eller diskutera",
     "difficulty": "medel",
-    "example": "Lönefrågan blev en het potatis på mötet. (The salary question became a hot potato at the meeting.)"
+    "example": "Lönefrågan blev en het potatis på mötet."
   },
   {
     "title": "snöa in på",
-    "definition": "to get fixated on",
+    "definition": "att fastna i detaljer kring något och tappa helhetsbilden",
     "difficulty": "medel",
-    "example": "Han snöade in på detaljerna och missade helheten. (He got fixated on the details and missed the big picture.)"
+    "example": "Han snöade in på detaljerna och missade helheten."
   },
   {
     "title": "gilla läget",
-    "definition": "to make the best of the situation",
+    "definition": "att acceptera en situation man inte kan ändra och göra det bästa av den",
     "difficulty": "svår",
-    "example": "Vi fick gilla läget när tåget blev inställt. (We had to make the best of it when the train was canceled.)"
+    "example": "Vi fick gilla läget när tåget blev inställt."
   },
   {
     "title": "döda tid",
-    "definition": "to kill time",
+    "definition": "att fördriva väntetid med en ointressant eller obetydlig aktivitet",
     "difficulty": "lätt",
-    "example": "Vi dödade tid på flygplatsen genom att spela kort. (We killed time at the airport by playing cards.)"
+    "example": "Vi dödade tid på flygplatsen genom att spela kort."
   },
   {
     "title": "nita det",
-    "definition": "to nail it",
+    "definition": "att lyckas helt perfekt med en uppgift eller prestation",
     "difficulty": "medel",
-    "example": "Hon nitade presentationen helt utan nerver. (She nailed the presentation completely without nerves.)"
+    "example": "Hon nitade presentationen helt utan nerver."
   },
   {
     "title": "rädda ansiktet",
-    "definition": "to save face",
+    "definition": "att undvika att framstå som dum eller besegrad inför andra",
     "difficulty": "medel",
-    "example": "Han skämtade bort det för att rädda ansiktet. (He joked it off to save face.)"
+    "example": "Han skämtade bort det för att rädda ansiktet."
   },
   {
     "title": "ströva runt",
-    "definition": "to wander around",
+    "definition": "att gå omkring utan ett bestämt mål, i lugn och avslappnad takt",
     "difficulty": "lätt",
-    "example": "Vi strövade runt i gamla stan hela eftermiddagen. (We wandered around the old town all afternoon.)"
+    "example": "Vi strövade runt i gamla stan hela eftermiddagen."
   },
   {
     "title": "få kalla kårar",
-    "definition": "to get chills",
+    "definition": "att känna en plötslig rysning av rädsla eller obehag",
     "difficulty": "medel",
-    "example": "Jag fick kalla kårar av spökhistorien. (I got chills from the ghost story.)"
+    "example": "Jag fick kalla kårar av spökhistorien."
   },
   {
     "title": "proppmätt",
-    "definition": "stuffed full",
+    "definition": "ätit så mycket att man känner sig helt fylld",
     "difficulty": "medel",
-    "example": "Vi var proppmätta efter julbordet. (We were stuffed full after the Christmas buffet.)"
+    "example": "Vi var proppmätta efter julbordet."
   },
   {
     "title": "ta en sak i taget",
-    "definition": "to take one thing at a time",
+    "definition": "att hantera uppgifter en efter en istället för flera samtidigt",
     "difficulty": "medel",
-    "example": "Lugn, vi tar en sak i taget. (Relax, we'll take one thing at a time.)"
+    "example": "Lugn, vi tar en sak i taget."
   },
   {
     "title": "ge upp hoppet",
-    "definition": "to give up hope",
+    "definition": "att slutligen sluta tro att något positivt kommer att hända",
     "difficulty": "medel",
-    "example": "Hon gav nästan upp hoppet innan sista provet. (She nearly gave up hope before the final test.)"
+    "example": "Hon gav nästan upp hoppet innan sista provet."
   },
   {
     "title": "hänga med i svängarna",
-    "definition": "to keep up with things",
+    "definition": "att klara av att följa ett högt tempo eller många snabba förändringar",
     "difficulty": "svår",
-    "example": "Det är svårt att hänga med i svängarna när allt går så snabbt. (It's hard to keep up when everything moves so fast.)"
+    "example": "Det är svårt att hänga med i svängarna när allt går så snabbt."
   },
   {
     "title": "känna sig hängig",
-    "definition": "to feel sluggish/off",
+    "definition": "att känna sig trött och lite krasslig utan att vara direkt sjuk",
     "difficulty": "medel",
-    "example": "Jag känner mig hängig efter den långa flygresan. (I feel sluggish after the long flight.)"
+    "example": "Jag känner mig hängig efter den långa flygresan."
   },
   {
     "title": "komma på fötter igen",
-    "definition": "to get back on one's feet",
+    "definition": "att återhämta sig ekonomiskt eller personligen efter en motgång",
     "difficulty": "svår",
-    "example": "Det tog ett år att komma på fötter igen efter konkursen. (It took a year to get back on his feet after the bankruptcy.)"
+    "example": "Det tog ett år att komma på fötter igen efter konkursen."
   },
   {
     "title": "lägga benen på ryggen",
-    "definition": "to make a run for it",
+    "definition": "att snabbt springa iväg, ofta drivet av rädsla",
     "difficulty": "svår",
-    "example": "Vi lade benen på ryggen när det började åska. (We made a run for it when the thunder started.)"
+    "example": "Vi lade benen på ryggen när det började åska."
   },
   {
     "title": "vända på steken",
-    "definition": "to turn the tables",
+    "definition": "att vrida en situation till sin fördel efter att tidigare ha legat sämre till",
     "difficulty": "svår",
-    "example": "Laget vände på steken i andra halvlek. (The team turned the tables in the second half.)"
+    "example": "Laget vände på steken i andra halvlek."
   },
   {
     "title": "dra det kortaste strået",
-    "definition": "to get the short end of the stick",
+    "definition": "att råka ut för det sämsta utfallet jämfört med andra inblandade",
     "difficulty": "svår",
-    "example": "Han drog det kortaste strået när lotten avgjorde. (He got the short end of the stick when the draw decided it.)"
+    "example": "Han drog det kortaste strået när lotten avgjorde."
   },
   {
     "title": "binge-titta",
-    "definition": "to binge-watch (slang)",
+    "definition": "att se många avsnitt av en serie i följd, utan uppehåll mellan dem",
     "difficulty": "svår",
-    "example": "Vi binge-tittade på hela säsongen en helg. (We binge-watched the whole season in one weekend.)"
+    "example": "Vi binge-tittade på hela säsongen en helg."
   },
   {
     "title": "ghosta",
-    "definition": "to ghost someone (slang)",
+    "definition": "att plötsligt sluta svara och försvinna ur kontakt utan förklaring",
     "difficulty": "svår",
-    "example": "Han ghostade henne efter andra dejten. (He ghosted her after the second date.)"
+    "example": "Han ghostade henne efter andra dejten."
   },
   {
     "title": "swipa",
-    "definition": "to swipe (dating app slang)",
+    "definition": "att svepa igenom profiler i en dejtingapp för att markera intresse eller avvisa",
     "difficulty": "svår",
-    "example": "Hon swipar bara på helger när hon har tid. (She only swipes on weekends when she has time.)"
+    "example": "Hon swipar bara på helger när hon har tid."
   },
   {
     "title": "streama",
-    "definition": "to stream",
+    "definition": "att se på eller spela något direkt via internet utan att ladda ner det",
     "difficulty": "lätt",
-    "example": "Vi streamar matchen istället för att gå till arenan. (We're streaming the match instead of going to the arena.)"
+    "example": "Vi streamar matchen istället för att gå till arenan."
   },
   {
     "title": "hugga av",
-    "definition": "to cut off / interrupt sharply",
+    "definition": "att skarpt avbryta någon mitt i något de säger eller gör",
     "difficulty": "medel",
-    "example": "Hon högg av honom mitt i meningen. (She cut him off right in the middle of his sentence.)"
+    "example": "Hon högg av honom mitt i meningen."
   },
   {
     "title": "snacka i nattmössan",
-    "definition": "to talk nonsense",
+    "definition": "att prata strunt eller osammanhängande, ofta av trötthet",
     "difficulty": "svår",
-    "example": "Han snackar i nattmössan när han är trött. (He talks nonsense when he's tired.)"
+    "example": "Han snackar i nattmössan när han är trött."
   },
   {
     "title": "lägga av",
-    "definition": "to quit / cut it out",
+    "definition": "irriterad uppmaning till någon att sluta med vad de gör",
     "difficulty": "lätt",
-    "example": "Lägg av nu, det är inte roligt längre. (Cut it out now, it's not funny anymore.)"
+    "example": "Lägg av nu, det är inte roligt längre."
   },
   {
     "title": "käftaskratt",
-    "definition": "a hearty burst of laughter (slang)",
+    "definition": "ett kraftigt och högljutt skratt",
     "difficulty": "svår",
-    "example": "Vi fick ett käftaskratt åt hans missade replik. (We burst out laughing at his botched line.)"
+    "example": "Vi fick ett käftaskratt åt hans missade replik."
   },
   {
     "title": "hugga tag i",
-    "definition": "to grab hold of (an opportunity)",
+    "definition": "att snabbt och beslutsamt ta vara på en möjlighet",
     "difficulty": "medel",
-    "example": "Hon högg tag i chansen direkt. (She grabbed the opportunity right away.)"
+    "example": "Hon högg tag i chansen direkt."
   },
   {
     "title": "lirka fram",
-    "definition": "to gently coax something out",
+    "definition": "att med tålamod och list lyckas få fram information ur någon",
     "difficulty": "svår",
-    "example": "Han lirkade fram sanningen ur sin lillebror. (He gently coaxed the truth out of his little brother.)"
+    "example": "Han lirkade fram sanningen ur sin lillebror."
   },
   {
     "title": "vara skraj",
-    "definition": "to be scared (slang)",
+    "definition": "att vara rädd för något specifikt",
     "difficulty": "medel",
-    "example": "Jag är lite skraj för spöken faktiskt. (I'm honestly a bit scared of ghosts.)"
+    "example": "Jag är lite skraj för spöken faktiskt."
   },
   {
     "title": "få storm",
-    "definition": "to get into big trouble",
+    "definition": "att hamna i stora problem eller bli kraftigt utskälld",
     "difficulty": "svår",
-    "example": "Han fick storm av mamma när han kom hem sent. (He got into big trouble with mom for coming home late.)"
+    "example": "Han fick storm av mamma när han kom hem sent."
   },
   {
     "title": "chilla ner",
-    "definition": "to chill out / settle down",
+    "definition": "uppmaning till någon att lugna sig och slappna av",
     "difficulty": "lätt",
-    "example": "Chilla ner lite, allt kommer lösa sig. (Chill out a bit, everything will work out.)"
+    "example": "Chilla ner lite, allt kommer lösa sig."
   },
   {
     "title": "vara helt slut",
-    "definition": "to be completely worn out",
+    "definition": "att vara fysiskt eller mentalt helt utan kvarvarande energi",
     "difficulty": "lätt",
-    "example": "Jag är helt slut efter flytten idag. (I'm completely worn out after moving today.)"
+    "example": "Jag är helt slut efter flytten idag."
   },
   {
     "title": "schyst",
-    "definition": "decent / fair",
+    "definition": "rättvis, hederlig och vänlig i sitt sätt att behandla andra",
     "difficulty": "lätt",
-    "example": "Det var schysst av dig att hjälpa till utan att fråga. (That was decent of you to help out without being asked.)"
+    "example": "Det var schysst av dig att hjälpa till utan att fråga."
   },
   {
     "title": "trevare",
-    "definition": "a feeler / test attempt",
+    "definition": "en första, försiktig kontakt som testar intresse innan man går vidare på allvar",
     "difficulty": "svår",
-    "example": "Han skickade en trevare om jobbet innan han sökte officiellt. (He sent a feeler about the job before officially applying.)"
+    "example": "Han skickade en trevare om jobbet innan han sökte officiellt."
   },
   {
     "title": "hugga huvudet av",
-    "definition": "to bite someone's head off",
+    "definition": "att reagera hårt och argt på en liten eller obetydlig sak",
     "difficulty": "svår",
-    "example": "Hon hög huvudet av mig för en liten miss. (She bit my head off over a tiny mistake.)"
+    "example": "Hon hög huvudet av mig för en liten miss."
   },
   {
     "title": "byta fot",
-    "definition": "to change one's approach mid-way",
+    "definition": "att plötsligt ändra strategi eller inställning mitt i en pågående process",
     "difficulty": "svår",
-    "example": "Laget bytte fot helt i andra halvlek. (The team completely changed their approach in the second half.)"
+    "example": "Laget bytte fot helt i andra halvlek."
   },
   {
     "title": "vara hangen",
-    "definition": "to be totally smitten",
+    "definition": "att vara mycket kär och fången av starka känslor för en person",
     "difficulty": "svår",
-    "example": "Han är helt hangen efter sin nya flickvän. (He is totally smitten with his new girlfriend.)"
+    "example": "Han är helt hangen efter sin nya flickvän."
   },
   {
     "title": "hänga läpp",
-    "definition": "to sulk / pout",
+    "definition": "att se sur och missnöjd ut, ofta efter en besvikelse",
     "difficulty": "medel",
-    "example": "Han hängde läpp hela kvällen efter förlusten. (He sulked the whole evening after the loss.)"
+    "example": "Han hängde läpp hela kvällen efter förlusten."
   },
   {
     "title": "vara på spåret",
-    "definition": "to be onto something",
+    "definition": "att vara nära att upptäcka eller förstå något viktigt man letat efter",
     "difficulty": "medel",
-    "example": "Polisen kände att de var på spåret efter tipset. (The police felt they were onto something after the tip.)"
+    "example": "Polisen kände att de var på spåret efter tipset."
   },
   {
     "title": "få fnatt",
-    "definition": "to freak out / go crazy",
+    "definition": "att bli kraftigt stressad eller upprörd helt plötsligt",
     "difficulty": "medel",
-    "example": "Hon fick fnatt när hon tappade bort nycklarna. (She freaked out when she lost her keys.)"
+    "example": "Hon fick fnatt när hon tappade bort nycklarna."
   },
   {
     "title": "vara körd",
-    "definition": "to be done for / in trouble",
+    "definition": "att vara i en situation helt utan utväg eller chans att lyckas",
     "difficulty": "lätt",
-    "example": "Vi är körda om bussen redan har gått. (We're done for if the bus has already left.)"
+    "example": "Vi är körda om bussen redan har gått."
   },
   {
     "title": "dra en vals",
-    "definition": "to spin a long-winded story",
+    "definition": "att berätta en lång, ofta ogrundad eller överdriven förklaring",
     "difficulty": "svår",
-    "example": "Han drog en vals om varför han var sen igen. (He spun a long-winded story about why he was late again.)"
+    "example": "Han drog en vals om varför han var sen igen."
   },
   {
     "title": "käka upp sig",
-    "definition": "to scarf down food",
+    "definition": "att äta något snabbt, ofta mellan eller innan andra aktiviteter",
     "difficulty": "medel",
-    "example": "Han käkade upp sig innan träningen. (He scarfed down some food before practice.)"
+    "example": "Han käkade upp sig innan träningen."
   },
   {
     "title": "vara på hugget",
-    "definition": "to be eager / on the ball",
+    "definition": "att vara energisk, motiverad och redo att agera direkt",
     "difficulty": "medel",
-    "example": "Hon var verkligen på hugget under hela mötet. (She was really on the ball during the whole meeting.)"
+    "example": "Hon var verkligen på hugget under hela mötet."
   },
   {
     "title": "sno åt sig",
-    "definition": "to snag / grab for oneself",
+    "definition": "att snabbt ta något för sig själv, ofta före att andra hinner",
     "difficulty": "medel",
-    "example": "Han snodde åt sig den sista biten pizza. (He snagged the last slice of pizza for himself.)"
+    "example": "Han snodde åt sig den sista biten pizza."
   },
   {
     "title": "få kalla fötter",
-    "definition": "to get cold feet",
+    "definition": "att tappa modet och bli osäker precis innan man ska göra något viktigt",
     "difficulty": "medel",
-    "example": "Hon fick kalla fötter precis innan bröllopet. (She got cold feet right before the wedding.)"
+    "example": "Hon fick kalla fötter precis innan bröllopet."
   },
   {
     "title": "hamna i kläm",
-    "definition": "to get caught in the middle",
+    "definition": "att oavsiktligt bli indragen i en konflikt mellan andra parter",
     "difficulty": "svår",
-    "example": "Barnen hamnade i kläm under föräldrarnas bråk. (The children got caught in the middle of the parents' fight.)"
+    "example": "Barnen hamnade i kläm under föräldrarnas bråk."
   },
   {
     "title": "vara på alerten",
-    "definition": "to be on alert / watchful",
+    "definition": "att vara extra uppmärksam och beredd på att något kan hända",
     "difficulty": "medel",
-    "example": "Vakten var extra på alerten efter stölden. (The guard was extra on alert after the theft.)"
+    "example": "Vakten var extra på alerten efter stölden."
   },
   {
     "title": "dra ett streck över",
-    "definition": "to draw a line under / let go of",
+    "definition": "att medvetet bestämma sig för att lägga något bakom sig och inte ta upp det igen",
     "difficulty": "medel",
-    "example": "Vi drar ett streck över det och börjar om. (We'll draw a line under it and start over.)"
+    "example": "Vi drar ett streck över det och börjar om."
   },
   {
     "title": "vara skitnödig",
-    "definition": "to be in dire need (slang, mild)",
+    "definition": "akut och stort behov av att gå på toaletten, vardagligt och rätt rått uttryckt",
     "difficulty": "svår",
-    "example": "Jag är skitnödig på toaletten, var snabb! (I really need the bathroom, hurry!)"
+    "example": "Jag är skitnödig på toaletten, var snabb!"
   },
   {
     "title": "snurra till det",
-    "definition": "to make things confusing",
+    "definition": "att göra en situation mer förvirrad eller komplicerad än vad den behöver vara",
     "difficulty": "medel",
-    "example": "Han snurrade till det med alla detaljer. (He made things confusing with all the details.)"
+    "example": "Han snurrade till det med alla detaljer."
   },
   {
     "title": "vara stenhård",
-    "definition": "to be dead set / unyielding",
+    "definition": "att vara orubblig och inte gå med på undantag eller kompromisser",
     "difficulty": "medel",
-    "example": "Chefen var stenhård om deadline. (The boss was dead set on the deadline.)"
+    "example": "Chefen var stenhård om deadline."
   },
   {
     "title": "käftriva",
-    "definition": "to argue loudly back and forth",
+    "definition": "att gräla högljutt fram och tillbaka",
     "difficulty": "svår",
-    "example": "Syskonen käftrev om vem som skulle diska. (The siblings bickered loudly about who should do the dishes.)"
+    "example": "Syskonen käftrev om vem som skulle diska."
   },
   {
     "title": "få napp",
-    "definition": "to get a bite / response (figuratively)",
+    "definition": "att få en första positiv respons på något man försökt, t.ex. en annons",
     "difficulty": "medel",
-    "example": "Han fick napp på sin annons redan dagen efter. (He got a response to his ad already the next day.)"
+    "example": "Han fick napp på sin annons redan dagen efter."
   },
   {
     "title": "vara på dekis",
-    "definition": "to be in bad shape / broke",
+    "definition": "att vara i dåligt skick, sliten eller utan pengar",
     "difficulty": "svår",
-    "example": "Bilen är rätt på dekis efter alla mil. (The car is in pretty bad shape after all those miles.)"
+    "example": "Bilen är rätt på dekis efter alla mil."
   },
   {
     "title": "snacka runt",
-    "definition": "to talk in circles",
+    "definition": "att prata mycket utan att egentligen svara på det centrala ämnet",
     "difficulty": "medel",
-    "example": "Han snackade runt utan att svara på frågan. (He talked in circles without answering the question.)"
+    "example": "Han snackade runt utan att svara på frågan."
   },
   {
     "title": "hugga till",
-    "definition": "to lash out / strike suddenly",
+    "definition": "att plötsligt reagera hårt, verbalt eller fysiskt",
     "difficulty": "svår",
-    "example": "Hon högg till med ett skarpt svar. (She lashed out with a sharp reply.)"
+    "example": "Hon högg till med ett skarpt svar."
   },
   {
     "title": "vara på G igen",
-    "definition": "to be back in the game",
+    "definition": "att vara tillbaka i full aktivitet efter ett uppehåll, t.ex. en skada",
     "difficulty": "medel",
-    "example": "Efter skadan är hon äntligen på G igen. (After the injury she's finally back in the game.)"
+    "example": "Efter skadan är hon äntligen på G igen."
   },
   {
     "title": "dra runt",
-    "definition": "to drag along / take with",
+    "definition": "att ta med sig en person eller sak vart man än går",
     "difficulty": "medel",
-    "example": "Han drog runt sin lillebror på alla fester. (He dragged his little brother along to every party.)"
+    "example": "Han drog runt sin lillebror på alla fester."
   },
   {
     "title": "vara skraj för",
-    "definition": "to be afraid of",
+    "definition": "att vara rädd för en specifik sak eller situation",
     "difficulty": "medel",
-    "example": "Hon är skraj för spindlar sedan barnsben. (She's been afraid of spiders since childhood.)"
+    "example": "Hon är skraj för spindlar sedan barnsben."
   },
   {
     "title": "käkväska",
-    "definition": "a chatterbox (mildly mocking, slang)",
+    "definition": "nedsättande ord för en person som pratar mycket och sällan tystnar",
     "difficulty": "svår",
-    "example": "Han är en sådan käkväska att man inte hinner svara. (He's such a chatterbox you can't even get a word in.)"
+    "example": "Han är en sådan käkväska att man inte hinner svara."
   },
   {
     "title": "vara nördig",
-    "definition": "to be nerdy",
+    "definition": "att ha ett passionerat, detaljerat intresse för något, ofta tekniskt eller nischat",
     "difficulty": "lätt",
-    "example": "Han är ganska nördig när det gäller dataspel. (He's pretty nerdy when it comes to video games.)"
+    "example": "Han är ganska nördig när det gäller dataspel."
   },
   {
     "title": "vara lagom",
-    "definition": "to be just right / moderate",
+    "definition": "att vara precis rätt mängd, varken för mycket eller för lite",
     "difficulty": "lätt",
-    "example": "Maten var lagom kryddad för min smak. (The food was just the right amount of spicy for my taste.)"
+    "example": "Maten var lagom kryddad för min smak."
   },
   {
     "title": "hugga en blund",
-    "definition": "to catch some sleep",
+    "definition": "att sova en kort stund",
     "difficulty": "svår",
-    "example": "Jag hugger en blund innan vi kör vidare. (I'll catch some sleep before we keep driving.)"
+    "example": "Jag hugger en blund innan vi kör vidare."
   },
   {
     "title": "vara på tårna",
-    "definition": "to be on one's toes / alert",
+    "definition": "att vara extra uppmärksam och redo att reagera snabbt om något händer",
     "difficulty": "medel",
-    "example": "Personalen var på tårna inför inspektionen. (The staff were on their toes ahead of the inspection.)"
+    "example": "Personalen var på tårna inför inspektionen."
   },
   {
     "title": "käka allt",
-    "definition": "to eat everything / clean the plate",
+    "definition": "att äta upp allt som finns kvar på tallriken",
     "difficulty": "lätt",
-    "example": "Han käkade allt på tallriken trots att han var mätt. (He ate everything on his plate even though he was full.)"
+    "example": "Han käkade allt på tallriken trots att han var mätt."
   },
   {
     "title": "vara hutlös",
-    "definition": "to be outrageous / shameless (price etc.)",
+    "definition": "att vara orimligt och provocerande oskälig, t.ex. om ett pris eller en begäran",
     "difficulty": "svår",
-    "example": "Priset på den biljetten var helt hutlöst. (The price of that ticket was completely outrageous.)"
+    "example": "Priset på den biljetten var helt hutlöst."
   },
   {
     "title": "snacka runt sig",
-    "definition": "to talk one's way out of something",
+    "definition": "att med ord övertyga andra och därmed undvika ansvar eller straff",
     "difficulty": "svår",
-    "example": "Han snackade runt sig och slank undan straff. (He talked his way out and avoided punishment.)"
+    "example": "Han snackade runt sig och slank undan straff."
   },
   {
     "title": "vara på väg ut",
-    "definition": "to be heading out the door (figuratively, leaving a job etc.)",
+    "definition": "att vara nära att lämna en plats, position eller anställning",
     "difficulty": "medel",
-    "example": "Ryktet säger att hon är på väg ut från företaget. (Rumor has it she's on her way out of the company.)"
+    "example": "Ryktet säger att hon är på väg ut från företaget."
   },
   {
     "title": "käftslunga",
-    "definition": "a sharp verbal jab (slang)",
+    "definition": "en skarp och träffande kommentar man levererar tillbaka i en diskussion",
     "difficulty": "svår",
-    "example": "Hon gav honom en käftslunga han inte glömmer. (She gave him a sharp jab he won't forget.)"
+    "example": "Hon gav honom en käftslunga han inte glömmer."
   },
   {
     "title": "vara taggig",
-    "definition": "to be prickly / irritable",
+    "definition": "att vara lättirriterad och kort i tonen mot andra",
     "difficulty": "medel",
-    "example": "Han är lite taggig innan han fått sin kaffe. (He's a bit prickly before he's had his coffee.)"
+    "example": "Han är lite taggig innan han fått sin kaffe."
   }
 ];
 
 export const svenskaFormell = [
   {
     "title": "ändamålsenlig",
-    "definition": "appropriate / fit for purpose",
+    "definition": "lämplig och väl anpassad för sitt specifika syfte",
     "difficulty": "svår",
-    "example": "Lösningen bedömdes vara ändamålsenlig för verksamhetens behov. (The solution was considered appropriate for the organization's needs.)"
+    "example": "Lösningen bedömdes vara ändamålsenlig för verksamhetens behov."
   },
   {
     "title": "avvikelse",
-    "definition": "deviation / discrepancy",
+    "definition": "en skillnad eller ett avsteg från det förväntade eller normala",
     "difficulty": "medel",
-    "example": "Revisorn upptäckte en avvikelse i bokföringen. (The auditor discovered a discrepancy in the accounting.)"
+    "example": "Revisorn upptäckte en avvikelse i bokföringen."
   },
   {
     "title": "implementera",
-    "definition": "to implement",
+    "definition": "att praktiskt genomföra eller sätta i drift något som planerats, t.ex. ett system",
     "difficulty": "medel",
-    "example": "Företaget planerar att implementera det nya systemet i höst. (The company plans to implement the new system this autumn.)"
+    "example": "Företaget planerar att implementera det nya systemet i höst."
   },
   {
     "title": "tillämpa",
-    "definition": "to apply (a rule/method)",
+    "definition": "att använda en regel, metod eller princip i ett konkret fall",
     "difficulty": "medel",
-    "example": "Domaren valde att tillämpa lagen strikt i detta fall. (The judge chose to apply the law strictly in this case.)"
+    "example": "Domaren valde att tillämpa lagen strikt i detta fall."
   },
   {
     "title": "förutsättning",
-    "definition": "precondition / prerequisite",
+    "definition": "något som måste finnas på plats för att något annat ska kunna ske",
     "difficulty": "medel",
-    "example": "God kommunikation är en förutsättning för bra samarbete. (Good communication is a prerequisite for good collaboration.)"
+    "example": "God kommunikation är en förutsättning för bra samarbete."
   },
   {
     "title": "konsekvens",
-    "definition": "consequence",
+    "definition": "ett resultat eller en följd som uppstår av en handling eller ett beslut",
     "difficulty": "medel",
-    "example": "Beslutet fick stora konsekvenser för hela personalen. (The decision had major consequences for the entire staff.)"
+    "example": "Beslutet fick stora konsekvenser för hela personalen."
   },
   {
     "title": "resonemang",
-    "definition": "reasoning / argument",
+    "definition": "en kedja av tankar och argument som leder fram till en slutsats",
     "difficulty": "svår",
-    "example": "Hennes resonemang höll inte vid en närmare granskning. (Her reasoning didn't hold up under closer scrutiny.)"
+    "example": "Hennes resonemang höll inte vid en närmare granskning."
   },
   {
     "title": "kartlägga",
-    "definition": "to map out / survey",
+    "definition": "att systematiskt undersöka och dokumentera hur något ser ut",
     "difficulty": "medel",
-    "example": "Myndigheten ska kartlägga riskerna inom branschen. (The agency will map out the risks within the industry.)"
+    "example": "Myndigheten ska kartlägga riskerna inom branschen."
   },
   {
     "title": "sammanställa",
-    "definition": "to compile",
+    "definition": "att samla in och ordna information eller resultat till en samlad helhet",
     "difficulty": "medel",
-    "example": "Vi behöver sammanställa alla resultat innan mötet. (We need to compile all the results before the meeting.)"
+    "example": "Vi behöver sammanställa alla resultat innan mötet."
   },
   {
     "title": "väsentlig",
-    "definition": "essential / significant",
+    "definition": "så viktig att den inte kan uteslutas utan att helheten påverkas negativt",
     "difficulty": "medel",
-    "example": "Det är väsentligt att alla deltar aktivt i processen. (It is essential that everyone participates actively in the process.)"
+    "example": "Det är väsentligt att alla deltar aktivt i processen."
   },
   {
     "title": "föreskriva",
-    "definition": "to prescribe / stipulate",
+    "definition": "att i en regel eller lag ange exakt vad som krävs eller gäller",
     "difficulty": "svår",
-    "example": "Lagen föreskriver särskilda krav för verksamheten. (The law prescribes special requirements for the operation.)"
+    "example": "Lagen föreskriver särskilda krav för verksamheten."
   },
   {
     "title": "åtgärd",
-    "definition": "measure / action",
+    "definition": "en konkret handling som vidtas för att lösa eller förbättra något",
     "difficulty": "medel",
-    "example": "Regeringen vidtog flera åtgärder för att minska utsläppen. (The government took several measures to reduce emissions.)"
+    "example": "Regeringen vidtog flera åtgärder för att minska utsläppen."
   },
   {
     "title": "revidera",
-    "definition": "to revise",
+    "definition": "att granska och ändra något, t.ex. en plan eller text, utifrån ny information",
     "difficulty": "medel",
-    "example": "Vi måste revidera budgeten efter de nya siffrorna. (We need to revise the budget after the new figures.)"
+    "example": "Vi måste revidera budgeten efter de nya siffrorna."
   },
   {
     "title": "utvärdera",
-    "definition": "to evaluate",
+    "definition": "att systematiskt bedöma resultatet eller kvaliteten av något efteråt",
     "difficulty": "medel",
-    "example": "Projektet kommer att utvärderas vid årets slut. (The project will be evaluated at the end of the year.)"
+    "example": "Projektet kommer att utvärderas vid årets slut."
   },
   {
     "title": "omständighet",
-    "definition": "circumstance",
+    "definition": "en faktor eller detalj i en situation som påverkar hur den bör bedömas",
     "difficulty": "svår",
-    "example": "Med tanke på omständigheterna fattades ett snabbt beslut. (Given the circumstances, a quick decision was made.)"
+    "example": "Med tanke på omständigheterna fattades ett snabbt beslut."
   },
   {
     "title": "tillförlitlig",
-    "definition": "reliable",
+    "definition": "går att lita på och ger konsekvent korrekt resultat",
     "difficulty": "medel",
-    "example": "Källan ansågs vara tillförlitlig av journalisten. (The source was considered reliable by the journalist.)"
+    "example": "Källan ansågs vara tillförlitlig av journalisten."
   },
   {
     "title": "nyanserad",
-    "definition": "nuanced",
+    "definition": "tar hänsyn till flera sidor eller detaljer istället för att vara svart-vit",
     "difficulty": "svår",
-    "example": "Debatten kräver en mer nyanserad bild av frågan. (The debate requires a more nuanced picture of the issue.)"
+    "example": "Debatten kräver en mer nyanserad bild av frågan."
   },
   {
     "title": "påtaglig",
-    "definition": "palpable / noticeable",
+    "definition": "tydligt märkbar, nästan möjlig att ta på",
     "difficulty": "svår",
-    "example": "Det fanns en påtaglig spänning i rummet under mötet. (There was a palpable tension in the room during the meeting.)"
+    "example": "Det fanns en påtaglig spänning i rummet under mötet."
   },
   {
     "title": "preliminär",
-    "definition": "preliminary",
+    "definition": "inte slutgiltig, kan komma att ändras senare i processen",
     "difficulty": "medel",
-    "example": "Resultaten är fortfarande preliminära och kan ändras. (The results are still preliminary and may change.)"
+    "example": "Resultaten är fortfarande preliminära och kan ändras."
   },
   {
     "title": "hypotetisk",
-    "definition": "hypothetical",
+    "definition": "antagen eller tänkt som exempel, inte bekräftad i verkligheten",
     "difficulty": "medel",
-    "example": "Låt oss diskutera ett hypotetiskt scenario för en stund. (Let's discuss a hypothetical scenario for a moment.)"
+    "example": "Låt oss diskutera ett hypotetiskt scenario för en stund."
   },
   {
     "title": "metodologi",
-    "definition": "methodology",
+    "definition": "det systematiska tillvägagångssätt som används i en undersökning",
     "difficulty": "svår",
-    "example": "Studiens metodologi beskrivs utförligt i kapitel två. (The study's methodology is described in detail in chapter two.)"
+    "example": "Studiens metodologi beskrivs utförligt i kapitel två."
   },
   {
     "title": "korrelation",
-    "definition": "correlation",
+    "definition": "ett statistiskt samband mellan två variabler, utan att det visar orsak",
     "difficulty": "svår",
-    "example": "Forskarna fann en stark korrelation mellan de två variablerna. (The researchers found a strong correlation between the two variables.)"
+    "example": "Forskarna fann en stark korrelation mellan de två variablerna."
   },
   {
     "title": "incitament",
-    "definition": "incentive",
+    "definition": "en morot eller drivkraft som gör att man motiveras att agera på ett visst sätt",
     "difficulty": "svår",
-    "example": "Bonusen gav de anställda ett incitament att prestera bättre. (The bonus gave employees an incentive to perform better.)"
+    "example": "Bonusen gav de anställda ett incitament att prestera bättre."
   },
   {
     "title": "förordning",
-    "definition": "regulation / decree",
+    "definition": "en bindande regel utfärdad av en myndighet eller regering",
     "difficulty": "svår",
-    "example": "Den nya förordningen träder i kraft i januari. (The new regulation takes effect in January.)"
+    "example": "Den nya förordningen träder i kraft i januari."
   },
   {
     "title": "proposition",
-    "definition": "bill / legislative proposal",
+    "definition": "ett formellt förslag som läggs fram för beslut, ofta i riksdagen",
     "difficulty": "svår",
-    "example": "Regeringen lade fram en proposition om skattereformen. (The government presented a bill on the tax reform.)"
+    "example": "Regeringen lade fram en proposition om skattereformen."
   },
   {
     "title": "legitimera",
-    "definition": "to legitimize",
+    "definition": "att göra något accepterat och rättmätigt i andras ögon",
     "difficulty": "svår",
-    "example": "Valet syftade till att legitimera den nya styrelsen. (The election aimed to legitimize the new board.)"
+    "example": "Valet syftade till att legitimera den nya styrelsen."
   },
   {
     "title": "motivera",
-    "definition": "to justify / motivate",
+    "definition": "att ge tydliga skäl för ett beslut eller en handling",
     "difficulty": "medel",
-    "example": "Hon fick motivera sitt beslut inför styrelsen. (She had to justify her decision before the board.)"
+    "example": "Hon fick motivera sitt beslut inför styrelsen."
   },
   {
     "title": "differentiera",
-    "definition": "to differentiate",
+    "definition": "att tydligt särskilja något från liknande saker eller alternativ",
     "difficulty": "svår",
-    "example": "Företaget vill differentiera sina produkter från konkurrenterna. (The company wants to differentiate its products from competitors.)"
+    "example": "Företaget vill differentiera sina produkter från konkurrenterna."
   },
   {
     "title": "kvantifiera",
-    "definition": "to quantify",
+    "definition": "att uttrycka något i mätbara siffror",
     "difficulty": "svår",
-    "example": "Det är svårt att kvantifiera den exakta effekten av kampanjen. (It is difficult to quantify the exact effect of the campaign.)"
+    "example": "Det är svårt att kvantifiera den exakta effekten av kampanjen."
   },
   {
     "title": "precisera",
-    "definition": "to specify precisely",
+    "definition": "att göra ett tidigare uttalande mer exakt och tydligt",
     "difficulty": "medel",
-    "example": "Kan du precisera vad du menar med det uttalandet? (Could you specify what you mean by that statement?)"
+    "example": "Kan du precisera vad du menar med det uttalandet?"
   },
   {
     "title": "formulera",
-    "definition": "to formulate / phrase",
+    "definition": "att uttrycka en tanke i ord på ett bestämt och avsiktligt sätt",
     "difficulty": "medel",
-    "example": "Vi behöver formulera frågan tydligare för enkäten. (We need to formulate the question more clearly for the survey.)"
+    "example": "Vi behöver formulera frågan tydligare för enkäten."
   },
   {
     "title": "härleda",
-    "definition": "to derive",
+    "definition": "att logiskt komma fram till ett resultat utifrån grundprinciper",
     "difficulty": "svår",
-    "example": "Formeln kan härledas direkt från grundläggande principer. (The formula can be derived directly from basic principles.)"
+    "example": "Formeln kan härledas direkt från grundläggande principer."
   },
   {
     "title": "beakta",
-    "definition": "to take into consideration",
+    "definition": "att aktivt ta något i beaktande inför ett beslut",
     "difficulty": "svår",
-    "example": "Domstolen ska beakta samtliga omständigheter i fallet. (The court shall take into consideration all circumstances in the case.)"
+    "example": "Domstolen ska beakta samtliga omständigheter i fallet."
   },
   {
     "title": "åberopa",
-    "definition": "to invoke / cite as grounds",
+    "definition": "att hänvisa till något, t.ex. en lag eller en tidigare dom, som stöd för sin sak",
     "difficulty": "svår",
-    "example": "Advokaten åberopade en tidigare dom till sitt stöd. (The lawyer invoked an earlier ruling in support.)"
+    "example": "Advokaten åberopade en tidigare dom till sitt stöd."
   },
   {
     "title": "anförande",
-    "definition": "speech / formal address",
+    "definition": "ett förberett, formellt tal hållet inför en publik",
     "difficulty": "svår",
-    "example": "Statsministern höll ett anförande om landets ekonomi. (The prime minister gave an address on the country's economy.)"
+    "example": "Statsministern höll ett anförande om landets ekonomi."
   },
   {
     "title": "erinran",
-    "definition": "formal reprimand",
+    "definition": "en formell men mild tillrättavisning, utan direkt juridisk påföljd",
     "difficulty": "svår",
-    "example": "Han fick en erinran för sitt olämpliga beteende. (He received a reprimand for his inappropriate behavior.)"
+    "example": "Han fick en erinran för sitt olämpliga beteende."
   },
   {
     "title": "vedertagen",
-    "definition": "established / accepted (convention)",
+    "definition": "allmänt accepterad och etablerad sedan länge inom ett område",
     "difficulty": "svår",
-    "example": "Det är en vedertagen metod inom forskningsfältet. (It is an established method within the research field.)"
+    "example": "Det är en vedertagen metod inom forskningsfältet."
   },
   {
     "title": "ändamål",
-    "definition": "purpose",
+    "definition": "det syfte som något är avsett för",
     "difficulty": "medel",
-    "example": "Pengarna ska användas för ett specifikt ändamål. (The money is to be used for a specific purpose.)"
+    "example": "Pengarna ska användas för ett specifikt ändamål."
   },
   {
     "title": "proportionalitet",
-    "definition": "proportionality",
+    "definition": "att en åtgärd står i rimlig balans med det problem den ska lösa",
     "difficulty": "svår",
-    "example": "Domstolen bedömde frågan utifrån principen om proportionalitet. (The court assessed the matter based on the principle of proportionality.)"
+    "example": "Domstolen bedömde frågan utifrån principen om proportionalitet."
   },
   {
     "title": "konsekvent",
-    "definition": "consistent",
+    "definition": "agerar på samma sätt varje gång utan att ändra principer",
     "difficulty": "medel",
-    "example": "Det är viktigt att vara konsekvent i sitt beslutsfattande. (It is important to be consistent in one's decision-making.)"
+    "example": "Det är viktigt att vara konsekvent i sitt beslutsfattande."
   },
   {
     "title": "resursfördelning",
-    "definition": "resource allocation",
+    "definition": "hur tillgångar som pengar eller personal delas ut mellan olika behov",
     "difficulty": "svår",
-    "example": "Kommunen ser över sin resursfördelning inför nästa budgetår. (The municipality is reviewing its resource allocation for the next budget year.)"
+    "example": "Kommunen ser över sin resursfördelning inför nästa budgetår."
   },
   {
     "title": "tillvägagångssätt",
-    "definition": "approach / procedure",
+    "definition": "det sätt eller den metod man väljer för att lösa en uppgift",
     "difficulty": "medel",
-    "example": "Vi behöver ett nytt tillvägagångssätt för att lösa problemet. (We need a new approach to solve the problem.)"
+    "example": "Vi behöver ett nytt tillvägagångssätt för att lösa problemet."
   },
   {
     "title": "analysera",
-    "definition": "to analyze",
+    "definition": "att bryta ner något i mindre delar för att förstå det bättre",
     "difficulty": "medel",
-    "example": "Teamet fick analysera resultaten innan rapporten skrevs. (The team had to analyze the results before the report was written.)"
+    "example": "Teamet fick analysera resultaten innan rapporten skrevs."
   },
   {
     "title": "strukturera",
-    "definition": "to structure",
+    "definition": "att ge något en tydlig och logisk ordning",
     "difficulty": "medel",
-    "example": "Vi behöver strukturera presentationen bättre. (We need to structure the presentation better.)"
+    "example": "Vi behöver strukturera presentationen bättre."
   },
   {
     "title": "koordinera",
-    "definition": "to coordinate",
+    "definition": "att se till att olika delar eller personer samverkar utan att krocka",
     "difficulty": "svår",
-    "example": "Hon fick i uppdrag att koordinera de olika avdelningarna. (She was tasked with coordinating the different departments.)"
+    "example": "Hon fick i uppdrag att koordinera de olika avdelningarna."
   },
   {
     "title": "verifiera",
-    "definition": "to verify",
+    "definition": "att kontrollera att något faktiskt stämmer eller är korrekt",
     "difficulty": "medel",
-    "example": "Vi måste verifiera uppgifterna innan vi publicerar dem. (We must verify the information before we publish it.)"
+    "example": "Vi måste verifiera uppgifterna innan vi publicerar dem."
   },
   {
     "title": "konstatera",
-    "definition": "to ascertain / state as fact",
+    "definition": "att efter undersökning slå fast något som ett faktum",
     "difficulty": "svår",
-    "example": "Utredningen kunde konstatera att inget brott begåtts. (The investigation could ascertain that no crime had been committed.)"
+    "example": "Utredningen kunde konstatera att inget brott begåtts."
   },
   {
     "title": "förvalta",
-    "definition": "to administer / manage",
+    "definition": "att sköta och ta hand om något över tid, t.ex. tillgångar eller egendom",
     "difficulty": "svår",
-    "example": "Stiftelsen förvaltar fonden enligt fastställda regler. (The foundation administers the fund according to established rules.)"
+    "example": "Stiftelsen förvaltar fonden enligt fastställda regler."
   },
   {
     "title": "inrätta",
-    "definition": "to establish / set up",
+    "definition": "att formellt skapa eller starta något, t.ex. en ny avdelning eller funktion",
     "difficulty": "svår",
-    "example": "Myndigheten beslutade att inrätta en ny avdelning. (The authority decided to establish a new department.)"
+    "example": "Myndigheten beslutade att inrätta en ny avdelning."
   },
   {
     "title": "fastställa",
-    "definition": "to establish / determine",
+    "definition": "att formellt bestämma och göra något definitivt och bindande",
     "difficulty": "medel",
-    "example": "Styrelsen ska fastställa budgeten vid nästa möte. (The board will determine the budget at the next meeting.)"
+    "example": "Styrelsen ska fastställa budgeten vid nästa möte."
   },
   {
     "title": "reglera",
-    "definition": "to regulate",
+    "definition": "att styra något genom regler så att det hålls inom bestämda gränser",
     "difficulty": "medel",
-    "example": "Lagen reglerar hur uppgifterna får användas. (The law regulates how the information may be used.)"
+    "example": "Lagen reglerar hur uppgifterna får användas."
   },
   {
     "title": "upphäva",
-    "definition": "to repeal / annul",
+    "definition": "att formellt ta bort giltigheten av ett beslut eller en lag",
     "difficulty": "svår",
-    "example": "Domstolen valde att upphäva det tidigare beslutet. (The court chose to repeal the earlier decision.)"
+    "example": "Domstolen valde att upphäva det tidigare beslutet."
   },
   {
     "title": "åsidosätta",
-    "definition": "to disregard / override",
+    "definition": "att medvetet bortse från en regel, ett intresse eller en hänsyn",
     "difficulty": "svår",
-    "example": "Man kan inte åsidosätta lagen bara för att det är opraktiskt. (You cannot disregard the law just because it's impractical.)"
+    "example": "Man kan inte åsidosätta lagen bara för att det är opraktiskt."
   },
   {
     "title": "samordna",
-    "definition": "to coordinate",
+    "definition": "att få flera parter att arbeta i samma riktning utan dubbelarbete",
     "difficulty": "svår",
-    "example": "De två myndigheterna behövde samordna sina insatser. (The two authorities needed to coordinate their efforts.)"
+    "example": "De två myndigheterna behövde samordna sina insatser."
   },
   {
     "title": "förvaltningsorgan",
-    "definition": "administrative body",
+    "definition": "en myndighet eller enhet som sköter administrativa uppgifter",
     "difficulty": "svår",
-    "example": "Beslutet fattades av ett särskilt förvaltningsorgan. (The decision was made by a special administrative body.)"
+    "example": "Beslutet fattades av ett särskilt förvaltningsorgan."
   },
   {
     "title": "befattningsbeskrivning",
-    "definition": "job description",
+    "definition": "ett dokument som anger en anställds ansvarsområden och uppgifter",
     "difficulty": "svår",
-    "example": "Hennes nya befattningsbeskrivning innehåller fler ansvarsområden. (Her new job description includes more areas of responsibility.)"
+    "example": "Hennes nya befattningsbeskrivning innehåller fler ansvarsområden."
   },
   {
     "title": "uppsägningsgrund",
-    "definition": "grounds for termination",
+    "definition": "den juridiska anledningen till att en anställning avslutas",
     "difficulty": "svår",
-    "example": "Arbetsgivaren måste ange en saklig uppsägningsgrund. (The employer must state a just cause for termination.)"
+    "example": "Arbetsgivaren måste ange en saklig uppsägningsgrund."
   },
   {
     "title": "kollektivavtal",
-    "definition": "collective agreement",
+    "definition": "ett avtal mellan fack och arbetsgivare som reglerar löner och anställningsvillkor",
     "difficulty": "medel",
-    "example": "Lönerna regleras av kollektivavtalet inom branschen. (Wages are regulated by the collective agreement in the industry.)"
+    "example": "Lönerna regleras av kollektivavtalet inom branschen."
   },
   {
     "title": "årsredovisning",
-    "definition": "annual report",
+    "definition": "ett bolags officiella, årliga sammanställning av ekonomi och verksamhet",
     "difficulty": "medel",
-    "example": "Bolagets årsredovisning publiceras varje vår. (The company's annual report is published every spring.)"
+    "example": "Bolagets årsredovisning publiceras varje vår."
   },
   {
     "title": "kassaflöde",
-    "definition": "cash flow",
+    "definition": "de pengar som faktiskt strömmar in och ut ur en verksamhet under en period",
     "difficulty": "svår",
-    "example": "Företaget hade ett negativt kassaflöde under kvartalet. (The company had negative cash flow during the quarter.)"
+    "example": "Företaget hade ett negativt kassaflöde under kvartalet."
   },
   {
     "title": "lönsamhet",
-    "definition": "profitability",
+    "definition": "hur mycket vinst en verksamhet genererar i förhållande till sina kostnader",
     "difficulty": "medel",
-    "example": "Lönsamheten förbättrades efter omorganisationen. (Profitability improved after the reorganization.)"
+    "example": "Lönsamheten förbättrades efter omorganisationen."
   },
   {
     "title": "aktiekapital",
-    "definition": "share capital",
+    "definition": "det kapital ett bolag har samlat in genom att ge ut aktier till ägare",
     "difficulty": "svår",
-    "example": "Bolaget höjde sitt aktiekapital genom en nyemission. (The company increased its share capital through a new share issue.)"
+    "example": "Bolaget höjde sitt aktiekapital genom en nyemission."
   },
   {
     "title": "intressekonflikt",
-    "definition": "conflict of interest",
+    "definition": "en situation där en persons olika roller eller intressen strider mot varandra",
     "difficulty": "svår",
-    "example": "Han avstod från att rösta på grund av en intressekonflikt. (He abstained from voting due to a conflict of interest.)"
+    "example": "Han avstod från att rösta på grund av en intressekonflikt."
   },
   {
     "title": "sekretessavtal",
-    "definition": "non-disclosure agreement",
+    "definition": "ett avtal som förbjuder en part att dela viss information vidare till andra",
     "difficulty": "medel",
-    "example": "Alla anställda fick skriva på ett sekretessavtal. (All employees had to sign a non-disclosure agreement.)"
+    "example": "Alla anställda fick skriva på ett sekretessavtal."
   },
   {
     "title": "upphandlingsförfarande",
-    "definition": "procurement procedure",
+    "definition": "den formella process en myndighet följer vid inköp av varor eller tjänster",
     "difficulty": "svår",
-    "example": "Kommunen följde ett strikt upphandlingsförfarande. (The municipality followed a strict procurement procedure.)"
+    "example": "Kommunen följde ett strikt upphandlingsförfarande."
   },
   {
     "title": "kvalitetssäkring",
-    "definition": "quality assurance",
+    "definition": "systematiskt arbete för att garantera att något håller en bestämd standard",
     "difficulty": "medel",
-    "example": "Avdelningen ansvarar för kvalitetssäkring av produkterna. (The department is responsible for quality assurance of the products.)"
+    "example": "Avdelningen ansvarar för kvalitetssäkring av produkterna."
   },
   {
     "title": "standardavvikelse",
-    "definition": "standard deviation",
+    "definition": "ett mått på hur mycket enskilda värden i en mätning sprider sig kring medelvärdet",
     "difficulty": "svår",
-    "example": "Forskarna räknade ut standardavvikelsen för mätningarna. (The researchers calculated the standard deviation of the measurements.)"
+    "example": "Forskarna räknade ut standardavvikelsen för mätningarna."
   },
   {
     "title": "hypotesprövning",
-    "definition": "hypothesis testing",
+    "definition": "en statistisk metod för att testa om ett antagande håller vid närmare granskning",
     "difficulty": "svår",
-    "example": "Studien bygger på klassisk hypotesprövning. (The study is based on classical hypothesis testing.)"
+    "example": "Studien bygger på klassisk hypotesprövning."
   },
   {
     "title": "litteraturöversikt",
-    "definition": "literature review",
+    "definition": "en sammanställning av tidigare forskning och publikationer inom ett ämne",
     "difficulty": "svår",
-    "example": "Avhandlingen inleds med en grundlig litteraturöversikt. (The thesis opens with a thorough literature review.)"
+    "example": "Avhandlingen inleds med en grundlig litteraturöversikt."
   },
   {
     "title": "forskningsfråga",
-    "definition": "research question",
+    "definition": "den specifika fråga en vetenskaplig studie försöker besvara",
     "difficulty": "svår",
-    "example": "Den centrala forskningsfrågan formulerades om flera gånger. (The central research question was reformulated several times.)"
+    "example": "Den centrala forskningsfrågan formulerades om flera gånger."
   },
   {
     "title": "kontrollgrupp",
-    "definition": "control group",
+    "definition": "den grupp i ett experiment som inte får den behandling som ska testas",
     "difficulty": "medel",
-    "example": "Hälften av deltagarna placerades i en kontrollgrupp. (Half of the participants were placed in a control group.)"
+    "example": "Hälften av deltagarna placerades i en kontrollgrupp."
   },
   {
     "title": "kausalitet",
-    "definition": "causality",
+    "definition": "ett orsak-verkan-samband mellan två företeelser, till skillnad från bara korrelation",
     "difficulty": "svår",
-    "example": "Studien kunde inte fastställa någon tydlig kausalitet. (The study could not establish any clear causality.)"
+    "example": "Studien kunde inte fastställa någon tydlig kausalitet."
   },
   {
     "title": "terminologi",
-    "definition": "terminology",
+    "definition": "de specifika fackord och begrepp som används inom ett visst område",
     "difficulty": "medel",
-    "example": "Branschen har sin egen specialiserade terminologi. (The industry has its own specialized terminology.)"
+    "example": "Branschen har sin egen specialiserade terminologi."
   },
   {
     "title": "taxonomi",
-    "definition": "taxonomy",
+    "definition": "ett system för att klassificera och ordna saker i kategorier och underkategorier",
     "difficulty": "svår",
-    "example": "Forskarna föreslog en ny taxonomi för arterna. (The researchers proposed a new taxonomy for the species.)"
+    "example": "Forskarna föreslog en ny taxonomi för arterna."
   },
   {
     "title": "algoritm",
-    "definition": "algorithm",
+    "definition": "en steg-för-steg-metod för att lösa ett problem eller utföra en beräkning",
     "difficulty": "medel",
-    "example": "Programmet använder en avancerad algoritm för sökningen. (The program uses an advanced algorithm for the search.)"
+    "example": "Programmet använder en avancerad algoritm för sökningen."
   },
   {
     "title": "kryptering",
-    "definition": "encryption",
+    "definition": "att omvandla information till en kod som bara behöriga kan tolka tillbaka",
     "difficulty": "medel",
-    "example": "All data skyddas med stark kryptering. (All data is protected with strong encryption.)"
+    "example": "All data skyddas med stark kryptering."
   },
   {
     "title": "autentisering",
-    "definition": "authentication",
+    "definition": "processen att bekräfta att en person eller ett system verkligen är vad det utger sig för att vara",
     "difficulty": "medel",
-    "example": "Systemet kräver tvåstegsautentisering vid inloggning. (The system requires two-factor authentication at login.)"
+    "example": "Systemet kräver tvåstegsautentisering vid inloggning."
   },
   {
     "title": "skalbarhet",
-    "definition": "scalability",
+    "definition": "förmågan hos ett system att hantera en växande mängd arbete utan att kollapsa",
     "difficulty": "svår",
-    "example": "Plattformens skalbarhet testades inför lanseringen. (The platform's scalability was tested before the launch.)"
+    "example": "Plattformens skalbarhet testades inför lanseringen."
   },
   {
     "title": "marknadsandel",
-    "definition": "market share",
+    "definition": "den andel av en marknads totala försäljning som ett specifikt företag har",
     "difficulty": "medel",
-    "example": "Företaget ökade sin marknadsandel betydligt förra året. (The company significantly increased its market share last year.)"
+    "example": "Företaget ökade sin marknadsandel betydligt förra året."
   },
   {
     "title": "affärsmodell",
-    "definition": "business model",
+    "definition": "det sätt ett företag är uppbyggt på för att skapa värde och tjäna pengar",
     "difficulty": "medel",
-    "example": "Startupens affärsmodell bygger på prenumerationer. (The startup's business model is based on subscriptions.)"
+    "example": "Startupens affärsmodell bygger på prenumerationer."
   },
   {
     "title": "leverantörskedja",
-    "definition": "supply chain",
+    "definition": "hela kedjan av led, från råvara till färdig produkt hos slutkunden",
     "difficulty": "svår",
-    "example": "Pandemin satte press på hela leverantörskedjan. (The pandemic put pressure on the entire supply chain.)"
+    "example": "Pandemin satte press på hela leverantörskedjan."
   },
   {
     "title": "konjunktur",
-    "definition": "economic cycle",
+    "definition": "det allmänna ekonomiska läget i samhället, om det går upp eller ner",
     "difficulty": "svår",
-    "example": "En svag konjunktur påverkade försäljningen negativt. (A weak economic cycle negatively affected sales.)"
+    "example": "En svag konjunktur påverkade försäljningen negativt."
   },
   {
     "title": "korruption",
-    "definition": "corruption",
+    "definition": "missbruk av en maktposition eller ett förtroende för personlig vinning",
     "difficulty": "medel",
-    "example": "Rapporten avslöjade omfattande korruption inom myndigheten. (The report revealed extensive corruption within the agency.)"
+    "example": "Rapporten avslöjade omfattande korruption inom myndigheten."
   },
   {
     "title": "skadestånd",
-    "definition": "damages (legal)",
+    "definition": "pengar som en part döms att betala för att kompensera en skada man har orsakat",
     "difficulty": "medel",
-    "example": "Företaget dömdes att betala skadestånd till kunden. (The company was ordered to pay damages to the customer.)"
+    "example": "Företaget dömdes att betala skadestånd till kunden."
   },
   {
     "title": "rättspraxis",
-    "definition": "case law",
+    "definition": "tidigare domar som används som vägledning för hur liknande fall ska bedömas",
     "difficulty": "svår",
-    "example": "Domen följer etablerad rättspraxis på området. (The ruling follows established case law in the field.)"
+    "example": "Domen följer etablerad rättspraxis på området."
   },
   {
     "title": "förundersökning",
-    "definition": "preliminary investigation",
+    "definition": "polisens och åklagarens utredning innan man avgör om åtal ska väckas",
     "difficulty": "svår",
-    "example": "Polisen inledde en förundersökning efter anmälan. (The police opened a preliminary investigation after the report.)"
+    "example": "Polisen inledde en förundersökning efter anmälan."
   },
   {
     "title": "symptom",
-    "definition": "symptom",
+    "definition": "ett tecken på att kroppen eller ett system har ett underliggande problem",
     "difficulty": "lätt",
-    "example": "Patienten uppvisade flera oroande symptom. (The patient showed several worrying symptoms.)"
+    "example": "Patienten uppvisade flera oroande symptom."
   },
   {
     "title": "diagnos",
-    "definition": "diagnosis",
+    "definition": "en läkares fastställande av vilken sjukdom eller vilket tillstånd en patient har",
     "difficulty": "lätt",
-    "example": "Läkaren ställde diagnosen efter flera prover. (The doctor made the diagnosis after several tests.)"
+    "example": "Läkaren ställde diagnosen efter flera prover."
   },
   {
     "title": "rehabilitering",
-    "definition": "rehabilitation",
+    "definition": "processen att gradvis återfå funktion eller förmåga efter sjukdom eller skada",
     "difficulty": "medel",
-    "example": "Rehabiliteringen tog flera månader efter olyckan. (The rehabilitation took several months after the accident.)"
+    "example": "Rehabiliteringen tog flera månader efter olyckan."
   },
   {
     "title": "immunsvar",
-    "definition": "immune response",
+    "definition": "kroppens reaktion för att bekämpa ett främmande ämne eller en infektion",
     "difficulty": "svår",
-    "example": "Vaccinet stimulerar kroppens immunsvar. (The vaccine stimulates the body's immune response.)"
+    "example": "Vaccinet stimulerar kroppens immunsvar."
   },
   {
     "title": "ansvarsfri",
-    "definition": "exempt from liability",
+    "definition": "inte juridiskt skyldig att stå för skador eller fel som uppstår",
     "difficulty": "svår",
-    "example": "Leverantören gjorde sig ansvarsfri genom avtalet. (The supplier exempted itself from liability through the contract.)"
+    "example": "Leverantören gjorde sig ansvarsfri genom avtalet."
   },
   {
     "title": "verkställbar",
-    "definition": "enforceable",
+    "definition": "kan faktiskt genomdrivas eller sättas i kraft, t.ex. en dom",
     "difficulty": "svår",
-    "example": "Domen blev verkställbar så snart den vunnit laga kraft. (The ruling became enforceable as soon as it became legally final.)"
+    "example": "Domen blev verkställbar så snart den vunnit laga kraft."
   },
   {
     "title": "retroaktiv",
-    "definition": "retroactive",
+    "definition": "gäller även för tid före det att beslutet eller lagen fattades",
     "difficulty": "svår",
-    "example": "Lagändringen gjordes retroaktiv från årets början. (The legal amendment was made retroactive from the start of the year.)"
+    "example": "Lagändringen gjordes retroaktiv från årets början."
   },
   {
     "title": "interimistisk",
-    "definition": "interim / temporary (legal)",
+    "definition": "tillfällig och gäller endast fram till ett slutgiltigt beslut fattas",
     "difficulty": "svår",
-    "example": "Domstolen fattade ett interimistiskt beslut i väntan på dom. (The court made an interim decision pending the verdict.)"
+    "example": "Domstolen fattade ett interimistiskt beslut i väntan på dom."
   },
   {
     "title": "subjektiv",
-    "definition": "subjective",
+    "definition": "färgad av personliga åsikter eller känslor snarare än objektiva fakta",
     "difficulty": "medel",
-    "example": "Bedömningen ansågs alltför subjektiv av kritikerna. (The assessment was considered too subjective by the critics.)"
+    "example": "Bedömningen ansågs alltför subjektiv av kritikerna."
   },
   {
     "title": "objektiv",
-    "definition": "objective",
+    "definition": "opåverkad av personliga känslor eller åsikter, baserad enbart på fakta",
     "difficulty": "medel",
-    "example": "Domaren måste vara helt objektiv i sin bedömning. (The judge must be completely objective in the assessment.)"
+    "example": "Domaren måste vara helt objektiv i sin bedömning."
   },
   {
     "title": "transparent",
-    "definition": "transparent",
+    "definition": "öppen och tydlig på ett sätt som gör att alla inblandade kan se hur något går till",
     "difficulty": "medel",
-    "example": "Processen ska vara transparent för alla inblandade parter. (The process should be transparent to all parties involved.)"
+    "example": "Processen ska vara transparent för alla inblandade parter."
   },
   {
     "title": "evidensbaserad",
-    "definition": "evidence-based",
+    "definition": "grundad på vetenskapliga bevis snarare än antaganden eller tradition",
     "difficulty": "svår",
-    "example": "Behandlingen bygger på evidensbaserad forskning. (The treatment is based on evidence-based research.)"
+    "example": "Behandlingen bygger på evidensbaserad forskning."
   },
   {
     "title": "generaliserbar",
-    "definition": "generalizable",
+    "definition": "kan med rimlig säkerhet överföras och gälla även andra liknande situationer",
     "difficulty": "svår",
-    "example": "Resultaten är inte direkt generaliserbara till andra grupper. (The results are not directly generalizable to other groups.)"
+    "example": "Resultaten är inte direkt generaliserbara till andra grupper."
   },
   {
     "title": "replikerbar",
-    "definition": "replicable",
+    "definition": "kan göras om av andra under samma villkor och ge samma resultat",
     "difficulty": "svår",
-    "example": "Studien designades för att vara replikerbar av andra forskare. (The study was designed to be replicable by other researchers.)"
+    "example": "Studien designades för att vara replikerbar av andra forskare."
   },
   {
     "title": "kostnadseffektiv",
-    "definition": "cost-effective",
+    "definition": "ger ett bra resultat i förhållande till vad det faktiskt kostar",
     "difficulty": "medel",
-    "example": "Den nya metoden visade sig vara mer kostnadseffektiv. (The new method proved to be more cost-effective.)"
+    "example": "Den nya metoden visade sig vara mer kostnadseffektiv."
   },
   {
     "title": "decentraliserad",
-    "definition": "decentralized",
+    "definition": "beslut och makt är utspridda över flera delar istället för samlade på ett ställe",
     "difficulty": "svår",
-    "example": "Organisationen gick över till en mer decentraliserad struktur. (The organization moved to a more decentralized structure.)"
+    "example": "Organisationen gick över till en mer decentraliserad struktur."
   },
   {
     "title": "proprietär",
-    "definition": "proprietary",
+    "definition": "ägs och kontrolleras helt av ett enskilt företag, inte fritt tillgänglig för alla",
     "difficulty": "svår",
-    "example": "Programvaran bygger på en proprietär teknik. (The software is built on proprietary technology.)"
+    "example": "Programvaran bygger på en proprietär teknik."
   },
   {
     "title": "i enlighet med",
-    "definition": "in accordance with",
+    "definition": "i överensstämmelse med en regel, ett avtal eller ett dokument",
     "difficulty": "svår",
-    "example": "Beslutet fattades i enlighet med gällande regler. (The decision was made in accordance with applicable rules.)"
+    "example": "Beslutet fattades i enlighet med gällande regler."
   },
   {
     "title": "med hänsyn till",
-    "definition": "with regard to",
+    "definition": "med beaktande av en specifik faktor när ett beslut fattas",
     "difficulty": "svår",
-    "example": "Bedömningen gjordes med hänsyn till samtliga omständigheter. (The assessment was made with regard to all circumstances.)"
+    "example": "Bedömningen gjordes med hänsyn till samtliga omständigheter."
   },
   {
     "title": "till följd av",
-    "definition": "as a result of",
+    "definition": "som ett direkt resultat av en tidigare händelse eller orsak",
     "difficulty": "medel",
-    "example": "Förseningen uppstod till följd av ett tekniskt fel. (The delay occurred as a result of a technical error.)"
+    "example": "Förseningen uppstod till följd av ett tekniskt fel."
   },
   {
     "title": "mot bakgrund av",
-    "definition": "against the background of",
+    "definition": "utifrån en viss situation eller information som grund för ett beslut",
     "difficulty": "svår",
-    "example": "Mot bakgrund av de nya siffrorna reviderades prognosen. (Against the background of the new figures, the forecast was revised.)"
+    "example": "Mot bakgrund av de nya siffrorna reviderades prognosen."
   },
   {
     "title": "i förekommande fall",
-    "definition": "where applicable",
+    "definition": "om och när en specifik situation faktiskt skulle uppstå",
     "difficulty": "svår",
-    "example": "Tillstånd krävs i förekommande fall enligt lagen. (A permit is required where applicable under the law.)"
+    "example": "Tillstånd krävs i förekommande fall enligt lagen."
   },
   {
     "title": "utan dröjsmål",
-    "definition": "without delay",
+    "definition": "omedelbart, utan någon onödig tidsutdräkt",
     "difficulty": "svår",
-    "example": "Felet ska åtgärdas utan dröjsmål enligt avtalet. (The fault must be remedied without delay according to the contract.)"
+    "example": "Felet ska åtgärdas utan dröjsmål enligt avtalet."
   },
   {
     "title": "efter bästa förmåga",
-    "definition": "to the best of one's ability",
+    "definition": "så väl som man förmår, givet sina egna resurser eller kunskaper",
     "difficulty": "svår",
-    "example": "Konsulten ska utföra uppdraget efter bästa förmåga. (The consultant shall perform the assignment to the best of their ability.)"
+    "example": "Konsulten ska utföra uppdraget efter bästa förmåga."
   },
   {
     "title": "opartisk",
-    "definition": "impartial",
+    "definition": "tar inte parti för någon sida, behandlar alla inblandade lika",
     "difficulty": "medel",
-    "example": "Medlaren måste förbli helt opartisk under förhandlingen. (The mediator must remain completely impartial during the negotiation.)"
+    "example": "Medlaren måste förbli helt opartisk under förhandlingen."
   },
   {
     "title": "tvistemål",
-    "definition": "civil dispute (legal case)",
+    "definition": "ett domstolsärende mellan privatpersoner eller företag, till skillnad från ett brottmål",
     "difficulty": "svår",
-    "example": "Tvistemålet avgjordes till slut utanför rätten. (The civil dispute was eventually settled out of court.)"
+    "example": "Tvistemålet avgjordes till slut utanför rätten."
   },
   {
     "title": "förlikning",
-    "definition": "settlement",
+    "definition": "en överenskommelse där parter i en tvist kommer överens utan att en dom behövs",
     "difficulty": "svår",
-    "example": "Parterna nådde en förlikning innan rättegången inleddes. (The parties reached a settlement before the trial began.)"
+    "example": "Parterna nådde en förlikning innan rättegången inleddes."
   },
   {
     "title": "jurisdiktion",
-    "definition": "jurisdiction",
+    "definition": "det område eller den befogenhet inom vilket en domstol eller myndighet har rätt att agera",
     "difficulty": "svår",
-    "example": "Domstolen saknade jurisdiktion i det internationella fallet. (The court lacked jurisdiction in the international case.)"
+    "example": "Domstolen saknade jurisdiktion i det internationella fallet."
   },
   {
     "title": "bevisbörda",
-    "definition": "burden of proof",
+    "definition": "skyldigheten att lägga fram bevis för det man påstår i en rättslig tvist",
     "difficulty": "svår",
-    "example": "Bevisbördan ligger på den som påstår avtalsbrottet. (The burden of proof lies with the party alleging the breach.)"
+    "example": "Bevisbördan ligger på den som påstår avtalsbrottet."
   },
   {
     "title": "vederlag",
-    "definition": "consideration / compensation (legal)",
+    "definition": "den motprestation eller ersättning som ges i utbyte mot något i ett avtal",
     "difficulty": "svår",
-    "example": "Avtalet saknade ett tydligt vederlag för tjänsten. (The contract lacked clear consideration for the service.)"
+    "example": "Avtalet saknade ett tydligt vederlag för tjänsten."
   },
   {
     "title": "fullmakt",
-    "definition": "power of attorney",
+    "definition": "en handling som ger en person rätt att agera å en annan persons vägnar",
     "difficulty": "medel",
-    "example": "Hon fick fullmakt att teckna avtal å företagets vägnar. (She was given power of attorney to sign agreements on the company's behalf.)"
+    "example": "Hon fick fullmakt att teckna avtal å företagets vägnar."
   },
   {
     "title": "habilitet",
-    "definition": "impartiality / fitness to judge",
+    "definition": "en persons lämplighet och opartiskhet att fatta beslut i ett specifikt ärende",
     "difficulty": "svår",
-    "example": "Domarens habilitet ifrågasattes av försvaret. (The judge's impartiality was questioned by the defense.)"
+    "example": "Domarens habilitet ifrågasattes av försvaret."
   },
   {
     "title": "åklagare",
-    "definition": "prosecutor",
+    "definition": "den jurist som för statens talan och beslutar om åtal ska väckas i brottmål",
     "difficulty": "medel",
-    "example": "Åklagaren lade fram ny bevisning under rättegången. (The prosecutor presented new evidence during the trial.)"
+    "example": "Åklagaren lade fram ny bevisning under rättegången."
   },
   {
     "title": "uppskov",
-    "definition": "postponement / deferral",
+    "definition": "ett beviljat dröjsmål med att fullgöra något, t.ex. en betalning eller skyldighet",
     "difficulty": "svår",
-    "example": "Hon begärde uppskov med betalningen till nästa kvartal. (She requested a deferral of payment until next quarter.)"
+    "example": "Hon begärde uppskov med betalningen till nästa kvartal."
   },
   {
     "title": "disposition",
-    "definition": "discretion / arrangement",
+    "definition": "rätten att fritt bestämma och förfoga över något, t.ex. pengar eller egendom",
     "difficulty": "svår",
-    "example": "Beloppet stod till företagets fria disposition. (The amount was at the company's free disposal.)"
+    "example": "Beloppet stod till företagets fria disposition."
   },
   {
     "title": "avveckla",
-    "definition": "to wind down / phase out",
+    "definition": "att gradvis och planerat avsluta en verksamhet eller funktion",
     "difficulty": "medel",
-    "example": "Bolaget beslutade att avveckla den olönsamma divisionen. (The company decided to wind down the unprofitable division.)"
+    "example": "Bolaget beslutade att avveckla den olönsamma divisionen."
   },
   {
     "title": "omstrukturering",
-    "definition": "restructuring",
+    "definition": "en större, genomgripande förändring av hur en organisation är uppbyggd",
     "difficulty": "medel",
-    "example": "Omstruktureringen påverkade flera avdelningar negativt. (The restructuring negatively affected several departments.)"
+    "example": "Omstruktureringen påverkade flera avdelningar negativt."
   },
   {
     "title": "förvärva",
-    "definition": "to acquire",
+    "definition": "att skaffa sig ägande över något, ofta genom köp",
     "difficulty": "medel",
-    "example": "Koncernen valde att förvärva sin största konkurrent. (The group chose to acquire its largest competitor.)"
+    "example": "Koncernen valde att förvärva sin största konkurrent."
   },
   {
     "title": "avyttra",
-    "definition": "to divest / sell off",
+    "definition": "att sälja av en tillgång man äger",
     "difficulty": "svår",
-    "example": "Styrelsen beslutade att avyttra fastighetsbeståndet. (The board decided to divest the property portfolio.)"
+    "example": "Styrelsen beslutade att avyttra fastighetsbeståndet."
   },
   {
     "title": "soliditet",
-    "definition": "solvency / financial strength",
+    "definition": "ett mått på hur stor andel av ett företags tillgångar som finansieras med eget kapital",
     "difficulty": "svår",
-    "example": "Bankens soliditet granskades noggrant inför lånet. (The bank's solvency was carefully examined before the loan.)"
+    "example": "Bankens soliditet granskades noggrant inför lånet."
   },
   {
     "title": "likviditet",
-    "definition": "liquidity",
+    "definition": "hur snabbt en tillgång kan omvandlas till kontanter för att betala kortsiktiga skulder",
     "difficulty": "medel",
-    "example": "Företaget fick problem med likviditeten under lågsäsongen. (The company had liquidity problems during the low season.)"
+    "example": "Företaget fick problem med likviditeten under lågsäsongen."
   },
   {
     "title": "amortering",
-    "definition": "loan repayment / amortization",
+    "definition": "regelbunden, delvis återbetalning av en lånesumma över tid",
     "difficulty": "medel",
-    "example": "Amorteringen sänktes tillfälligt efter omförhandlingen. (The loan repayment was temporarily lowered after the renegotiation.)"
+    "example": "Amorteringen sänktes tillfälligt efter omförhandlingen."
   },
   {
     "title": "borgenär",
-    "definition": "creditor",
+    "definition": "den part som har en fordran och därmed rätt att kräva betalning",
     "difficulty": "svår",
-    "example": "Borgenärerna krävde besked om bolagets framtid. (The creditors demanded clarity about the company's future.)"
+    "example": "Borgenärerna krävde besked om bolagets framtid."
   },
   {
     "title": "gäldenär",
-    "definition": "debtor",
+    "definition": "den part som är skyldig pengar till en borgenär",
     "difficulty": "svår",
-    "example": "Gäldenären misslyckades med att betala i tid. (The debtor failed to pay on time.)"
+    "example": "Gäldenären misslyckades med att betala i tid."
   },
   {
     "title": "konkurs",
-    "definition": "bankruptcy",
+    "definition": "ett juridiskt förfarande som inleds när ett företag inte längre kan betala sina skulder",
     "difficulty": "medel",
-    "example": "Företaget försattes i konkurs efter flera förlustår. (The company was declared bankrupt after several years of losses.)"
+    "example": "Företaget försattes i konkurs efter flera förlustår."
   },
   {
     "title": "rekonstruktion",
-    "definition": "corporate reorganization",
+    "definition": "ett formellt förfarande för att rädda ett företag med ekonomiska problem utan konkurs",
     "difficulty": "svår",
-    "example": "Bolaget genomgick en rekonstruktion för att undvika konkurs. (The company underwent a reorganization to avoid bankruptcy.)"
+    "example": "Bolaget genomgick en rekonstruktion för att undvika konkurs."
   },
   {
     "title": "styrelseledamot",
-    "definition": "board member",
+    "definition": "en person som är vald medlem i ett bolags styrelse",
     "difficulty": "medel",
-    "example": "En ny styrelseledamot valdes in på årsstämman. (A new board member was elected at the annual general meeting.)"
+    "example": "En ny styrelseledamot valdes in på årsstämman."
   },
   {
     "title": "bolagsordning",
-    "definition": "articles of association",
+    "definition": "bolagets grunddokument som reglerar dess syfte, struktur och regler",
     "difficulty": "svår",
-    "example": "Ändringen krävde en uppdatering av bolagsordningen. (The change required an update to the articles of association.)"
+    "example": "Ändringen krävde en uppdatering av bolagsordningen."
   },
   {
     "title": "revisionsberättelse",
-    "definition": "audit report",
+    "definition": "revisorns formella rapport om granskningen av bolagets bokföring och ekonomi",
     "difficulty": "svår",
-    "example": "Revisionsberättelsen innehöll inga anmärkningar i år. (The audit report contained no remarks this year.)"
+    "example": "Revisionsberättelsen innehöll inga anmärkningar i år."
   },
   {
     "title": "befogenhet",
-    "definition": "authority / mandate",
+    "definition": "den formella rätten att fatta ett visst beslut inom sin roll",
     "difficulty": "svår",
-    "example": "Chefen saknade befogenhet att fatta beslutet ensam. (The manager lacked the authority to make the decision alone.)"
+    "example": "Chefen saknade befogenhet att fatta beslutet ensam."
   },
   {
     "title": "delegera",
-    "definition": "to delegate",
+    "definition": "att överlåta en uppgift eller beslutsrätt till någon annan",
     "difficulty": "medel",
-    "example": "Hon valde att delegera uppgiften till sin assistent. (She chose to delegate the task to her assistant.)"
+    "example": "Hon valde att delegera uppgiften till sin assistent."
   },
   {
     "title": "eskalera",
-    "definition": "to escalate",
+    "definition": "att en situation snabbt blir allvarligare eller mer intensiv",
     "difficulty": "medel",
-    "example": "Konflikten eskalerade snabbt efter mejlet. (The conflict escalated quickly after the email.)"
+    "example": "Konflikten eskalerade snabbt efter mejlet."
   },
   {
     "title": "mitigera",
-    "definition": "to mitigate",
+    "definition": "att vidta åtgärder för att minska de negativa effekterna av en risk",
     "difficulty": "svår",
-    "example": "Åtgärderna syftade till att mitigera riskerna i projektet. (The measures aimed to mitigate the risks in the project.)"
+    "example": "Åtgärderna syftade till att mitigera riskerna i projektet."
   },
   {
     "title": "konsolidera",
-    "definition": "to consolidate",
+    "definition": "att slå samman flera mindre delar till en starkare, mer enhetlig helhet",
     "difficulty": "svår",
-    "example": "De två avdelningarna konsoliderades till en enhet. (The two departments were consolidated into one unit.)"
+    "example": "De två avdelningarna konsoliderades till en enhet."
   },
   {
     "title": "outsourca",
-    "definition": "to outsource",
+    "definition": "att lägga ut en uppgift eller funktion på ett externt företag istället för att sköta den själv",
     "difficulty": "medel",
-    "example": "Företaget valde att outsourca hela kundtjänsten. (The company chose to outsource the entire customer service.)"
+    "example": "Företaget valde att outsourca hela kundtjänsten."
   },
   {
     "title": "benchmarka",
-    "definition": "to benchmark",
+    "definition": "att systematiskt jämföra sina egna resultat mot en etablerad standard eller konkurrent",
     "difficulty": "svår",
-    "example": "Teamet benchmarkade sina resultat mot branschstandarden. (The team benchmarked their results against the industry standard.)"
+    "example": "Teamet benchmarkade sina resultat mot branschstandarden."
   },
   {
     "title": "extrapolera",
-    "definition": "to extrapolate",
+    "definition": "att dra slutsatser om okänd, framtida data utifrån redan kända mönster",
     "difficulty": "svår",
-    "example": "Det är riskabelt att extrapolera från så få datapunkter. (It is risky to extrapolate from so few data points.)"
+    "example": "Det är riskabelt att extrapolera från så få datapunkter."
   },
   {
     "title": "paradigm",
-    "definition": "paradigm",
+    "definition": "ett rådande, allmänt accepterat sätt att tänka eller förstå ett område",
     "difficulty": "svår",
-    "example": "Upptäckten innebar ett helt nytt paradigm inom fysiken. (The discovery represented an entirely new paradigm in physics.)"
+    "example": "Upptäckten innebar ett helt nytt paradigm inom fysiken."
   },
   {
     "title": "dikotomi",
-    "definition": "dichotomy",
+    "definition": "en uppdelning i två kategorier som ofta framställs som varandras motsatser",
     "difficulty": "svår",
-    "example": "Författaren ifrågasatte den klassiska dikotomin mellan kropp och själ. (The author questioned the classic dichotomy between body and mind.)"
+    "example": "Författaren ifrågasatte den klassiska dikotomin mellan kropp och själ."
   },
   {
     "title": "axiom",
-    "definition": "axiom",
+    "definition": "ett grundpåstående som accepteras som sant utan att behöva bevisas",
     "difficulty": "svår",
-    "example": "Beviset utgår från ett enkelt matematiskt axiom. (The proof starts from a simple mathematical axiom.)"
+    "example": "Beviset utgår från ett enkelt matematiskt axiom."
   },
   {
     "title": "empiri",
-    "definition": "empirical evidence",
+    "definition": "kunskap som bygger på observation och erfarenhet snarare än på ren teori",
     "difficulty": "svår",
-    "example": "Slutsatsen byggde mer på empiri än på teori. (The conclusion was based more on empirical evidence than on theory.)"
+    "example": "Slutsatsen byggde mer på empiri än på teori."
   },
   {
     "title": "induktiv",
-    "definition": "inductive",
+    "definition": "drar generella slutsatser utifrån ett antal enskilda observationer",
     "difficulty": "svår",
-    "example": "Forskaren använde en induktiv metod för att dra sina slutsatser. (The researcher used an inductive method to draw conclusions.)"
+    "example": "Forskaren använde en induktiv metod för att dra sina slutsatser."
   },
   {
     "title": "deduktiv",
-    "definition": "deductive",
+    "definition": "drar specifika slutsatser utifrån redan givna, generella principer",
     "difficulty": "svår",
-    "example": "Beviset bygger på ett strikt deduktivt resonemang. (The proof is based on strict deductive reasoning.)"
+    "example": "Beviset bygger på ett strikt deduktivt resonemang."
   },
   {
     "title": "avhandling",
-    "definition": "doctoral thesis",
+    "definition": "ett omfattande skriftligt forskningsarbete som krävs för en doktorsexamen",
     "difficulty": "medel",
-    "example": "Hon disputerade på sin avhandling i förra veckan. (She defended her doctoral thesis last week.)"
+    "example": "Hon disputerade på sin avhandling i förra veckan."
   },
   {
     "title": "opponent",
-    "definition": "thesis examiner",
+    "definition": "den person som formellt granskar och ifrågasätter en avhandling vid disputationen",
     "difficulty": "svår",
-    "example": "Opponenten ställde flera kritiska frågor under disputationen. (The examiner asked several critical questions during the defense.)"
+    "example": "Opponenten ställde flera kritiska frågor under disputationen."
   },
   {
     "title": "avtalsvillkor",
-    "definition": "contract terms",
+    "definition": "de specifika regler och krav som parterna i ett avtal har kommit överens om",
     "difficulty": "medel",
-    "example": "Avtalsvillkoren förhandlades om innan undertecknandet. (The contract terms were renegotiated before signing.)"
+    "example": "Avtalsvillkoren förhandlades om innan undertecknandet."
   },
   {
     "title": "hävning",
-    "definition": "termination/rescission of a contract",
+    "definition": "att ensidigt avbryta ett avtal på grund av att den andra parten brutit mot det",
     "difficulty": "svår",
-    "example": "Leverantören hotade med hävning av avtalet. (The supplier threatened to terminate the contract.)"
+    "example": "Leverantören hotade med hävning av avtalet."
   },
   {
     "title": "dröjsmålsränta",
-    "definition": "late payment interest",
+    "definition": "extra ränta som tillkommer vid en försenad betalning",
     "difficulty": "svår",
-    "example": "Dröjsmålsränta tillkommer vid sen betalning. (Late payment interest applies in case of delayed payment.)"
+    "example": "Dröjsmålsränta tillkommer vid sen betalning."
   },
   {
     "title": "preskription",
-    "definition": "statute of limitations",
+    "definition": "att en rättighet eller skyldighet upphör att gälla efter en viss bestämd tid",
     "difficulty": "svår",
-    "example": "Fordringen hade gått i preskription efter tio år. (The claim had become statute-barred after ten years.)"
+    "example": "Fordringen hade gått i preskription efter tio år."
   },
   {
     "title": "skälighetsbedömning",
-    "definition": "reasonableness assessment",
+    "definition": "en bedömning av om något är rimligt med hänsyn till de specifika omständigheterna",
     "difficulty": "svår",
-    "example": "Domstolen gjorde en skälighetsbedömning av villkoren. (The court made a reasonableness assessment of the terms.)"
+    "example": "Domstolen gjorde en skälighetsbedömning av villkoren."
   },
   {
     "title": "avtalsbrott",
-    "definition": "breach of contract",
+    "definition": "att en part inte uppfyller det som man lovat i ett avtal",
     "difficulty": "medel",
-    "example": "Företaget stämdes för avtalsbrott efter den uteblivna leveransen. (The company was sued for breach of contract after the missed delivery.)"
+    "example": "Företaget stämdes för avtalsbrott efter den uteblivna leveransen."
   },
   {
     "title": "rättssäkerhet",
-    "definition": "rule of law / legal certainty",
+    "definition": "principen att lagar tillämpas förutsägbart och lika för alla",
     "difficulty": "svår",
-    "example": "Reformen syftade till att stärka rättssäkerheten. (The reform aimed to strengthen legal certainty.)"
+    "example": "Reformen syftade till att stärka rättssäkerheten."
   },
   {
     "title": "vitesklausul",
-    "definition": "penalty clause",
+    "definition": "en avtalspunkt som anger en bestämd bot vid brott mot avtalet",
     "difficulty": "svår",
-    "example": "Avtalet innehöll en vitesklausul vid försenad leverans. (The contract included a penalty clause for delayed delivery.)"
+    "example": "Avtalet innehöll en vitesklausul vid försenad leverans."
   },
   {
     "title": "näringsidkare",
-    "definition": "business operator / trader",
+    "definition": "en person eller ett företag som yrkesmässigt bedriver verksamhet, motsats till konsument",
     "difficulty": "svår",
-    "example": "Lagen skiljer mellan konsument och näringsidkare. (The law distinguishes between consumer and business operator.)"
+    "example": "Lagen skiljer mellan konsument och näringsidkare."
   },
   {
     "title": "konsumentskydd",
-    "definition": "consumer protection",
+    "definition": "lagar och regler som skyddar privatpersoner i deras roll som köpare",
     "difficulty": "medel",
-    "example": "Konsumentskyddet stärktes genom den nya lagstiftningen. (Consumer protection was strengthened through the new legislation.)"
+    "example": "Konsumentskyddet stärktes genom den nya lagstiftningen."
   },
   {
     "title": "miljöpåverkan",
-    "definition": "environmental impact",
+    "definition": "den effekt en verksamhet eller åtgärd har på naturen och omgivningen",
     "difficulty": "medel",
-    "example": "Projektet krävde en utredning av dess miljöpåverkan. (The project required an investigation into its environmental impact.)"
+    "example": "Projektet krävde en utredning av dess miljöpåverkan."
   },
   {
     "title": "hållbarhetsredovisning",
-    "definition": "sustainability report",
+    "definition": "ett företags formella rapportering om sitt miljömässiga och sociala ansvar",
     "difficulty": "svår",
-    "example": "Bolaget publicerade sin första hållbarhetsredovisning i år. (The company published its first sustainability report this year.)"
+    "example": "Bolaget publicerade sin första hållbarhetsredovisning i år."
   },
   {
     "title": "utsläppsrätt",
-    "definition": "emissions allowance",
+    "definition": "ett tillstånd att släppa ut en viss mängd växthusgaser, som kan köpas och säljas",
     "difficulty": "svår",
-    "example": "Företaget köpte utsläppsrätter för att täcka sina utsläpp. (The company bought emissions allowances to cover its emissions.)"
+    "example": "Företaget köpte utsläppsrätter för att täcka sina utsläpp."
   },
   {
     "title": "cirkulär ekonomi",
-    "definition": "circular economy",
+    "definition": "ett ekonomiskt system där material återanvänds i kretslopp istället för att slängas",
     "difficulty": "medel",
-    "example": "Branschen rör sig sakta mot en cirkulär ekonomi. (The industry is slowly moving toward a circular economy.)"
+    "example": "Branschen rör sig sakta mot en cirkulär ekonomi."
   },
   {
     "title": "biologisk mångfald",
-    "definition": "biodiversity",
+    "definition": "variationen av arter, gener och ekosystem i naturen",
     "difficulty": "medel",
-    "example": "Skogsavverkningen hotar den biologiska mångfalden i området. (The logging threatens the biodiversity in the area.)"
+    "example": "Skogsavverkningen hotar den biologiska mångfalden i området."
   },
   {
     "title": "klimatanpassning",
-    "definition": "climate adaptation",
+    "definition": "åtgärder som vidtas för att samhället ska klara av klimatförändringens effekter",
     "difficulty": "svår",
-    "example": "Kommunen arbetar med klimatanpassning av sina kustområden. (The municipality is working on climate adaptation of its coastal areas.)"
+    "example": "Kommunen arbetar med klimatanpassning av sina kustområden."
   },
   {
     "title": "resiliens",
-    "definition": "resilience",
+    "definition": "förmågan hos ett system eller en organisation att stå emot och återhämta sig från påfrestningar",
     "difficulty": "svår",
-    "example": "Systemets resiliens testades under krisen. (The system's resilience was tested during the crisis.)"
+    "example": "Systemets resiliens testades under krisen."
   },
   {
     "title": "paradigmskifte",
-    "definition": "paradigm shift",
+    "definition": "en grundläggande förändring i hur man ser på eller löser ett problem inom ett helt fält",
     "difficulty": "svår",
-    "example": "Pandemin ledde till ett paradigmskifte inom distansarbete. (The pandemic led to a paradigm shift in remote work.)"
+    "example": "Pandemin ledde till ett paradigmskifte inom distansarbete."
   },
   {
     "title": "institutionalisera",
-    "definition": "to institutionalize",
+    "definition": "att göra något till en fast, etablerad och bestående del av ett system",
     "difficulty": "svår",
-    "example": "Reformerna syftade till att institutionalisera de nya rutinerna. (The reforms aimed to institutionalize the new routines.)"
+    "example": "Reformerna syftade till att institutionalisera de nya rutinerna."
   },
   {
     "title": "byråkratisera",
-    "definition": "to bureaucratize",
+    "definition": "att göra en process alltmer styrd av formella regler, blanketter och instanser",
     "difficulty": "svår",
-    "example": "Kritiker menade att processen hade byråkratiserats i onödan. (Critics argued the process had been unnecessarily bureaucratized.)"
+    "example": "Kritiker menade att processen hade byråkratiserats i onödan."
   },
   {
     "title": "centralisering",
-    "definition": "centralization",
+    "definition": "att samla makt och beslutsfattande till ett ställe istället för att sprida ut det",
     "difficulty": "svår",
-    "example": "Centraliseringen av beslutsfattandet väckte protester. (The centralization of decision-making sparked protests.)"
+    "example": "Centraliseringen av beslutsfattandet väckte protester."
   },
   {
     "title": "mandatperiod",
-    "definition": "term of office",
+    "definition": "den bestämda tidsperiod som en vald person innehar sin post",
     "difficulty": "medel",
-    "example": "Hon valdes om för en ny mandatperiod i styrelsen. (She was re-elected for a new term on the board.)"
+    "example": "Hon valdes om för en ny mandatperiod i styrelsen."
   },
   {
     "title": "remissinstans",
-    "definition": "consultation body / referral authority",
+    "definition": "en organisation eller myndighet som ombeds yttra sig om ett förslag innan beslut tas",
     "difficulty": "svår",
-    "example": "Förslaget skickades till flera remissinstanser för synpunkter. (The proposal was sent to several consultation bodies for input.)"
+    "example": "Förslaget skickades till flera remissinstanser för synpunkter."
   },
   {
     "title": "lagrum",
-    "definition": "legal provision / statutory clause",
+    "definition": "den exakta paragrafen eller bestämmelsen i en lag som är tillämplig i ett fall",
     "difficulty": "svår",
-    "example": "Domen hänvisade till ett specifikt lagrum. (The ruling referred to a specific legal provision.)"
+    "example": "Domen hänvisade till ett specifikt lagrum."
   },
   {
     "title": "prejudikat",
-    "definition": "legal precedent",
+    "definition": "en tidigare dom som blir vägledande för hur liknande framtida fall ska avgöras",
     "difficulty": "svår",
-    "example": "Domen blev ett viktigt prejudikat för liknande fall. (The ruling became an important precedent for similar cases.)"
+    "example": "Domen blev ett viktigt prejudikat för liknande fall."
   },
   {
     "title": "sakkunnig",
-    "definition": "expert witness / specialist consultant",
+    "definition": "en person med specialistkunskap som anlitas för att bedöma en specifik fråga",
     "difficulty": "medel",
-    "example": "En sakkunnig kallades in för att bedöma skadan. (An expert witness was called in to assess the damage.)"
+    "example": "En sakkunnig kallades in för att bedöma skadan."
   },
   {
     "title": "vittnesmål",
-    "definition": "testimony",
+    "definition": "en persons berättelse om vad de sett eller upplevt, avgiven formellt inför rätten",
     "difficulty": "medel",
-    "example": "Vittnesmålet ändrade hela bilden av händelsen. (The testimony changed the whole picture of the event.)"
+    "example": "Vittnesmålet ändrade hela bilden av händelsen."
   },
   {
     "title": "åtalsanmälan",
-    "definition": "criminal complaint / report for prosecution",
+    "definition": "en formell anmälan till åklagare som kan leda till att åtal väcks",
     "difficulty": "svår",
-    "example": "Företaget gjorde en åtalsanmälan mot den tidigare anställde. (The company filed a criminal complaint against the former employee.)"
+    "example": "Företaget gjorde en åtalsanmälan mot den tidigare anställde."
   },
   {
     "title": "rekvisit",
-    "definition": "legal requirement / element of an offense",
+    "definition": "de specifika villkor som måste vara uppfyllda för att en lagregel ska gälla i ett fall",
     "difficulty": "svår",
-    "example": "Alla rekvisit för brottet måste vara uppfyllda. (All the legal elements of the offense must be fulfilled.)"
+    "example": "Alla rekvisit för brottet måste vara uppfyllda."
   },
   {
     "title": "integritet",
-    "definition": "privacy / integrity",
+    "definition": "rätten att själv bestämma över sin personliga information och sitt privatliv",
     "difficulty": "medel",
-    "example": "Den nya lagen stärker individens rätt till integritet. (The new law strengthens the individual's right to privacy.)"
+    "example": "Den nya lagen stärker individens rätt till integritet."
   },
   {
     "title": "dataskydd",
-    "definition": "data protection",
+    "definition": "de regler och åtgärder som skyddar personuppgifter från obehörig användning eller missbruk",
     "difficulty": "medel",
-    "example": "Företaget investerade stort i bättre dataskydd. (The company invested heavily in better data protection.)"
+    "example": "Företaget investerade stort i bättre dataskydd."
   },
   {
     "title": "anonymisera",
-    "definition": "to anonymize",
+    "definition": "att ta bort all information ur ett dataset som skulle kunna identifiera en specifik person",
     "difficulty": "medel",
-    "example": "Forskarna anonymiserade alla personuppgifter i studien. (The researchers anonymized all personal data in the study.)"
+    "example": "Forskarna anonymiserade alla personuppgifter i studien."
   },
   {
     "title": "pseudonymisera",
-    "definition": "to pseudonymize",
+    "definition": "att byta ut identifierande uppgifter mot kodnamn som kan kopplas tillbaka under vissa villkor",
     "difficulty": "svår",
-    "example": "Uppgifterna pseudonymiserades innan analysen genomfördes. (The data was pseudonymized before the analysis was carried out.)"
+    "example": "Uppgifterna pseudonymiserades innan analysen genomfördes."
   },
   {
     "title": "redundans",
-    "definition": "redundancy (technical/organizational)",
+    "definition": "extra kapacitet eller backup-system som finns till hands om huvudsystemet skulle fallera",
     "difficulty": "svår",
-    "example": "Systemet byggdes med redundans för att undvika driftstopp. (The system was built with redundancy to avoid downtime.)"
+    "example": "Systemet byggdes med redundans för att undvika driftstopp."
   },
   {
     "title": "latens",
-    "definition": "latency",
+    "definition": "den tidsfördröjning som uppstår innan ett system svarar på en förfrågan",
     "difficulty": "svår",
-    "example": "Den nya servern minskade latensen avsevärt. (The new server significantly reduced the latency.)"
+    "example": "Den nya servern minskade latensen avsevärt."
   },
   {
     "title": "infrastruktur",
-    "definition": "infrastructure",
+    "definition": "de grundläggande system och anläggningar som ett samhälle eller en organisation bygger på",
     "difficulty": "medel",
-    "example": "Kommunen satsar stort på digital infrastruktur. (The municipality is investing heavily in digital infrastructure.)"
+    "example": "Kommunen satsar stort på digital infrastruktur."
   },
   {
     "title": "interoperabilitet",
-    "definition": "interoperability",
+    "definition": "förmågan hos olika system att fungera tillsammans och utbyta information sömlöst",
     "difficulty": "svår",
-    "example": "Systemen saknade interoperabilitet med varandra. (The systems lacked interoperability with each other.)"
+    "example": "Systemen saknade interoperabilitet med varandra."
   },
   {
     "title": "användarvänlighet",
-    "definition": "user-friendliness",
+    "definition": "hur lätt och intuitivt ett system är att förstå och använda för en vanlig användare",
     "difficulty": "medel",
-    "example": "Plattformens användarvänlighet förbättrades efter omdesignen. (The platform's user-friendliness improved after the redesign.)"
+    "example": "Plattformens användarvänlighet förbättrades efter omdesignen."
   },
   {
     "title": "komplexitet",
-    "definition": "complexity",
+    "definition": "graden av hur invecklat och svåröverskådligt något är",
     "difficulty": "medel",
-    "example": "Projektets komplexitet underskattades från början. (The project's complexity was underestimated from the start.)"
+    "example": "Projektets komplexitet underskattades från början."
   },
   {
     "title": "robusthet",
-    "definition": "robustness",
+    "definition": "förmågan att fortsätta fungera stabilt trots störningar, fel eller hög belastning",
     "difficulty": "svår",
-    "example": "Modellens robusthet testades mot avvikande data. (The model's robustness was tested against outlier data.)"
+    "example": "Modellens robusthet testades mot avvikande data."
   }
 ];
