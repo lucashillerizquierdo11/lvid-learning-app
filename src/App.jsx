@@ -93,6 +93,31 @@ export default function App() {
   const [nm, setNm] = useState('');
   const [nex, setNex] = useState('');
   const [elabNotes, setElabNotes] = useState(saved?.elabNotes || {});
+  const [bulkText, setBulkText] = useState('');
+  const [sessionCount, setSessionCount] = useState(0);
+  const [showBreakNudge, setShowBreakNudge] = useState(false);
+
+  // Daily streak: computed once from the persisted last-active date so
+  // consecutive-day usage is rewarded without needing a backend clock.
+  const [streak] = useState(() => {
+    const today = new Date().toISOString().slice(0, 10);
+    const prevActive = saved?.lastActive;
+    if (prevActive === today) return saved?.streak || 1;
+    if (prevActive) {
+      const diffDays = Math.round((new Date(today) - new Date(prevActive)) / 86400000);
+      return diffDays === 1 ? (saved?.streak || 0) + 1 : 1;
+    }
+    return 1;
+  });
+  const [lastActive] = useState(() => new Date().toISOString().slice(0, 10));
+
+  function bumpSession() {
+    setSessionCount(c => {
+      const n = c + 1;
+      if (n % 20 === 0) setShowBreakNudge(true);
+      return n;
+    });
+  }
 
   const modes = [
     { id: 'flashcard', name: 'Flashcard' },
@@ -239,6 +264,7 @@ export default function App() {
     const { card: nextCard } = gradeCard(scheduler, cardState, rating, new Date());
     setCardStates(cs => ({ ...cs, [cardKey]: serializeCard(nextCard) }));
     logJol(rating);
+    bumpSession();
     if (idx < cards.length - 1) next();
     else setPredicted(null);
   }
@@ -258,6 +284,7 @@ export default function App() {
     const { card: nextCard } = gradeCard(scheduler, reviewCardState, rating, new Date());
     setCardStates(cs => ({ ...cs, [reviewItem.key]: serializeCard(nextCard) }));
     logJol(rating);
+    bumpSession();
     setPredicted(null);
     setFlipped(false);
     setReviewIdx(i => i + 1);
@@ -284,6 +311,7 @@ export default function App() {
     if (picked !== null) return;
     setPicked(opt);
     setScore(s => ({ correct: s.correct + (opt === answerValue ? 1 : 0), total: s.total + 1 }));
+    bumpSession();
     if (delayedFeedback) setTimeout(() => setPickRevealed(true), 1200);
     else setPickRevealed(true);
   }
@@ -297,6 +325,7 @@ export default function App() {
     if (revealed) return;
     setRevealed(true);
     setScore(s => ({ correct: s.correct + (fillTier !== 'wrong' ? 1 : 0), total: s.total + 1 }));
+    bumpSession();
     if (delayedFeedback) setTimeout(() => setResultShown(true), 1200);
     else setResultShown(true);
   }
@@ -325,9 +354,54 @@ export default function App() {
     setNt(''); setNd(''); setNdiff('medel'); setNm(''); setNex('');
   }
 
+  // Plain-text bulk import ("Begrepp - Definition" per line) - the report's
+  // adherence layer calls for low-friction onboarding, not an AI generator.
+  function bulkImport() {
+    const lines = bulkText.split('\n').map(l => l.trim()).filter(Boolean);
+    const newCards = [];
+    for (const line of lines) {
+      const m = line.match(/^(.+?)\s[-–|]\s(.+)$/);
+      if (m) newCards.push({ title: m[1].trim(), definition: m[2].trim(), difficulty: 'medel' });
+    }
+    if (newCards.length === 0) return;
+    setCustomCards(cc => {
+      const copy = { ...cc };
+      copy[cat] = { ...(copy[cat] || {}) };
+      copy[cat][sub] = [...(copy[cat][sub] || []), ...newCards];
+      return copy;
+    });
+    setBulkText('');
+  }
+
+  // Cross-category rollup for the "Analys" box - reuses the same
+  // retrievability scan as weakAreas but aggregated instead of per-category.
+  const globalStats = useMemo(() => {
+    const now = new Date();
+    let totalReviewed = 0, totalMastered = 0, sumR = 0;
+    for (const c of Object.keys(data)) {
+      for (const s of Object.keys(data[c] || {})) {
+        for (const cd of data[c][s]) {
+          const stored = cardStates[`${c}:${s}:${cd.title}`];
+          if (stored) {
+            const cs = deserializeCard(stored);
+            if (cs.reps > 0) {
+              totalReviewed++;
+              sumR += retrievability(scheduler, cs, now);
+              if (cs.state === State.Review) totalMastered++;
+            }
+          }
+        }
+      }
+    }
+    return { totalReviewed, totalMastered, avgRetrievability: totalReviewed ? sumR / totalReviewed : null };
+  }, [data, cardStates, scheduler]);
+
   useEffect(() => {
-    saveState({ customCards, cardStates, score, jolLog, elabNotes, settings: { retention, delayedFeedback } });
-  }, [customCards, cardStates, score, jolLog, elabNotes, retention, delayedFeedback]);
+    saveState({
+      customCards, cardStates, score, jolLog, elabNotes, streak, lastActive,
+      settings: { retention, delayedFeedback },
+    });
+  }, [customCards, cardStates, score, jolLog, elabNotes, streak, lastActive, retention, delayedFeedback]);
 
   const learned = allCards.filter(c => cardStates[`${cat}:${sub}:${c.title}`]?.state === State.Review).length;
   const accuracy = score.total ? Math.round((score.correct / score.total) * 100) : null;
@@ -352,6 +426,7 @@ export default function App() {
           <div className="hdr-top">
             <h1>{categories[cat]?.name}</h1>
             <div className="hdr-controls">
+              <span className="streak-badge" title="Dagar i rad med aktivitet">🔥 {streak}</span>
               <input className="search" placeholder="Sök kort..." value={search}
                 onChange={e => { setSearch(e.target.value); setIdx(0); }} />
               <button className={`toggle ${visual ? 'on' : ''}`} onClick={() => setVisual(v => !v)} title="Visa bilder">
@@ -378,6 +453,12 @@ export default function App() {
               </button>
             ))}
           </div>
+          {showBreakNudge && (
+            <div className="break-nudge">
+              🧠 Du har klarat {sessionCount} kort denna session. En kort paus nu - och gärna en natts sömn innan nästa repetition - hjälper hjärnan konsolidera minnena.
+              <button onClick={() => setShowBreakNudge(false)}>Stäng</button>
+            </div>
+          )}
         </header>
 
         <div className="body">
@@ -587,6 +668,13 @@ export default function App() {
               <textarea rows="2" value={nex} onChange={e => setNex(e.target.value)} placeholder="Ett konkret exempel..." />
               <button className="add" onClick={addCard}>+ Lägg till i {sub}</button>
             </div>
+            <div className="add-box bulk-box">
+              <h4>Massimport</h4>
+              <p className="bulk-hint">En rad per kort: Begrepp - Definition</p>
+              <textarea rows="4" value={bulkText} onChange={e => setBulkText(e.target.value)}
+                placeholder={'Mitokondrie - Cellens kraftverk\nATP - Energimolekyl'} />
+              <button className="add" onClick={bulkImport}>+ Importera till {sub}</button>
+            </div>
             <div className="stat-box">
               <h4>Session</h4>
               <div className="stat-row"><span>Rätt</span><b>{score.correct}</b></div>
@@ -597,6 +685,12 @@ export default function App() {
               <div className="stat-row"><span>Osäker</span><b>{calibration.low.t ? Math.round(calibration.low.c / calibration.low.t * 100) + '%' : '–'}</b></div>
               <div className="stat-row"><span>Lagom</span><b>{calibration.mid.t ? Math.round(calibration.mid.c / calibration.mid.t * 100) + '%' : '–'}</b></div>
               <div className="stat-row"><span>Säker</span><b>{calibration.high.t ? Math.round(calibration.high.c / calibration.high.t * 100) + '%' : '–'}</b></div>
+            </div>
+            <div className="stat-box">
+              <h4>Analys (alla kategorier)</h4>
+              <div className="stat-row"><span>Repeterade kort</span><b>{globalStats.totalReviewed}</b></div>
+              <div className="stat-row"><span>Lärda kort</span><b>{globalStats.totalMastered}</b></div>
+              <div className="stat-row"><span>Snittminne</span><b>{globalStats.avgRetrievability === null ? '–' : Math.round(globalStats.avgRetrievability * 100) + '%'}</b></div>
             </div>
           </div>
         </div>
