@@ -145,13 +145,27 @@ export default function App() {
 
   const subs = subcatMap[cat] || [];
   const allCards = (visibleData[cat]?.[sub]) || [];
+  // Cards already mastered (FSRS state Review) drop out of the regular
+  // training modes - they only resurface there once every other card in
+  // the subcategory has reached that state too (the deck "wraps around").
+  const unlearnedCards = useMemo(
+    () => allCards.filter(c => cardStates[`${cat}:${sub}:${c.title}`]?.state !== State.Review),
+    [allCards, cardStates, cat, sub]
+  );
+  const activeCards = unlearnedCards.length > 0 ? unlearnedCards : allCards;
   const cards = useMemo(() => {
-    if (!search.trim()) return allCards;
+    if (!search.trim()) return activeCards;
     const q = search.toLowerCase();
-    return allCards.filter(c => c.title.toLowerCase().includes(q) || c.definition.toLowerCase().includes(q));
-  }, [allCards, search]);
+    return activeCards.filter(c => c.title.toLowerCase().includes(q) || c.definition.toLowerCase().includes(q));
+  }, [activeCards, search]);
 
   const card = cards[idx];
+
+  // Keep idx in bounds when the deck shrinks (e.g. a card just became
+  // mastered and dropped out of the active list).
+  useEffect(() => {
+    if (idx > 0 && idx >= cards.length) setIdx(Math.max(0, cards.length - 1));
+  }, [cards.length, idx]);
 
   // Cross-topic due queue powering "Repetition" - this is the interleaved
   // spaced-review engine; "Flashcard" stays a per-subcategory block/focus mode.
@@ -281,7 +295,12 @@ export default function App() {
     setCardStates(cs => ({ ...cs, [cardKey]: serializeCard(nextCard) }));
     logJol(rating);
     bumpSession();
-    if (idx < cards.length - 1) next();
+    // A card that just became mastered drops out of `cards` on the next
+    // render, so the following card slides into the current idx already -
+    // advancing here would skip it.
+    const justMastered = nextCard.state === State.Review;
+    if (!justMastered && idx < cards.length - 1) next();
+    else if (justMastered) { setFlipped(false); setPredicted(null); }
     else setPredicted(null);
   }
 
@@ -364,7 +383,7 @@ export default function App() {
   }
 
   // matcha
-  const matchCards = useMemo(() => allCards.slice(0, 5), [allCards]);
+  const matchCards = useMemo(() => activeCards.slice(0, 5), [activeCards]);
   const matchDefs = useMemo(() => shuffle(matchCards), [matchCards, sub, cat]);
   function clickTerm(t) { if (matched.includes(t.title)) return; setMatchSel(t.title); }
   function clickDef(d) {
