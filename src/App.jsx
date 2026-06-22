@@ -9,6 +9,7 @@ import {
 } from './fsrs';
 
 const NEW_CARDS_PER_SESSION = 20;
+const SHUFFLE_ON_ENTRY_SUBS = ['Svenska informell', 'Svenska formell'];
 
 function shuffle(arr) {
   const a = [...arr];
@@ -153,11 +154,28 @@ export default function App() {
     [allCards, cardStates, cat, sub]
   );
   const activeCards = unlearnedCards.length > 0 ? unlearnedCards : allCards;
+
+  // For the Swedish vocab subcategories, Flashcard/Fylla i shouldn't always
+  // open on the same order - re-shuffle a fresh order every time the
+  // learner enters that subcategory/mode combo.
+  const shuffleHere = (mode === 'flashcard' || mode === 'fillin') && SHUFFLE_ON_ENTRY_SUBS.includes(sub);
+  const [entryOrder, setEntryOrder] = useState([]);
+  useEffect(() => {
+    if (shuffleHere) setEntryOrder(shuffle(allCards.map(c => c.title)));
+  }, [cat, sub, mode]);
+
   const cards = useMemo(() => {
-    if (!search.trim()) return activeCards;
-    const q = search.toLowerCase();
-    return activeCards.filter(c => c.title.toLowerCase().includes(q) || c.definition.toLowerCase().includes(q));
-  }, [activeCards, search]);
+    let list = activeCards;
+    if (search.trim()) {
+      const q = search.toLowerCase();
+      list = list.filter(c => c.title.toLowerCase().includes(q) || c.definition.toLowerCase().includes(q));
+    }
+    if (shuffleHere && entryOrder.length) {
+      const order = new Map(entryOrder.map((t, i) => [t, i]));
+      list = [...list].sort((a, b) => (order.get(a.title) ?? Infinity) - (order.get(b.title) ?? Infinity));
+    }
+    return list;
+  }, [activeCards, search, shuffleHere, entryOrder]);
 
   const card = cards[idx];
 
