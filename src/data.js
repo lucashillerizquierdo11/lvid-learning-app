@@ -6,7 +6,7 @@ import { lvid } from './lvidData';
 
 export const categories = {
   musik: { name: 'Musik', color: '#a78bfa' },
-  film,
+  film: { name: 'Film', color: '#38bdf8' },
   sport: { name: 'Sport', color: '#fb923c' },
   lvid: { name: 'Lvid', color: '#60a5fa' },
   investering: { name: 'Investering', color: '#a3e635' },

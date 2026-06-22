@@ -185,6 +185,7 @@ input, textarea, select { -webkit-appearance: none; appearance: none; }
      A grid wrap here would clip categories beyond the fixed max-height. */
   .sidebar {
     width: 100%;
+    flex-shrink: 0;
     border-right: none;
     border-bottom: 1px solid var(--border);
     padding: 10px 12px;
@@ -196,13 +197,14 @@ input, textarea, select { -webkit-appearance: none; appearance: none; }
     overflow-y: hidden;
     -webkit-overflow-scrolling: touch;
   }
-  .cat-list { flex-direction: row; }
+  .cat-list { flex-direction: row; flex-shrink: 0; }
   .logo, .sidebar > .side-h { display: none; }
   .cat-btn { padding: 6px 10px; font-size: 11px; flex: 0 0 auto; white-space: nowrap; min-height: 44px; }
   .dot { width: 6px; height: 6px; }
-  
-  /* Main */
-  .main { height: auto; }
+
+  /* Main - flex:1 already set globally; min-height:0 lets .body's own
+     overflow-y:auto scroll instead of the column flex shrinking .sidebar. */
+  .main { min-height: 0; }
   .hdr { padding: 12px; }
   .hdr-top { 
     flex-direction: column; 
