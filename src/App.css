@@ -81,6 +81,13 @@ input, textarea, select { -webkit-appearance: none; appearance: none; }
 .nav button:disabled { opacity: .4; cursor: not-allowed; }
 .nav span { color: var(--muted); font-size: 13px; min-width: 60px; text-align: center; }
 
+/* Card actions (nav + discard) - kept in the same view as the card on
+   mobile so discarding never requires scrolling away from it */
+.card-actions { display: flex; gap: 10px; align-items: center; width: 100%; max-width: 520px; }
+.card-actions .nav { flex: 1; max-width: none; }
+.discard-btn { padding: 11px 14px; border: 1px solid #5a2a2a; background: var(--bg2); color: var(--red); border-radius: 7px; cursor: pointer; font-size: 13px; font-weight: 600; white-space: nowrap; transition: .15s; }
+.discard-btn:hover { background: #2a1818; }
+
 /* Feedback */
 .fb { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; width: 100%; max-width: 520px; }
 .fb-btn { padding: 11px 6px; border-radius: 7px; border: 1px solid var(--border); background: var(--bg2); cursor: pointer; font-size: 13px; font-weight: 600; transition: .15s; display: flex; flex-direction: column; align-items: center; gap: 2px; }
@@ -255,6 +262,10 @@ input, textarea, select { -webkit-appearance: none; appearance: none; }
   .nav { gap: 8px; padding: 12px 0; }
   .nav button { padding: 8px 12px; font-size: 12px; min-height: 44px; }
 
+  /* Card actions (nav + discard) */
+  .card-actions { flex-wrap: wrap; gap: 8px; }
+  .discard-btn { padding: 8px 12px; font-size: 12px; min-height: 44px; }
+
   /* Feedback buttons */
   .fb { gap: 6px; }
   .fb-btn { padding: 8px 4px; font-size: 11px; min-height: 44px; }
@@ -308,6 +319,9 @@ input, textarea, select { -webkit-appearance: none; appearance: none; }
   .nav { display: grid; grid-template-columns: 1fr auto 1fr; gap: 6px; }
   .nav button { padding: 8px; }
   .nav span { text-align: center; font-size: 12px; }
+
+  .card-actions { flex-direction: column; }
+  .discard-btn { width: 100%; }
   
   .match-col { display: flex; flex-direction: column; gap: 4px; }
   .m-item { padding: 7px 8px; font-size: 11px; }

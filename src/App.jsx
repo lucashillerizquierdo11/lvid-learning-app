@@ -95,6 +95,7 @@ export default function App() {
   const [elabNotes, setElabNotes] = useState(saved?.elabNotes || {});
   const [bulkText, setBulkText] = useState('');
   const [sessionCount, setSessionCount] = useState(0);
+  const [bannedCards, setBannedCards] = useState(saved?.bannedCards || {});
   const [showBreakNudge, setShowBreakNudge] = useState(false);
 
   // Daily streak: computed once from the persisted last-active date so
@@ -127,8 +128,23 @@ export default function App() {
     { id: 'matching', name: 'Matcha' },
   ];
 
+  // Discarded cards are hidden everywhere (all modes, all categories) and
+  // stay hidden even if the underlying data files are later updated, since
+  // bans are keyed by cat:sub:title rather than array position.
+  const visibleData = useMemo(() => Object.fromEntries(
+    Object.entries(data).map(([c, subsObj]) => [
+      c,
+      Object.fromEntries(
+        Object.entries(subsObj || {}).map(([s, arr]) => [
+          s,
+          arr.filter(cd => !bannedCards[`${c}:${s}:${cd.title}`]),
+        ])
+      ),
+    ])
+  ), [data, bannedCards]);
+
   const subs = subcatMap[cat] || [];
-  const allCards = (data[cat]?.[sub]) || [];
+  const allCards = (visibleData[cat]?.[sub]) || [];
   const cards = useMemo(() => {
     if (!search.trim()) return allCards;
     const q = search.toLowerCase();
@@ -145,24 +161,24 @@ export default function App() {
   const dueCount = useMemo(() => {
     const now = new Date();
     let n = 0;
-    for (const c of Object.keys(data)) {
-      for (const s of Object.keys(data[c] || {})) {
-        for (const cd of data[c][s]) {
+    for (const c of Object.keys(visibleData)) {
+      for (const s of Object.keys(visibleData[c] || {})) {
+        for (const cd of visibleData[c][s]) {
           const stored = cardStates[`${c}:${s}:${cd.title}`];
           if (stored && isDue(deserializeCard(stored), now)) n++;
         }
       }
     }
     return n;
-  }, [data, cardStates]);
+  }, [visibleData, cardStates]);
 
   function buildReviewQueue() {
     const now = new Date();
     const due = [];
     const fresh = [];
-    for (const c of Object.keys(data)) {
-      for (const s of Object.keys(data[c] || {})) {
-        for (const cd of data[c][s]) {
+    for (const c of Object.keys(visibleData)) {
+      for (const s of Object.keys(visibleData[c] || {})) {
+        for (const cd of visibleData[c][s]) {
           const key = `${c}:${s}:${cd.title}`;
           const stored = cardStates[key];
           if (stored) {
@@ -212,10 +228,10 @@ export default function App() {
   const weakAreas = useMemo(() => {
     const now = new Date();
     const byCategory = {};
-    for (const c of Object.keys(data)) {
+    for (const c of Object.keys(visibleData)) {
       let sum = 0, n = 0;
-      for (const s of Object.keys(data[c] || {})) {
-        for (const cd of data[c][s]) {
+      for (const s of Object.keys(visibleData[c] || {})) {
+        for (const cd of visibleData[c][s]) {
           const stored = cardStates[`${c}:${s}:${cd.title}`];
           if (stored) {
             const cs = deserializeCard(stored);
@@ -226,13 +242,13 @@ export default function App() {
       if (n >= 3) byCategory[c] = sum / n;
     }
     return Object.entries(byCategory).sort((a, b) => a[1] - b[1]).slice(0, 3);
-  }, [data, cardStates, scheduler]);
+  }, [visibleData, cardStates, scheduler]);
 
   function buildWeakQueue(catKey) {
     const now = new Date();
     const items = [];
-    for (const s of Object.keys(data[catKey] || {})) {
-      for (const cd of data[catKey][s]) {
+    for (const s of Object.keys(visibleData[catKey] || {})) {
+      for (const cd of visibleData[catKey][s]) {
         const key = `${catKey}:${s}:${cd.title}`;
         const stored = cardStates[key];
         if (stored) {
@@ -287,6 +303,23 @@ export default function App() {
     bumpSession();
     setPredicted(null);
     setFlipped(false);
+    setReviewIdx(i => i + 1);
+  }
+
+  function discardCard(c, catKey, subKey) {
+    if (!c) return;
+    setBannedCards(b => ({ ...b, [`${catKey}:${subKey}:${c.title}`]: true }));
+  }
+
+  function discardCurrentCard() {
+    discardCard(card, cat, sub);
+    reset();
+  }
+
+  function discardReviewItem() {
+    if (!reviewItem) return;
+    discardCard(reviewItem.card, reviewItem.cat, reviewItem.sub);
+    setFlipped(false); setPredicted(null);
     setReviewIdx(i => i + 1);
   }
 
@@ -378,9 +411,9 @@ export default function App() {
   const globalStats = useMemo(() => {
     const now = new Date();
     let totalReviewed = 0, totalMastered = 0, sumR = 0;
-    for (const c of Object.keys(data)) {
-      for (const s of Object.keys(data[c] || {})) {
-        for (const cd of data[c][s]) {
+    for (const c of Object.keys(visibleData)) {
+      for (const s of Object.keys(visibleData[c] || {})) {
+        for (const cd of visibleData[c][s]) {
           const stored = cardStates[`${c}:${s}:${cd.title}`];
           if (stored) {
             const cs = deserializeCard(stored);
@@ -394,14 +427,14 @@ export default function App() {
       }
     }
     return { totalReviewed, totalMastered, avgRetrievability: totalReviewed ? sumR / totalReviewed : null };
-  }, [data, cardStates, scheduler]);
+  }, [visibleData, cardStates, scheduler]);
 
   useEffect(() => {
     saveState({
-      customCards, cardStates, score, jolLog, elabNotes, streak, lastActive,
+      customCards, cardStates, score, jolLog, elabNotes, streak, lastActive, bannedCards,
       settings: { retention, delayedFeedback },
     });
-  }, [customCards, cardStates, score, jolLog, elabNotes, streak, lastActive, retention, delayedFeedback]);
+  }, [customCards, cardStates, score, jolLog, elabNotes, streak, lastActive, retention, delayedFeedback, bannedCards]);
 
   const learned = allCards.filter(c => cardStates[`${cat}:${sub}:${c.title}`]?.state === State.Review).length;
   const accuracy = score.total ? Math.round((score.correct / score.total) * 100) : null;
@@ -510,7 +543,10 @@ export default function App() {
                     </div>
                   </div>
                 </div>
-                <Nav idx={idx} len={cards.length} prev={prev} next={next} />
+                <div className="card-actions">
+                  <Nav idx={idx} len={cards.length} prev={prev} next={next} />
+                  <DiscardButton onClick={discardCurrentCard} />
+                </div>
                 {!flipped && (
                   <div className="jol">
                     <span className="jol-label">Hur säker är du på svaret?</span>
@@ -562,6 +598,9 @@ export default function App() {
                     </div>
                   </div>
                 </div>
+                <div className="card-actions">
+                  <DiscardButton onClick={discardReviewItem} />
+                </div>
                 {!flipped && (
                   <div className="jol">
                     <span className="jol-label">Hur säker är du på svaret?</span>
@@ -609,7 +648,10 @@ export default function App() {
                     );
                   })}
                 </div>
-                <Nav idx={idx} len={cards.length} prev={prev} next={next} />
+                <div className="card-actions">
+                  <Nav idx={idx} len={cards.length} prev={prev} next={next} />
+                  <DiscardButton onClick={discardCurrentCard} />
+                </div>
               </div>
             )}
 
@@ -627,7 +669,10 @@ export default function App() {
                   : <div className={`result ${fillTier !== 'wrong' ? 'ok' : 'no'}`}>
                       {fillTier === 'exact' ? 'Rätt! ' : fillTier === 'close' ? 'Nästan rätt! ' : 'Rätt svar: '}<b>{fillAnswer}</b>
                     </div>}
-                <Nav idx={idx} len={cards.length} prev={prev} next={next} />
+                <div className="card-actions">
+                  <Nav idx={idx} len={cards.length} prev={prev} next={next} />
+                  <DiscardButton onClick={discardCurrentCard} />
+                </div>
               </div>
             )}
 
@@ -696,6 +741,15 @@ export default function App() {
         </div>
       </div>
     </div>
+  );
+}
+
+function DiscardButton({ onClick }) {
+  return (
+    <button type="button" className="discard-btn" onClick={onClick}
+      title="Skrota detta begrepp - visas aldrig igen">
+      🗑️ Skrota
+    </button>
   );
 }
 
