@@ -2,7 +2,9 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 <title>Laganas, Zakynthos — Bars &amp; Activities Map</title>
 <link rel="stylesheet" href="vendor/leaflet/leaflet.css" />
 <style>
@@ -14,34 +16,54 @@
     --text: #eef1f8;
     --muted: #9aa3bd;
   }
-  * { box-sizing: border-box; }
-  html, body { margin: 0; padding: 0; height: 100%; background: var(--bg); color: var(--text); font-family: -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; }
-  #app { display: flex; flex-direction: column; height: 100vh; }
-  header { padding: 14px 18px; background: var(--panel); border-bottom: 1px solid #232a45; }
-  header h1 { margin: 0 0 4px; font-size: 18px; }
-  header p { margin: 0; font-size: 12.5px; color: var(--muted); }
-  #controls { display: flex; flex-wrap: wrap; gap: 10px; padding: 10px 18px; background: var(--panel); border-bottom: 1px solid #232a45; align-items: center; }
+  * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+  html, body { margin: 0; padding: 0; height: 100%; background: var(--bg); color: var(--text); font-family: -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; overscroll-behavior: none; }
+  #app { display: flex; flex-direction: column; height: 100vh; height: 100dvh; }
+  header { padding: 10px 14px; padding-top: max(10px, env(safe-area-inset-top)); background: var(--panel); border-bottom: 1px solid #232a45; }
+  header h1 { margin: 0 0 3px; font-size: 16px; line-height: 1.25; }
+  header p { margin: 0; font-size: 12px; color: var(--muted); }
+  #controls { display: flex; flex-wrap: wrap; gap: 8px; padding: 8px 14px; background: var(--panel); border-bottom: 1px solid #232a45; align-items: center; }
   .toggle-btn {
-    border: 1px solid #2c3354; background: #1d2440; color: var(--text); padding: 7px 14px;
+    border: 1px solid #2c3354; background: #1d2440; color: var(--text); padding: 9px 14px;
     border-radius: 20px; font-size: 13px; cursor: pointer; display: flex; align-items: center; gap: 6px;
-    transition: background .15s, opacity .15s;
+    transition: background .15s, opacity .15s; min-height: 38px; touch-action: manipulation;
   }
-  .toggle-btn .swatch { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
+  .toggle-btn .swatch { width: 10px; height: 10px; border-radius: 50%; display: inline-block; flex-shrink: 0; }
   .toggle-btn.off { opacity: .4; }
   .toggle-btn.bars.on { background: rgba(255,77,109,.18); border-color: var(--bar-color); }
   .toggle-btn.activities.on { background: rgba(46,196,255,.18); border-color: var(--activity-color); }
-  #search { margin-left: auto; padding: 7px 12px; border-radius: 20px; border: 1px solid #2c3354; background: #1d2440; color: var(--text); font-size: 13px; min-width: 180px; }
+  #search {
+    margin-left: auto; padding: 9px 12px; border-radius: 20px; border: 1px solid #2c3354;
+    background: #1d2440; color: var(--text); font-size: 14px; min-width: 180px; flex: 1 1 180px;
+  }
   #search::placeholder { color: var(--muted); }
-  #map { flex: 1; }
+  #map { flex: 1; min-height: 0; }
   .leaflet-popup-content-wrapper { background: var(--panel); color: var(--text); border-radius: 10px; }
+  .leaflet-popup-content { margin: 11px 14px; }
   .leaflet-popup-tip { background: var(--panel); }
-  .popup-title { font-weight: 700; font-size: 14px; margin-bottom: 4px; }
-  .popup-tag { display: inline-block; font-size: 10.5px; padding: 2px 7px; border-radius: 10px; margin-bottom: 6px; }
+  .popup-title { font-weight: 700; font-size: 15px; margin-bottom: 4px; }
+  .popup-tag { display: inline-block; font-size: 11px; padding: 3px 8px; border-radius: 10px; margin-bottom: 6px; }
   .popup-tag.bar { background: rgba(255,77,109,.2); color: var(--bar-color); }
   .popup-tag.activity { background: rgba(46,196,255,.2); color: var(--activity-color); }
-  .popup-desc { font-size: 12.5px; color: var(--muted); margin-bottom: 6px; }
-  .popup-link { font-size: 12px; color: #6fb3ff; text-decoration: none; }
-  footer { padding: 8px 18px; background: var(--panel); border-top: 1px solid #232a45; font-size: 11px; color: var(--muted); }
+  .popup-desc { font-size: 13px; color: var(--muted); margin-bottom: 6px; }
+  .popup-link { font-size: 13px; color: #6fb3ff; text-decoration: none; display: inline-block; padding: 4px 0; }
+  footer {
+    padding: 8px 14px; padding-bottom: max(8px, env(safe-area-inset-bottom));
+    background: var(--panel); border-top: 1px solid #232a45; font-size: 11px; color: var(--muted);
+  }
+  footer summary { cursor: pointer; color: var(--text); list-style: none; }
+  footer summary::before { content: 'ℹ️ '; }
+  footer p { margin: 6px 0 0; }
+
+  @media (max-width: 600px) {
+    header h1 { font-size: 14.5px; }
+    header p { font-size: 11px; }
+    #controls { padding: 8px 10px; }
+    .toggle-btn { font-size: 12.5px; padding: 8px 12px; }
+    #search { flex-basis: 100%; margin-left: 0; }
+    .leaflet-popup-content-wrapper { max-width: 76vw; }
+    .leaflet-touch .leaflet-control-zoom a { width: 36px; height: 36px; line-height: 36px; }
+  }
 </style>
 </head>
 <body>
@@ -57,7 +79,10 @@
   </div>
   <div id="map"></div>
   <footer>
-    Map data © <a href="https://www.openstreetmap.org/copyright" style="color:#6fb3ff" target="_blank" rel="noopener">OpenStreetMap</a> contributors. Pin locations are best-effort placements along the strip for orientation, not verified GPS addresses — names/venues change season to season, so confirm details (opening hours, current ownership) before relying on this for a night out. Edit the <code>bars</code> / <code>activities</code> arrays in this file to correct or extend the list.
+    <details>
+      <summary>About this map</summary>
+      <p>Map data © <a href="https://www.openstreetmap.org/copyright" style="color:#6fb3ff" target="_blank" rel="noopener">OpenStreetMap</a> contributors. Pin locations are best-effort placements along the strip for orientation, not verified GPS addresses — names/venues change season to season, so confirm details (opening hours, current ownership) before relying on this for a night out. Edit the <code>bars</code> / <code>activities</code> arrays in this file to correct or extend the list.</p>
+    </details>
   </footer>
 </div>
 
@@ -113,11 +138,17 @@ const activities = [
   { name: "Watersports Center", desc: "One-stop hire: kayaks, SUP, wakeboarding, ringos.", lat: 37.7225, lng: 20.8755 }
 ];
 
-const map = L.map('map', { zoomControl: true }).setView(CENTER, 15);
+const map = L.map('map', { zoomControl: true, tap: true, tapTolerance: 20 }).setView(CENTER, 15);
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
   maxZoom: 19,
+  detectRetina: true,
   attribution: '&copy; OpenStreetMap contributors'
 }).addTo(map);
+
+// Bigger tap target on touch devices (fingers are less precise than a mouse cursor)
+const isTouch = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+const markerRadius = isTouch ? 11 : 8;
+const popupMaxWidth = window.innerWidth < 420 ? 220 : 280;
 
 function gmapsLink(lat, lng) {
   return `https://www.google.com/maps/dir/?api=1&destination=${lat},${lng}`;
@@ -132,14 +163,14 @@ function makePopup(item, tag) {
 
 const barLayer = L.layerGroup(
   bars.map(b => L.circleMarker([b.lat, b.lng], {
-    radius: 8, color: '#ff4d6d', fillColor: '#ff4d6d', fillOpacity: 0.9, weight: 2
-  }).bindPopup(makePopup(b, 'bar')).bindTooltip(b.name, { direction: 'top' }))
+    radius: markerRadius, color: '#ff4d6d', fillColor: '#ff4d6d', fillOpacity: 0.9, weight: 2
+  }).bindPopup(makePopup(b, 'bar'), { maxWidth: popupMaxWidth }))
 ).addTo(map);
 
 const activityLayer = L.layerGroup(
   activities.map(a => L.circleMarker([a.lat, a.lng], {
-    radius: 8, color: '#2ec4ff', fillColor: '#2ec4ff', fillOpacity: 0.9, weight: 2
-  }).bindPopup(makePopup(a, 'activity')).bindTooltip(a.name, { direction: 'top' }))
+    radius: markerRadius, color: '#2ec4ff', fillColor: '#2ec4ff', fillOpacity: 0.9, weight: 2
+  }).bindPopup(makePopup(a, 'activity'), { maxWidth: popupMaxWidth }))
 ).addTo(map);
 
 document.querySelectorAll('.toggle-btn[data-layer]').forEach(btn => {
