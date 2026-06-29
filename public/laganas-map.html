@@ -73,70 +73,65 @@
     <p>Top bars/clubs on and around the strip, plus top activity &amp; excursion spots. Tap a dot for details.</p>
   </header>
   <div id="controls">
-    <button class="toggle-btn bars on" data-layer="bars"><span class="swatch" style="background:var(--bar-color)"></span>Top Bars (20)</button>
-    <button class="toggle-btn activities on" data-layer="activities"><span class="swatch" style="background:var(--activity-color)"></span>Top Activities (20)</button>
+    <button class="toggle-btn bars on" data-layer="bars"><span class="swatch" style="background:var(--bar-color)"></span>Bars (<span id="bars-count"></span>)</button>
+    <button class="toggle-btn activities on" data-layer="activities"><span class="swatch" style="background:var(--activity-color)"></span>Activities (<span id="activities-count"></span>)</button>
     <input id="search" type="text" placeholder="Search by name…" />
   </div>
   <div id="map"></div>
   <footer>
     <details>
       <summary>About this map</summary>
-      <p>Map data © <a href="https://www.openstreetmap.org/copyright" style="color:#6fb3ff" target="_blank" rel="noopener">OpenStreetMap</a> contributors. Pin locations are best-effort placements along the strip for orientation, not verified GPS addresses — names/venues change season to season, so confirm details (opening hours, current ownership) before relying on this for a night out. Edit the <code>bars</code> / <code>activities</code> arrays in this file to correct or extend the list.</p>
+      <p>Map data © <a href="https://www.openstreetmap.org/copyright" style="color:#6fb3ff" target="_blank" rel="noopener">OpenStreetMap</a> contributors. Bars/pubs/nightclubs and named attractions use real OpenStreetMap coordinates. Beach-activity pins (jet ski, banana boat, parasailing, etc.) are approximate placements along the real beachfront — those operators move and change season to season, so confirm details (opening hours, current ownership, exact spot) before relying on this for a night out. Edit the <code>bars</code> / <code>activities</code> arrays in this file to correct or extend the list.</p>
     </details>
   </footer>
 </div>
 
 <script src="vendor/leaflet/leaflet.js"></script>
 <script>
-// Approximate center of the Laganas strip, Zakynthos
-const CENTER = [37.7263, 20.8809];
+// Center of the Laganas strip, Zakynthos (verified against OpenStreetMap data)
+const CENTER = [37.7253, 20.8648];
 
-// Each entry: name, short description, lat/lng (approximate placement along/near the strip)
+// Each entry: name, short description, lat/lng. Bars/pubs/nightclubs are real
+// venues sourced from OpenStreetMap (amenity=bar/pub/nightclub) around the strip.
 const bars = [
-  { name: "Must", desc: "Long-running strip superclub, big dance floor & stage shows.", lat: 37.7268, lng: 20.8801 },
-  { name: "Sing Sing", desc: "Themed party bar, costumed staff, high-energy crowd.", lat: 37.7271, lng: 20.8806 },
-  { name: "Rescue", desc: "Lifeguard-themed club, one of the busiest late-night spots.", lat: 37.7266, lng: 20.8812 },
-  { name: "Cherry", desc: "Cocktail bar with a lively pre-club crowd.", lat: 37.7274, lng: 20.8798 },
-  { name: "Barrel", desc: "Bucket cocktails and games, popular with groups.", lat: 37.7260, lng: 20.8817 },
-  { name: "Zeros", desc: "Long-standing strip bar known for cheap shots & shooters.", lat: 37.7277, lng: 20.8793 },
-  { name: "Argo", desc: "Greek-run bar mixing local vibe with strip energy.", lat: 37.7257, lng: 20.8822 },
-  { name: "Rock Cafe", desc: "Rock & alt-music bar, calmer alternative to the main clubs.", lat: 37.7281, lng: 20.8789 },
-  { name: "Temptation", desc: "Themed cocktail bar with games and bucket deals.", lat: 37.7263, lng: 20.8826 },
-  { name: "Rebels", desc: "Mid-strip bar, sports screens early, party later.", lat: 37.7285, lng: 20.8784 },
-  { name: "Vasilis Bar", desc: "Family-run bar, good for a relaxed first drink.", lat: 37.7253, lng: 20.8831 },
-  { name: "Cinderella", desc: "Glam-themed bar with cocktail towers.", lat: 37.7289, lng: 20.8779 },
-  { name: "Time Out", desc: "Sports bar by day, party bar by night.", lat: 37.7249, lng: 20.8836 },
-  { name: "Tequila", desc: "Shot bar with Mexican theme, popular pre-club stop.", lat: 37.7293, lng: 20.8775 },
-  { name: "Status", desc: "Upscale-leaning lounge/bar on the quieter end of the strip.", lat: 37.7245, lng: 20.8840 },
-  { name: "Yes! Bar", desc: "High-energy dance bar, regular drink offers.", lat: 37.7297, lng: 20.8770 },
-  { name: "Marathon Bar", desc: "All-day bar near the beach end of the strip.", lat: 37.7241, lng: 20.8845 },
-  { name: "Cuban Bar", desc: "Latin-themed cocktail bar with live music nights.", lat: 37.7301, lng: 20.8766 },
-  { name: "Rolling Stone", desc: "Classic rock bar, mixed local & tourist crowd.", lat: 37.7237, lng: 20.8849 },
-  { name: "Vouli", desc: "Late-night bar known for staying open after the rest close.", lat: 37.7305, lng: 20.8762 }
+  { name: "Milagro Bar", desc: "Bar on the Main Road in the heart of the strip.", lat: 37.7268626, lng: 20.8639878 },
+  { name: "Mad Murphy's Irish Pub", desc: "Irish pub on the Main Road, sports screens & drinks.", lat: 37.726286, lng: 20.8641627 },
+  { name: "Medousa", desc: "Pub on the Main Road.", lat: 37.7261388, lng: 20.8640529 },
+  { name: "Ghetto", desc: "Nightclub just off the Main Road.", lat: 37.7273222, lng: 20.8636131 },
+  { name: "X-Paradiso", desc: "Bar near the centre of the strip.", lat: 37.7228521, lng: 20.8642229 },
+  { name: "Cool Peppers", desc: "Bar toward the beach end of the strip.", lat: 37.7241916, lng: 20.8664439 },
+  { name: "Malibooz", desc: "Bar near the beachfront.", lat: 37.7239319, lng: 20.8660093 },
+  { name: "Cubaneros", desc: "Bar close to the beach.", lat: 37.7247246, lng: 20.867338 },
+  { name: "Pure Beach Club", desc: "Beach club/bar right on the sand.", lat: 37.7269205, lng: 20.8682421 },
+  { name: "Rhoé", desc: "Bar on the northern stretch of the beachfront.", lat: 37.7284697, lng: 20.8699081 },
+  { name: "Cheeky Tikis", desc: "Bar at the northern end of the strip.", lat: 37.7294493, lng: 20.8635438 },
+  { name: "Splash Pool Bar", desc: "Pool bar at the far north end of the strip.", lat: 37.7335155, lng: 20.8652117 },
+  { name: "Sabbia Beach Bar", desc: "Beach bar at the southern end of Laganas beach.", lat: 37.7168656, lng: 20.8611329 },
+  { name: "Cheers' Beach Bar", desc: "Beach bar on the southern stretch of sand.", lat: 37.7211281, lng: 20.8624816 },
+  { name: "Braxos Cafe-Bar", desc: "Cafe-bar on the southern beachfront.", lat: 37.7201914, lng: 20.8618078 }
 ];
 
+// Verified real points of interest (tourism attractions, dive centre, rentals) plus
+// honestly-labelled generic beach-activity stalls placed along the verified beachfront
+// (jet ski/banana boat/parasailing operators move and change season to season, so these
+// are approximate placements on the real beach, not pinned to one specific business).
 const activities = [
-  { name: "Laganas Speedboat Charters", desc: "Private/group speedboat hire along the bay.", lat: 37.7240, lng: 20.8795 },
-  { name: "Turtle Island Boat Trips (Marathonisi)", desc: "Glass-bottom boat tours to see loggerhead turtles.", lat: 37.7228, lng: 20.8781 },
-  { name: "Blue Caves Excursion Boats", desc: "Full-day boat trips to Zakynthos' Blue Caves & Shipwreck Beach.", lat: 37.7300, lng: 20.8830 },
-  { name: "Banana Boat & Inflatables", desc: "Banana boat, donut & towable rides off the main beach.", lat: 37.7222, lng: 20.8800 },
-  { name: "Jet Ski Rental", desc: "Hourly/half-day jet ski hire on Laganas Bay.", lat: 37.7218, lng: 20.8812 },
-  { name: "Parasailing Laganas", desc: "Tandem parasail flights over the bay.", lat: 37.7215, lng: 20.8825 },
-  { name: "Scuba Diving Center", desc: "PADI courses & reef dives off the south coast.", lat: 37.7232, lng: 20.8845 },
-  { name: "Quad & ATV Safari Rental", desc: "Off-road quad rentals for island safari routes.", lat: 37.7310, lng: 20.8750 },
-  { name: "Water Village Waterpark", desc: "Large waterpark with slides, just outside Laganas.", lat: 37.7350, lng: 20.8700 },
-  { name: "Foam Party Boat", desc: "Daytime foam-party booze cruise along the coast.", lat: 37.7205, lng: 20.8790 },
-  { name: "Sunset Cruise", desc: "Evening sailing trip with drinks included.", lat: 37.7198, lng: 20.8805 },
-  { name: "Pub Crawl Laganas", desc: "Organized bar-hopping tour with reps & games.", lat: 37.7272, lng: 20.8815 },
-  { name: "Cliff Diving Boat Trip", desc: "Boat excursion to cliff-jumping spots along the coast.", lat: 37.7192, lng: 20.8818 },
-  { name: "Horseback Riding Tours", desc: "Guided horse rides through olive groves near Laganas.", lat: 37.7330, lng: 20.8650 },
-  { name: "Bungee Jump", desc: "Bungee jump tower / extreme rides near the strip.", lat: 37.7280, lng: 20.8760 },
-  { name: "Mini Golf Laganas", desc: "Family-friendly mini-golf course.", lat: 37.7320, lng: 20.8730 },
-  { name: "Beach Volleyball Courts", desc: "Public courts on Laganas beach, pickup games daily.", lat: 37.7235, lng: 20.8770 },
-  { name: "Paragliding Zakynthos", desc: "Tandem paragliding flights with coastal views.", lat: 37.7340, lng: 20.8680 },
-  { name: "Party Boat (DJ Cruise)", desc: "DJ-hosted day party cruise with swim stops.", lat: 37.7210, lng: 20.8835 },
-  { name: "Watersports Center", desc: "One-stop hire: kayaks, SUP, wakeboarding, ringos.", lat: 37.7225, lng: 20.8755 }
+  { name: "Turtle Feeding Point", desc: "Local fisherman feeds loggerhead sea turtles each morning, ~7:30-8:30.", lat: 37.7154933, lng: 20.8637553 },
+  { name: "Euro Divers", desc: "PADI scuba diving courses & reef dives.", lat: 37.7222157, lng: 20.8634574 },
+  { name: "Cameo Island", desc: "Small islet & beach, popular boat-trip / swim stop.", lat: 37.7137066, lng: 20.8650064 },
+  { name: "Top Rentals", desc: "Car, quad & ATV rental for island excursions.", lat: 37.7328441, lng: 20.8630707 },
+  { name: "GoElectric", desc: "Electric bike rental.", lat: 37.710163, lng: 20.8566485 },
+  { name: "Jet Ski & Watersports Hire", desc: "Approximate beach spot — jet ski/watersports stalls along this stretch (operators change seasonally).", lat: 37.7185, lng: 20.8615 },
+  { name: "Banana Boat & Inflatables", desc: "Approximate beach spot — banana boat & towable rides off the sand.", lat: 37.7207, lng: 20.8621 },
+  { name: "Parasailing", desc: "Approximate beach spot — tandem parasail flights over the bay.", lat: 37.7220, lng: 20.8635 },
+  { name: "Speedboat & Boat Hire", desc: "Approximate beach spot — speedboat charters along the bay.", lat: 37.7240, lng: 20.8654 },
+  { name: "SUP, Kayak & Pedal Boat Rental", desc: "Approximate beach spot — paddle craft hire.", lat: 37.7260, lng: 20.8670 },
+  { name: "Beach Volleyball Courts", desc: "Approximate beach spot — public courts, pickup games.", lat: 37.7277, lng: 20.8691 },
+  { name: "Sunset / Party Boat Departure", desc: "Approximate beach spot — daytime party cruises & evening sailing trips depart near here.", lat: 37.7150, lng: 20.8600 }
 ];
+
+document.getElementById('bars-count').textContent = bars.length;
+document.getElementById('activities-count').textContent = activities.length;
 
 const map = L.map('map', { zoomControl: true, tap: true, tapTolerance: 20 }).setView(CENTER, 15);
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
