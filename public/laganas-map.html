@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Laganas, Zakynthos — Bars &amp; Activities Map</title>
+<link rel="stylesheet" href="vendor/leaflet/leaflet.css" />
+<style>
+  :root {
+    --bar-color: #ff4d6d;
+    --activity-color: #2ec4ff;
+    --bg: #0f1320;
+    --panel: #161b2e;
+    --text: #eef1f8;
+    --muted: #9aa3bd;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; height: 100%; background: var(--bg); color: var(--text); font-family: -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; }
+  #app { display: flex; flex-direction: column; height: 100vh; }
+  header { padding: 14px 18px; background: var(--panel); border-bottom: 1px solid #232a45; }
+  header h1 { margin: 0 0 4px; font-size: 18px; }
+  header p { margin: 0; font-size: 12.5px; color: var(--muted); }
+  #controls { display: flex; flex-wrap: wrap; gap: 10px; padding: 10px 18px; background: var(--panel); border-bottom: 1px solid #232a45; align-items: center; }
+  .toggle-btn {
+    border: 1px solid #2c3354; background: #1d2440; color: var(--text); padding: 7px 14px;
+    border-radius: 20px; font-size: 13px; cursor: pointer; display: flex; align-items: center; gap: 6px;
+    transition: background .15s, opacity .15s;
+  }
+  .toggle-btn .swatch { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
+  .toggle-btn.off { opacity: .4; }
+  .toggle-btn.bars.on { background: rgba(255,77,109,.18); border-color: var(--bar-color); }
+  .toggle-btn.activities.on { background: rgba(46,196,255,.18); border-color: var(--activity-color); }
+  #search { margin-left: auto; padding: 7px 12px; border-radius: 20px; border: 1px solid #2c3354; background: #1d2440; color: var(--text); font-size: 13px; min-width: 180px; }
+  #search::placeholder { color: var(--muted); }
+  #map { flex: 1; }
+  .leaflet-popup-content-wrapper { background: var(--panel); color: var(--text); border-radius: 10px; }
+  .leaflet-popup-tip { background: var(--panel); }
+  .popup-title { font-weight: 700; font-size: 14px; margin-bottom: 4px; }
+  .popup-tag { display: inline-block; font-size: 10.5px; padding: 2px 7px; border-radius: 10px; margin-bottom: 6px; }
+  .popup-tag.bar { background: rgba(255,77,109,.2); color: var(--bar-color); }
+  .popup-tag.activity { background: rgba(46,196,255,.2); color: var(--activity-color); }
+  .popup-desc { font-size: 12.5px; color: var(--muted); margin-bottom: 6px; }
+  .popup-link { font-size: 12px; color: #6fb3ff; text-decoration: none; }
+  footer { padding: 8px 18px; background: var(--panel); border-top: 1px solid #232a45; font-size: 11px; color: var(--muted); }
+</style>
+</head>
+<body>
+<div id="app">
+  <header>
+    <h1>🇬🇷 Laganas Strip, Zakynthos — Interactive Map</h1>
+    <p>Top bars/clubs on and around the strip, plus top activity &amp; excursion spots. Tap a dot for details.</p>
+  </header>
+  <div id="controls">
+    <button class="toggle-btn bars on" data-layer="bars"><span class="swatch" style="background:var(--bar-color)"></span>Top Bars (20)</button>
+    <button class="toggle-btn activities on" data-layer="activities"><span class="swatch" style="background:var(--activity-color)"></span>Top Activities (20)</button>
+    <input id="search" type="text" placeholder="Search by name…" />
+  </div>
+  <div id="map"></div>
+  <footer>
+    Map data © <a href="https://www.openstreetmap.org/copyright" style="color:#6fb3ff" target="_blank" rel="noopener">OpenStreetMap</a> contributors. Pin locations are best-effort placements along the strip for orientation, not verified GPS addresses — names/venues change season to season, so confirm details (opening hours, current ownership) before relying on this for a night out. Edit the <code>bars</code> / <code>activities</code> arrays in this file to correct or extend the list.
+  </footer>
+</div>
+
+<script src="vendor/leaflet/leaflet.js"></script>
+<script>
+// Approximate center of the Laganas strip, Zakynthos
+const CENTER = [37.7263, 20.8809];
+
+// Each entry: name, short description, lat/lng (approximate placement along/near the strip)
+const bars = [
+  { name: "Must", desc: "Long-running strip superclub, big dance floor & stage shows.", lat: 37.7268, lng: 20.8801 },
+  { name: "Sing Sing", desc: "Themed party bar, costumed staff, high-energy crowd.", lat: 37.7271, lng: 20.8806 },
+  { name: "Rescue", desc: "Lifeguard-themed club, one of the busiest late-night spots.", lat: 37.7266, lng: 20.8812 },
+  { name: "Cherry", desc: "Cocktail bar with a lively pre-club crowd.", lat: 37.7274, lng: 20.8798 },
+  { name: "Barrel", desc: "Bucket cocktails and games, popular with groups.", lat: 37.7260, lng: 20.8817 },
+  { name: "Zeros", desc: "Long-standing strip bar known for cheap shots & shooters.", lat: 37.7277, lng: 20.8793 },
+  { name: "Argo", desc: "Greek-run bar mixing local vibe with strip energy.", lat: 37.7257, lng: 20.8822 },
+  { name: "Rock Cafe", desc: "Rock & alt-music bar, calmer alternative to the main clubs.", lat: 37.7281, lng: 20.8789 },
+  { name: "Temptation", desc: "Themed cocktail bar with games and bucket deals.", lat: 37.7263, lng: 20.8826 },
+  { name: "Rebels", desc: "Mid-strip bar, sports screens early, party later.", lat: 37.7285, lng: 20.8784 },
+  { name: "Vasilis Bar", desc: "Family-run bar, good for a relaxed first drink.", lat: 37.7253, lng: 20.8831 },
+  { name: "Cinderella", desc: "Glam-themed bar with cocktail towers.", lat: 37.7289, lng: 20.8779 },
+  { name: "Time Out", desc: "Sports bar by day, party bar by night.", lat: 37.7249, lng: 20.8836 },
+  { name: "Tequila", desc: "Shot bar with Mexican theme, popular pre-club stop.", lat: 37.7293, lng: 20.8775 },
+  { name: "Status", desc: "Upscale-leaning lounge/bar on the quieter end of the strip.", lat: 37.7245, lng: 20.8840 },
+  { name: "Yes! Bar", desc: "High-energy dance bar, regular drink offers.", lat: 37.7297, lng: 20.8770 },
+  { name: "Marathon Bar", desc: "All-day bar near the beach end of the strip.", lat: 37.7241, lng: 20.8845 },
+  { name: "Cuban Bar", desc: "Latin-themed cocktail bar with live music nights.", lat: 37.7301, lng: 20.8766 },
+  { name: "Rolling Stone", desc: "Classic rock bar, mixed local & tourist crowd.", lat: 37.7237, lng: 20.8849 },
+  { name: "Vouli", desc: "Late-night bar known for staying open after the rest close.", lat: 37.7305, lng: 20.8762 }
+];
+
+const activities = [
+  { name: "Laganas Speedboat Charters", desc: "Private/group speedboat hire along the bay.", lat: 37.7240, lng: 20.8795 },
+  { name: "Turtle Island Boat Trips (Marathonisi)", desc: "Glass-bottom boat tours to see loggerhead turtles.", lat: 37.7228, lng: 20.8781 },
+  { name: "Blue Caves Excursion Boats", desc: "Full-day boat trips to Zakynthos' Blue Caves & Shipwreck Beach.", lat: 37.7300, lng: 20.8830 },
+  { name: "Banana Boat & Inflatables", desc: "Banana boat, donut & towable rides off the main beach.", lat: 37.7222, lng: 20.8800 },
+  { name: "Jet Ski Rental", desc: "Hourly/half-day jet ski hire on Laganas Bay.", lat: 37.7218, lng: 20.8812 },
+  { name: "Parasailing Laganas", desc: "Tandem parasail flights over the bay.", lat: 37.7215, lng: 20.8825 },
+  { name: "Scuba Diving Center", desc: "PADI courses & reef dives off the south coast.", lat: 37.7232, lng: 20.8845 },
+  { name: "Quad & ATV Safari Rental", desc: "Off-road quad rentals for island safari routes.", lat: 37.7310, lng: 20.8750 },
+  { name: "Water Village Waterpark", desc: "Large waterpark with slides, just outside Laganas.", lat: 37.7350, lng: 20.8700 },
+  { name: "Foam Party Boat", desc: "Daytime foam-party booze cruise along the coast.", lat: 37.7205, lng: 20.8790 },
+  { name: "Sunset Cruise", desc: "Evening sailing trip with drinks included.", lat: 37.7198, lng: 20.8805 },
+  { name: "Pub Crawl Laganas", desc: "Organized bar-hopping tour with reps & games.", lat: 37.7272, lng: 20.8815 },
+  { name: "Cliff Diving Boat Trip", desc: "Boat excursion to cliff-jumping spots along the coast.", lat: 37.7192, lng: 20.8818 },
+  { name: "Horseback Riding Tours", desc: "Guided horse rides through olive groves near Laganas.", lat: 37.7330, lng: 20.8650 },
+  { name: "Bungee Jump", desc: "Bungee jump tower / extreme rides near the strip.", lat: 37.7280, lng: 20.8760 },
+  { name: "Mini Golf Laganas", desc: "Family-friendly mini-golf course.", lat: 37.7320, lng: 20.8730 },
+  { name: "Beach Volleyball Courts", desc: "Public courts on Laganas beach, pickup games daily.", lat: 37.7235, lng: 20.8770 },
+  { name: "Paragliding Zakynthos", desc: "Tandem paragliding flights with coastal views.", lat: 37.7340, lng: 20.8680 },
+  { name: "Party Boat (DJ Cruise)", desc: "DJ-hosted day party cruise with swim stops.", lat: 37.7210, lng: 20.8835 },
+  { name: "Watersports Center", desc: "One-stop hire: kayaks, SUP, wakeboarding, ringos.", lat: 37.7225, lng: 20.8755 }
+];
+
+const map = L.map('map', { zoomControl: true }).setView(CENTER, 15);
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  maxZoom: 19,
+  attribution: '&copy; OpenStreetMap contributors'
+}).addTo(map);
+
+function gmapsLink(lat, lng) {
+  return `https://www.google.com/maps/dir/?api=1&destination=${lat},${lng}`;
+}
+
+function makePopup(item, tag) {
+  return `<div class="popup-title">${item.name}</div>
+    <span class="popup-tag ${tag}">${tag === 'bar' ? 'Bar / Club' : 'Activity'}</span>
+    <div class="popup-desc">${item.desc}</div>
+    <a class="popup-link" href="${gmapsLink(item.lat, item.lng)}" target="_blank" rel="noopener">Get directions →</a>`;
+}
+
+const barLayer = L.layerGroup(
+  bars.map(b => L.circleMarker([b.lat, b.lng], {
+    radius: 8, color: '#ff4d6d', fillColor: '#ff4d6d', fillOpacity: 0.9, weight: 2
+  }).bindPopup(makePopup(b, 'bar')).bindTooltip(b.name, { direction: 'top' }))
+).addTo(map);
+
+const activityLayer = L.layerGroup(
+  activities.map(a => L.circleMarker([a.lat, a.lng], {
+    radius: 8, color: '#2ec4ff', fillColor: '#2ec4ff', fillOpacity: 0.9, weight: 2
+  }).bindPopup(makePopup(a, 'activity')).bindTooltip(a.name, { direction: 'top' }))
+).addTo(map);
+
+document.querySelectorAll('.toggle-btn[data-layer]').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const layer = btn.dataset.layer === 'bars' ? barLayer : activityLayer;
+    if (map.hasLayer(layer)) {
+      map.removeLayer(layer);
+      btn.classList.add('off');
+      btn.classList.remove('on');
+    } else {
+      map.addLayer(layer);
+      btn.classList.remove('off');
+      btn.classList.add('on');
+    }
+  });
+});
+
+document.getElementById('search').addEventListener('input', (e) => {
+  const q = e.target.value.trim().toLowerCase();
+  const all = [...bars.map(b => ({ ...b, tag: 'bar' })), ...activities.map(a => ({ ...a, tag: 'activity' }))];
+  if (!q) return;
+  const hit = all.find(item => item.name.toLowerCase().includes(q));
+  if (hit) map.setView([hit.lat, hit.lng], 17);
+});
+</script>
+</body>
+</html>
